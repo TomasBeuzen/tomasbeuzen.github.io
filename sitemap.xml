@@ -3,47 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://TomasBeuzen.github.io/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/talk/example/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/post/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://TomasBeuzen.github.io/authors/admin/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
@@ -60,14 +19,14 @@
   </url>
   
   <url>
-    <loc>http://TomasBeuzen.github.io/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://TomasBeuzen.github.io/post/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://TomasBeuzen.github.io/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>http://TomasBeuzen.github.io/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -106,7 +65,7 @@
   
   <url>
     <loc>http://TomasBeuzen.github.io/tags/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -296,29 +255,6 @@
   </url>
   
   <url>
-    <loc>http://TomasBeuzen.github.io/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/categories/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://TomasBeuzen.github.io/publication_types/1/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -336,11 +272,8 @@
   </url>
   
   <url>
-    <loc>http://TomasBeuzen.github.io/post/jupyter/</loc>
-  </url>
-  
-  <url>
-    <loc>http://TomasBeuzen.github.io/courses/</loc>
+    <loc>http://TomasBeuzen.github.io/categories/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
