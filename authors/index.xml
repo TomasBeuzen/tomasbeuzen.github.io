@@ -2,166 +2,166 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | Tomas Beuzen</title>
-    <link>http://TomasBeuzen.github.io/authors/</link>
-      <atom:link href="http://TomasBeuzen.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://tomasbeuzen.github.io/authors/</link>
+      <atom:link href="http://tomasbeuzen.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://TomasBeuzen.github.io/img/icon-192.png</url>
+      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Authors</title>
-      <link>http://TomasBeuzen.github.io/authors/</link>
+      <link>http://tomasbeuzen.github.io/authors/</link>
     </image>
     
     <item>
       <title></title>
-      <link>http://TomasBeuzen.github.io/authors/admin/</link>
-      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/admin/</guid>
+      <link>http://tomasbeuzen.github.io/authors/admin/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/authors/admin/</guid>
       <description>&lt;div class=text-justify&gt;I&#39;m a postdoctoral teaching and learning fellow for the Master of Data Science course at the University of British Columbia, Vancouver, Canada. I have experience in global ocean modelling, modelling coastal processes (particularly coastal storm erosion), coastal engineering and machine learning. Currently, my primary interest is the application of machine learning and data science to Earth processes. I enjoy developing software and apps for workflow automation and would love to change the world 🌏.&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Joshua Simmons</title>
-      <link>http://TomasBeuzen.github.io/authors/joshua-simmons/</link>
+      <link>http://tomasbeuzen.github.io/authors/joshua-simmons/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/joshua-simmons/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/joshua-simmons/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tomas Beuzen</title>
-      <link>http://TomasBeuzen.github.io/authors/tomas-beuzen/</link>
+      <link>http://tomasbeuzen.github.io/authors/tomas-beuzen/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/tomas-beuzen/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/tomas-beuzen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kristen Splinter</title>
-      <link>http://TomasBeuzen.github.io/authors/kristen-splinter/</link>
+      <link>http://tomasbeuzen.github.io/authors/kristen-splinter/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/kristen-splinter/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/kristen-splinter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lucy Marshall</title>
-      <link>http://TomasBeuzen.github.io/authors/lucy-marshall/</link>
+      <link>http://tomasbeuzen.github.io/authors/lucy-marshall/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/lucy-marshall/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/lucy-marshall/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ian Turner</title>
-      <link>http://TomasBeuzen.github.io/authors/ian-turner/</link>
+      <link>http://tomasbeuzen.github.io/authors/ian-turner/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/ian-turner/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/ian-turner/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Margaret Palmsten</title>
-      <link>http://TomasBeuzen.github.io/authors/margaret-palmsten/</link>
+      <link>http://tomasbeuzen.github.io/authors/margaret-palmsten/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/margaret-palmsten/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/margaret-palmsten/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mitchell Harley</title>
-      <link>http://TomasBeuzen.github.io/authors/mitchell-harley/</link>
+      <link>http://tomasbeuzen.github.io/authors/mitchell-harley/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/mitchell-harley/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/mitchell-harley/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alex Atkinson</title>
-      <link>http://TomasBeuzen.github.io/authors/alex-atkinson/</link>
+      <link>http://tomasbeuzen.github.io/authors/alex-atkinson/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/alex-atkinson/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/alex-atkinson/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alexander Atkinson</title>
-      <link>http://TomasBeuzen.github.io/authors/alexander-atkinson/</link>
+      <link>http://tomasbeuzen.github.io/authors/alexander-atkinson/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/alexander-atkinson/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/alexander-atkinson/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chris Blenkinsopp</title>
-      <link>http://TomasBeuzen.github.io/authors/chris-blenkinsopp/</link>
+      <link>http://tomasbeuzen.github.io/authors/chris-blenkinsopp/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/chris-blenkinsopp/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/chris-blenkinsopp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>David Callaghan</title>
-      <link>http://TomasBeuzen.github.io/authors/david-callaghan/</link>
+      <link>http://tomasbeuzen.github.io/authors/david-callaghan/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/david-callaghan/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/david-callaghan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Florent Birrien</title>
-      <link>http://TomasBeuzen.github.io/authors/florent-birrien/</link>
+      <link>http://tomasbeuzen.github.io/authors/florent-birrien/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/florent-birrien/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/florent-birrien/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Francois Flocard</title>
-      <link>http://TomasBeuzen.github.io/authors/francois-flocard/</link>
+      <link>http://tomasbeuzen.github.io/authors/francois-flocard/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/francois-flocard/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/francois-flocard/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Peter Nielsen</title>
-      <link>http://TomasBeuzen.github.io/authors/peter-nielsen/</link>
+      <link>http://tomasbeuzen.github.io/authors/peter-nielsen/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/peter-nielsen/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/peter-nielsen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Roshanka Ranasinghe</title>
-      <link>http://TomasBeuzen.github.io/authors/roshanka-ranasinghe/</link>
+      <link>http://tomasbeuzen.github.io/authors/roshanka-ranasinghe/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/roshanka-ranasinghe/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/roshanka-ranasinghe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tom Baldock</title>
-      <link>http://TomasBeuzen.github.io/authors/tom-baldock/</link>
+      <link>http://tomasbeuzen.github.io/authors/tom-baldock/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/tom-baldock/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/tom-baldock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alexander Horner-Devine</title>
-      <link>http://TomasBeuzen.github.io/authors/alexander-horner-devine/</link>
+      <link>http://tomasbeuzen.github.io/authors/alexander-horner-devine/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/alexander-horner-devine/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/alexander-horner-devine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chris Chickadel</title>
-      <link>http://TomasBeuzen.github.io/authors/chris-chickadel/</link>
+      <link>http://tomasbeuzen.github.io/authors/chris-chickadel/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/authors/chris-chickadel/</guid>
+      <guid>http://tomasbeuzen.github.io/authors/chris-chickadel/</guid>
       <description></description>
     </item>
     

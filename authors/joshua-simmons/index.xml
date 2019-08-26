@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joshua Simmons | Tomas Beuzen</title>
-    <link>http://TomasBeuzen.github.io/authors/joshua-simmons/</link>
-      <atom:link href="http://TomasBeuzen.github.io/authors/joshua-simmons/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://tomasbeuzen.github.io/authors/joshua-simmons/</link>
+      <atom:link href="http://tomasbeuzen.github.io/authors/joshua-simmons/index.xml" rel="self" type="application/rss+xml" />
     <description>Joshua Simmons</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://TomasBeuzen.github.io/img/icon-192.png</url>
+      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Joshua Simmons</title>
-      <link>http://TomasBeuzen.github.io/authors/joshua-simmons/</link>
+      <link>http://tomasbeuzen.github.io/authors/joshua-simmons/</link>
     </image>
     
     <item>
       <title>A variable selection package driving Netica with Python</title>
-      <link>http://TomasBeuzen.github.io/publication/journal-article-cvnvs/</link>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/publication/journal-article-cvnvs/</guid>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

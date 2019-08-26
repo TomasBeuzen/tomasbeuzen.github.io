@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lucy Marshall | Tomas Beuzen</title>
-    <link>http://TomasBeuzen.github.io/authors/lucy-marshall/</link>
-      <atom:link href="http://TomasBeuzen.github.io/authors/lucy-marshall/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://tomasbeuzen.github.io/authors/lucy-marshall/</link>
+      <atom:link href="http://tomasbeuzen.github.io/authors/lucy-marshall/index.xml" rel="self" type="application/rss+xml" />
     <description>Lucy Marshall</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://TomasBeuzen.github.io/img/icon-192.png</url>
+      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Lucy Marshall</title>
-      <link>http://TomasBeuzen.github.io/authors/lucy-marshall/</link>
+      <link>http://tomasbeuzen.github.io/authors/lucy-marshall/</link>
     </image>
     
     <item>
       <title>A comparison of methods for discretizing continuous variables in Bayesian Networks</title>
-      <link>http://TomasBeuzen.github.io/publication/journal-article-dis/</link>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-dis/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/publication/journal-article-dis/</guid>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-dis/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -37,9 +37,9 @@
     
     <item>
       <title>Bayesian Networks in coastal engineering: Distinguishing descriptive and predictive applications</title>
-      <link>http://TomasBeuzen.github.io/publication/journal-article-bn/</link>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-bn/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/publication/journal-article-bn/</guid>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-bn/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -60,9 +60,9 @@
     
     <item>
       <title>Predicting storm erosion on sandy coastlines using a Bayesian network</title>
-      <link>http://TomasBeuzen.github.io/publication/conference-paper-cp1/</link>
+      <link>http://tomasbeuzen.github.io/publication/conference-paper-cp1/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/publication/conference-paper-cp1/</guid>
+      <guid>http://tomasbeuzen.github.io/publication/conference-paper-cp1/</guid>
       <description>&lt;!--
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;

@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Tomas Beuzen</title>
-    <link>http://TomasBeuzen.github.io/tags/</link>
-      <atom:link href="http://TomasBeuzen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://tomasbeuzen.github.io/tags/</link>
+      <atom:link href="http://tomasbeuzen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://TomasBeuzen.github.io/img/icon-192.png</url>
+      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Tags</title>
-      <link>http://TomasBeuzen.github.io/tags/</link>
+      <link>http://tomasbeuzen.github.io/tags/</link>
     </image>
     
     <item>
       <title>Bayesian network, variable selection, overfitting</title>
-      <link>http://TomasBeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</link>
+      <link>http://tomasbeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bayesian network, discretization, model fitting</title>
-      <link>http://TomasBeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</link>
+      <link>http://tomasbeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bayesian network, storm erosion, coastal processes, coastal modelling</title>
-      <link>http://TomasBeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</link>
+      <link>http://tomasbeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sea level rise, coastal erosion, Bruun rule, coastal management, sediment transport</title>
-      <link>http://TomasBeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</link>
+      <link>http://tomasbeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sea level rise, seawalls, coastal erosion, Bruun rule, coastal management</title>
-      <link>http://TomasBeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</link>
+      <link>http://tomasbeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aeration, rivers, stratification, thermal imaging, turbulence</title>
-      <link>http://TomasBeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</link>
+      <link>http://tomasbeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>http://TomasBeuzen.github.io/tags/deep-learning/</link>
+      <link>http://tomasbeuzen.github.io/tags/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/deep-learning/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Demo</title>
-      <link>http://TomasBeuzen.github.io/tags/demo/</link>
+      <link>http://tomasbeuzen.github.io/tags/demo/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/demo/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/demo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shoreline prediction, storms, shoreline erosion, Bayesian network</title>
-      <link>http://TomasBeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</link>
+      <link>http://tomasbeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://TomasBeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</guid>
       <description></description>
     </item>
     
