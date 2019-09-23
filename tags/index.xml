@@ -61,18 +61,42 @@
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>http://tomasbeuzen.github.io/tags/deep-learning/</link>
+      <title>Data Science</title>
+      <link>http://tomasbeuzen.github.io/tags/data-science/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/deep-learning/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Demo</title>
-      <link>http://tomasbeuzen.github.io/tags/demo/</link>
+      <title>Graphics</title>
+      <link>http://tomasbeuzen.github.io/tags/graphics/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/demo/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/graphics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>http://tomasbeuzen.github.io/tags/machine-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outreach</title>
+      <link>http://tomasbeuzen.github.io/tags/outreach/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/outreach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prediction</title>
+      <link>http://tomasbeuzen.github.io/tags/prediction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/prediction/</guid>
       <description></description>
     </item>
     

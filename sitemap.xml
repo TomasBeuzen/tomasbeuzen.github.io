@@ -14,7 +14,17 @@
   </url>
   
   <url>
+    <loc>http://tomasbeuzen.github.io/post/cookie-cutter-eda/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</loc>
+    <lastmod>2019-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/post/simple-logistic-regression/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -227,31 +237,69 @@
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/deep-learning/</loc>
+    <loc>http://tomasbeuzen.github.io/project/apple-watch-faces/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/data-science/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/demo/</loc>
+    <loc>http://tomasbeuzen.github.io/tags/graphics/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/external-project/</loc>
+    <loc>http://tomasbeuzen.github.io/project/autobeach/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/internal-project/</loc>
+    <loc>http://tomasbeuzen.github.io/tags/machine-learning/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/nrl-prediction/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/runup-prediction/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/prediction/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://tomasbeuzen.github.io/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/unsw-jersey/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/unsw-wwd/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
