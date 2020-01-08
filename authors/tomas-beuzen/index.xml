@@ -5,12 +5,35 @@
     <link>http://tomasbeuzen.github.io/authors/tomas-beuzen/</link>
       <atom:link href="http://tomasbeuzen.github.io/authors/tomas-beuzen/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Tomas Beuzen</title>
       <link>http://tomasbeuzen.github.io/authors/tomas-beuzen/</link>
     </image>
+    
+    <item>
+      <title>Controls of variability in berm and dune storm erosion</title>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-jgr/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-jgr/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
     
     <item>
       <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>

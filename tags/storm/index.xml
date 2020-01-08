@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dune | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/dune/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/dune/index.xml" rel="self" type="application/rss+xml" />
-    <description>dune</description>
+    <title>storm | Tomas Beuzen</title>
+    <link>http://tomasbeuzen.github.io/tags/storm/</link>
+      <atom:link href="http://tomasbeuzen.github.io/tags/storm/index.xml" rel="self" type="application/rss+xml" />
+    <description>storm</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
-      <title>dune</title>
-      <link>http://tomasbeuzen.github.io/tags/dune/</link>
+      <title>storm</title>
+      <link>http://tomasbeuzen.github.io/tags/storm/</link>
     </image>
     
     <item>
@@ -17,29 +17,6 @@
       <link>http://tomasbeuzen.github.io/publication/journal-article-jgr/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/publication/journal-article-jgr/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
