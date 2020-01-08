@@ -5,7 +5,7 @@
     <link>http://tomasbeuzen.github.io/tags/</link>
       <atom:link href="http://tomasbeuzen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,50 +13,226 @@
     </image>
     
     <item>
-      <title>Bayesian network, variable selection, overfitting</title>
-      <link>http://tomasbeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</link>
+      <title>Machine Learning</title>
+      <link>http://tomasbeuzen.github.io/tags/machine-learning/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beach</title>
+      <link>http://tomasbeuzen.github.io/tags/beach/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/beach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coastal</title>
+      <link>http://tomasbeuzen.github.io/tags/coastal/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/coastal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>http://tomasbeuzen.github.io/tags/data/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dune</title>
+      <link>http://tomasbeuzen.github.io/tags/dune/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/dune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dune toe</title>
+      <link>http://tomasbeuzen.github.io/tags/dune-toe/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/dune-toe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>runup</title>
+      <link>http://tomasbeuzen.github.io/tags/runup/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/runup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian network</title>
+      <link>http://tomasbeuzen.github.io/tags/bayesian-network/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-variable-selection-overfitting/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/bayesian-network/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bayesian network, discretization, model fitting</title>
-      <link>http://tomasbeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</link>
+      <title>Gaussian process</title>
+      <link>http://tomasbeuzen.github.io/tags/gaussian-process/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/gaussian-process/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>erosion</title>
+      <link>http://tomasbeuzen.github.io/tags/erosion/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/erosion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>overfitting</title>
+      <link>http://tomasbeuzen.github.io/tags/overfitting/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/overfitting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>variable selection</title>
+      <link>http://tomasbeuzen.github.io/tags/variable-selection/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/variable-selection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>discretization</title>
+      <link>http://tomasbeuzen.github.io/tags/discretization/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-discretization-model-fitting/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/discretization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bayesian network, storm erosion, coastal processes, coastal modelling</title>
-      <link>http://tomasbeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</link>
+      <title>model fitting</title>
+      <link>http://tomasbeuzen.github.io/tags/model-fitting/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/model-fitting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coastal modelling</title>
+      <link>http://tomasbeuzen.github.io/tags/coastal-modelling/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/bayesian-network-storm-erosion-coastal-processes-coastal-modelling/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/coastal-modelling/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>sea level rise, coastal erosion, Bruun rule, coastal management, sediment transport</title>
-      <link>http://tomasbeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</link>
+      <title>coastal processes</title>
+      <link>http://tomasbeuzen.github.io/tags/coastal-processes/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/coastal-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storm erosion</title>
+      <link>http://tomasbeuzen.github.io/tags/storm-erosion/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/storm-erosion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bruun rule</title>
+      <link>http://tomasbeuzen.github.io/tags/bruun-rule/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/sea-level-rise-coastal-erosion-bruun-rule-coastal-management-sediment-transport/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/bruun-rule/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>sea level rise, seawalls, coastal erosion, Bruun rule, coastal management</title>
-      <link>http://tomasbeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</link>
+      <title>coastal erosion</title>
+      <link>http://tomasbeuzen.github.io/tags/coastal-erosion/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/sea-level-rise-seawalls-coastal-erosion-bruun-rule-coastal-management/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/coastal-erosion/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>aeration, rivers, stratification, thermal imaging, turbulence</title>
-      <link>http://tomasbeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</link>
+      <title>coastal management</title>
+      <link>http://tomasbeuzen.github.io/tags/coastal-management/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/coastal-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sea level rise</title>
+      <link>http://tomasbeuzen.github.io/tags/sea-level-rise/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/sea-level-rise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>seawalls</title>
+      <link>http://tomasbeuzen.github.io/tags/seawalls/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/seawalls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sediment transport</title>
+      <link>http://tomasbeuzen.github.io/tags/sediment-transport/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/sediment-transport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aeration</title>
+      <link>http://tomasbeuzen.github.io/tags/aeration/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/aeration-rivers-stratification-thermal-imaging-turbulence/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/aeration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rivers</title>
+      <link>http://tomasbeuzen.github.io/tags/rivers/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/rivers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stratification</title>
+      <link>http://tomasbeuzen.github.io/tags/stratification/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/stratification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thermal imaging</title>
+      <link>http://tomasbeuzen.github.io/tags/thermal-imaging/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/thermal-imaging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>turbulence</title>
+      <link>http://tomasbeuzen.github.io/tags/turbulence/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/turbulence/</guid>
       <description></description>
     </item>
     
@@ -77,14 +253,6 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>http://tomasbeuzen.github.io/tags/machine-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Outreach</title>
       <link>http://tomasbeuzen.github.io/tags/outreach/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -101,10 +269,26 @@
     </item>
     
     <item>
-      <title>shoreline prediction, storms, shoreline erosion, Bayesian network</title>
-      <link>http://tomasbeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</link>
+      <title>shoreline erosion</title>
+      <link>http://tomasbeuzen.github.io/tags/shoreline-erosion/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/tags/shoreline-prediction-storms-shoreline-erosion-bayesian-network/</guid>
+      <guid>http://tomasbeuzen.github.io/tags/shoreline-erosion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shoreline prediction</title>
+      <link>http://tomasbeuzen.github.io/tags/shoreline-prediction/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/shoreline-prediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storms</title>
+      <link>http://tomasbeuzen.github.io/tags/storms/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/tags/storms/</guid>
       <description></description>
     </item>
     

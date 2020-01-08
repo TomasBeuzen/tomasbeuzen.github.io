@@ -21,14 +21,6 @@
     </item>
     
     <item>
-      <title>Identifying beach profile features.</title>
-      <link>http://tomasbeuzen.github.io/project/autobeach/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/autobeach/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>NRL game predictions</title>
       <link>http://tomasbeuzen.github.io/project/nrl-prediction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -57,6 +49,14 @@
       <link>http://tomasbeuzen.github.io/project/unsw-wwd/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/project/unsw-wwd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pybeach - a Python package for locating the dune toe on cross-shore beach profile transects.</title>
+      <link>http://tomasbeuzen.github.io/project/autobeach/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/autobeach/</guid>
       <description></description>
     </item>
     

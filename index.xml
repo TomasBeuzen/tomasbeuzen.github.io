@@ -196,10 +196,56 @@ For other tips, such as using math, see the guide on [writing content with Acade
     </item>
     
     <item>
+      <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
       <title>A variable selection package driving Netica with Python</title>
       <link>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble models from machine learning: an example of wave runup and coastal dune erosion</title>
+      <link>http://tomasbeuzen.github.io/publication/journal-article-gp/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/publication/journal-article-gp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -342,14 +388,6 @@ For other tips, such as using math, see the guide on [writing content with Acade
     </item>
     
     <item>
-      <title>Identifying beach profile features.</title>
-      <link>http://tomasbeuzen.github.io/project/autobeach/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/autobeach/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>NRL game predictions</title>
       <link>http://tomasbeuzen.github.io/project/nrl-prediction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -378,6 +416,14 @@ For other tips, such as using math, see the guide on [writing content with Acade
       <link>http://tomasbeuzen.github.io/project/unsw-wwd/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/project/unsw-wwd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pybeach - a Python package for locating the dune toe on cross-shore beach profile transects.</title>
+      <link>http://tomasbeuzen.github.io/project/autobeach/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/autobeach/</guid>
       <description></description>
     </item>
     
