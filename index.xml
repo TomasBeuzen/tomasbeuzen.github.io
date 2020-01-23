@@ -5,12 +5,119 @@
     <link>http://tomasbeuzen.github.io/</link>
       <atom:link href="http://tomasbeuzen.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Tomas Beuzen</title>
       <link>http://tomasbeuzen.github.io/</link>
     </image>
+    
+    <item>
+      <title>Simultaneous feature preprocessing, feature selection, model selection, and hyperparameter tuning in scikit-learn with Pipeline and GridSearchCV</title>
+      <link>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</guid>
+      <description>
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Some of the key steps in a machine learning workflow are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;feature preprocessing (encoding categorical features, scaling numeric features, transforming text data, etc.);&lt;/li&gt;
+&lt;li&gt;feature selection (choosing which features to include in the model);&lt;/li&gt;
+&lt;li&gt;model selection (choosing which machine learning estimator to use); and,&lt;/li&gt;
+&lt;li&gt;hyperparameter tuning (determining the optimum hyperparameter values to use for each estimator).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It can be difficult to perform these tasks in an accurate, efficient and reproducible manner. In particular, it is important to ensure that, during cross-validation, feature preprocessing and feature selection are based only on the training portion of data, preventing leakage from the validation set which could bias our results. In this short, practical post I&amp;rsquo;ll demonstrate how to use &lt;a href=&#34;https://scikit-learn.org/stable/&#34; target=&#34;_blank&#34;&gt;scikit-learn&lt;/a&gt; to simultaneously perform the above steps. While the example given is somewhat contrived, the syntax and workflow are what is important here and can be applied to any machine learning workflow.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-1-import-dependencies&#34;&gt;Step 1: Import dependencies&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.pipeline import Pipeline
+from sklearn.datasets import make_classification
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import GridSearchCV
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_selection import SelectKBest, mutual_info_classif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;step-2-import-data&#34;&gt;Step 2: Import data&lt;/h3&gt;
+
+&lt;p&gt;We will create a synthetic binary classification dataset for this demonstration using the scikit-learn function &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html&#34; target=&#34;_blank&#34;&gt;make_classification&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X, y = make_classification(n_samples=1000,
+                           n_features=30,
+                           n_informative=5,
+                           n_redundant=5,
+                           n_classes=2,
+                           random_state=123)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;step-3-create-pipeline-framework&#34;&gt;Step 3: Create pipeline framework&lt;/h3&gt;
+
+&lt;p&gt;Using our synthetic dataset, we are going to set up a pipeline object that will:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Standardize the data using &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html&#34; target=&#34;_blank&#34;&gt;StandardScaler&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Select the &lt;code&gt;k&lt;/code&gt; best features from the data using &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html&#34; target=&#34;_blank&#34;&gt;SelectKBest&lt;/a&gt; and the &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html&#34; target=&#34;_blank&#34;&gt;mutual information metric&lt;/a&gt; (where &lt;code&gt;k&lt;/code&gt; is a hyperparameter that we will tune during the fitting process); and,&lt;/li&gt;
+&lt;li&gt;Use an estimator to model the data, here we will be trying a &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html&#34; target=&#34;_blank&#34;&gt;LogisticRegression&lt;/a&gt;, &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html&#34; target=&#34;_blank&#34;&gt;RandomForestClassifier&lt;/a&gt;, and &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html&#34; target=&#34;_blank&#34;&gt;KNeighborsClassifier&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The syntax for creating this pipeline is shown below. To instantiate the &lt;code&gt;Pipeline&lt;/code&gt; object I&amp;rsquo;ve used  a &lt;code&gt;k&lt;/code&gt; value in &lt;code&gt;SelectKBest&lt;/code&gt; of 5 and I&amp;rsquo;ve input &lt;code&gt;LogisticRegression&lt;/code&gt; as the estimator, but these are simply placeholders for now and they will be varied during the fitting stage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pipe = Pipeline([(&#39;scaler&#39;, StandardScaler()),
+                 (&#39;selector&#39;, SelectKBest(mutual_info_classif, k=5)),
+                 (&#39;classifier&#39;, LogisticRegression())])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;step-4-create-search-space&#34;&gt;Step 4: Create search space&lt;/h3&gt;
+
+&lt;p&gt;The next step is to define the space of hyperparameters and estimators we want to search through. We do this in the form of a dictionary and we use double underscore notation (&lt;code&gt;__&lt;/code&gt;) to refer to the hyperparameters of different steps in our pipeline. We will be trying out different values of &lt;code&gt;k&lt;/code&gt; for the feature selector &lt;code&gt;SelectKBest&lt;/code&gt;, as well as different hyperparameter values for each of our three estimators as shown below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;search_space = [{&#39;selector__k&#39;: [5, 10, 20, 30]},
+                {&#39;classifier&#39;: [LogisticRegression(solver=&#39;lbfgs&#39;)],
+                 &#39;classifier__C&#39;: [0.01, 0.1, 1.0]},
+                {&#39;classifier&#39;: [RandomForestClassifier(n_estimators=100)],
+                 &#39;classifier__max_depth&#39;: [5, 10, None]},
+                {&#39;classifier&#39;: [KNeighborsClassifier()],
+                 &#39;classifier__n_neighbors&#39;: [3, 7, 11],
+                 &#39;classifier__weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;]}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;step-5-run-the-gridsearch&#34;&gt;Step 5: Run the GridSearch&lt;/h3&gt;
+
+&lt;p&gt;This is where the magic happens. We will now pass our pipeline into &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html&#34; target=&#34;_blank&#34;&gt;GridSearchCV&lt;/a&gt; to test our search space (of feature preprocessing, feature selection, model selection, and hyperparameter tuning combinations) using 10-fold cross-validation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;clf = GridSearchCV(pipe, search_space, cv=10, verbose=0)
+clf = clf.fit(X, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;step-6-get-the-results&#34;&gt;Step 6: Get the results&lt;/h3&gt;
+
+&lt;p&gt;We can access the best result of our search using the &lt;code&gt;best_estimator_&lt;/code&gt; attribute. For this particular case, the &lt;code&gt;KNeighborsClassifier&lt;/code&gt; did the best, using &lt;code&gt;n_neighbors=3&lt;/code&gt; and &lt;code&gt;weights=&#39;distance&#39;&lt;/code&gt;, along with the &lt;code&gt;k=5&lt;/code&gt; best features chosen by &lt;code&gt;SelectKBest&lt;/code&gt;. This combination had a 10-fold cross-validation accuracy of 0.958.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;clf.best_estimator_
+Pipeline(memory=None,
+         steps=[(&#39;scaler&#39;,
+                 StandardScaler(copy=True, with_mean=True, with_std=True)),
+                (&#39;selector&#39;,
+                 SelectKBest(k=5,
+                             score_func=&amp;lt;function mutual_info_classif at 0x1a1f91db00&amp;gt;)),
+                (&#39;classifier&#39;,
+                 KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30,
+                                      metric=&#39;minkowski&#39;, metric_params=None,
+                                      n_jobs=None, n_neighbors=3, p=2,
+                                      weights=&#39;distance&#39;))],
+         verbose=False)
+
+clf.best_score_
+0.958
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Controls of variability in berm and dune storm erosion</title>
@@ -36,7 +143,7 @@
     </item>
     
     <item>
-      <title>Building your own website with Hugo and GitHub Pages.</title>
+      <title>Building your own website with Hugo and GitHub Pages</title>
       <link>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</link>
       <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</guid>
