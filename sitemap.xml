@@ -105,6 +105,29 @@
   </url>
   
   <url>
+    <loc>http://tomasbeuzen.github.io/project/calocrunch/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/data-science/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/graphics/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://tomasbeuzen.github.io/tags/machine-learning/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -131,6 +154,17 @@
     <loc>http://tomasbeuzen.github.io/tags/runup/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/bait-509/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -396,26 +430,8 @@
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/data-science/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/graphics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://tomasbeuzen.github.io/project/nrl-prediction/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -425,12 +441,6 @@
   
   <url>
     <loc>http://tomasbeuzen.github.io/tags/prediction/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -482,10 +492,6 @@
   <url>
     <loc>http://tomasbeuzen.github.io/categories/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/project/bait-509/</loc>
   </url>
   
 </urlset>

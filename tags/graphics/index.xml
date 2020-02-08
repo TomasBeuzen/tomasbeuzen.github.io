@@ -5,12 +5,20 @@
     <link>http://tomasbeuzen.github.io/tags/graphics/</link>
       <atom:link href="http://tomasbeuzen.github.io/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
     <description>Graphics</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Graphics</title>
       <link>http://tomasbeuzen.github.io/tags/graphics/</link>
     </image>
+    
+    <item>
+      <title>Calorie Calculator Web App</title>
+      <link>http://tomasbeuzen.github.io/project/calocrunch/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/calocrunch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Custom Apple Watch faces</title>

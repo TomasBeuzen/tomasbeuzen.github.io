@@ -5,7 +5,7 @@
     <link>http://tomasbeuzen.github.io/tags/data-science/</link>
       <atom:link href="http://tomasbeuzen.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Data Science</title>
@@ -13,18 +13,26 @@
     </image>
     
     <item>
-      <title>NRL game predictions</title>
-      <link>http://tomasbeuzen.github.io/project/nrl-prediction/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/nrl-prediction/</guid>
+      <title>Calorie Calculator Web App</title>
+      <link>http://tomasbeuzen.github.io/project/calocrunch/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/calocrunch/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Publicly available Machine Learning Course</title>
+      <title>Public Machine Learning Course</title>
       <link>http://tomasbeuzen.github.io/project/bait-509/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       <guid>http://tomasbeuzen.github.io/project/bait-509/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NRL game predictions</title>
+      <link>http://tomasbeuzen.github.io/project/nrl-prediction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/nrl-prediction/</guid>
       <description></description>
     </item>
     
