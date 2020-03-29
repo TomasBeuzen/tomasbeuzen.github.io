@@ -120,185 +120,114 @@ clf.best_score_
     </item>
     
     <item>
-      <title>Building your own website with Hugo and GitHub Pages</title>
-      <link>http://tomasbeuzen.github.io/post/hosting-website-google-domain/</link>
-      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/hosting-website-google-domain/</guid>
+      <title>The Git Fork-Branch-Pull Workflow</title>
+      <link>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
 
-&lt;p&gt;I recently decided I wanted to create this personal website to serve as my online bio and to display various research and personal projects I am/have worked on. To my surprise, this actually turned out to be much easier than anticipated! So in this brief post I&amp;rsquo;ll walk you through how I created this website (for free!) in 5 simple steps using the static site generator &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; and the static site hosting service provided by &lt;a href=&#34;https://pages.github.com/&#34; target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-1-install-hugo-and-get-a-github-account&#34;&gt;Step 1: Install Hugo and get a GitHub account&lt;/h3&gt;
-
-&lt;p&gt;As I&amp;rsquo;m a mac user, I&amp;rsquo;ll provide instructions here for installing Hugo on macOS. For instructions on installing Hugo on Windows or Linux, go to the &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34; target=&#34;_blank&#34;&gt;Hugo Installation Page&lt;/a&gt; and then skip to Step 2. To install Hugo on macOS, you&amp;rsquo;ll ned both Homebrew and Go. Homebrew is a free and open-source software package management system that simplifies the installation of software on macOS and Go is a programming language created by Google that Hugo will leverage to create your website framework. If you don&amp;rsquo;t have Homebrew or Go installed on your computer, run the following in the terminal:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-
-$ brew install go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, to install Hugo simply type:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ brew install hugo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Finally, if you don&amp;rsquo;t already have a GitHub account, head over to the &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub website&lt;/a&gt; and create one.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-2-set-up-a-workspace&#34;&gt;Step 2: Set up a workspace&lt;/h3&gt;
-
-&lt;p&gt;The next thing we need to do is create a directory from which we will build our website, this can be anywhere you like on your computer. You can create a directory using the macOS Finder or Windows File Explorer GUIs, or alternatively by using the command line. For example, the code below creates a new directory called &lt;strong&gt;&lt;em&gt;websites&lt;/em&gt;&lt;/strong&gt; in the &lt;strong&gt;&lt;em&gt;Documents&lt;/em&gt;&lt;/strong&gt; folder:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd ~/Documents
-
-$ mkdir websites
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, from the command line, change into your new directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd websites
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this directory we will use Hugo to create the framework for your website. Simply type the following with &lt;strong&gt;&lt;em&gt;&amp;ldquo;websitename&amp;rdquo;&lt;/em&gt;&lt;/strong&gt; replaced with whatever you want to call your website:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ hugo new site websitename
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After executing this command, you will see something like the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Congratulations! Your new Hugo site is created in ~/Documents/websitename.
-
-Just a few more steps and you are ready to go:
-
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the &amp;quot;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;quot; command.
-2. Perhaps you want to add some content. You can add single files
-   with &amp;quot;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.&amp;lt;FORMAT&amp;gt;&amp;quot;.
-3. Start the built-in live server via &amp;quot;hugo server&amp;quot;.
-
-Visit https://gohugo.io/ for quickstart guide and full documentation.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Change into your newly created  &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; directory and view the contents using &lt;code&gt;ls&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd websitename
-
-$ ls
-
-archetypes	content		layouts		themes
-config.toml	data		static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;These files and folders form the framework of your Hugo site. We&amp;rsquo;ll explore them a little more later but for now, notice the &lt;strong&gt;&lt;em&gt;themes&lt;/em&gt;&lt;/strong&gt; folder. In the next step we will select a theme for your website and place it in this folder.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-choose-a-theme-for-your-website&#34;&gt;Step 3: Choose a theme for your website!&lt;/h3&gt;
-
-&lt;p&gt;With Hugo you can create your very own website theme or download one of many different pre-made, open source themes. There are plenty of really great pre-made themes and they are perfect for getting your website up and running as quickly as possible. Head over to the &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo themes page&lt;/a&gt; and select a theme for your website. I used the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;Academic theme&lt;/a&gt; for my website.&lt;/p&gt;
+&lt;p&gt;I primarily use Git and GitHub for my open-source work. However, if your anything like me, using these tools sometimes feels like a bit of a black box, nicely summarised by this xkcd comic:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;image_2.png&#34; alt=&#34;png&#34; /&gt;
-&lt;strong&gt;&lt;em&gt;The gallery of themes available to build a website with Hugo.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Git. Source: &lt;a href=&#34;https://xkcd.com/1597/&#34; target=&#34;_blank&#34;&gt;xkcd.com&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Once you&amp;rsquo;ve found a theme you like, click the &lt;strong&gt;&lt;em&gt;download&lt;/em&gt;&lt;/strong&gt; button which will take you to the theme&amp;rsquo;s GitHub repository. In the repository click the green &lt;strong&gt;&lt;em&gt;Clone or download&lt;/em&gt;&lt;/strong&gt; button and copy the https web URL. Go back to your terminal, &lt;code&gt;cd&lt;/code&gt; to the &lt;strong&gt;&lt;em&gt;themes&lt;/em&gt;&lt;/strong&gt; directory and clone the repository:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd themes
-
-$ git clone https://github.com/gcushen/hugo-academic.git
-
-archetypes	content		layouts		themes
-config.toml	data		static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can type &lt;code&gt;ls&lt;/code&gt; to see that you now have a directory called &lt;strong&gt;&lt;em&gt;hugo-academic&lt;/em&gt;&lt;/strong&gt; (or whatever other theme you chose). Now &lt;code&gt;cd&lt;/code&gt; into that directory and again type &lt;code&gt;ls&lt;/code&gt; to see the content of the directory; these are the files and folders you will need to create your website.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-creating-your-website&#34;&gt;Step 4: Creating your website&lt;/h3&gt;
-
-&lt;p&gt;I found that the quickest (and dirtiest) way to get your website up and running is to simply copy everything in the folder &lt;strong&gt;&lt;em&gt;exampleSite&lt;/em&gt;&lt;/strong&gt; to your directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; - overwrite any duplications. Once you&amp;rsquo;ve done that, go ahead and copy all the other folders and files in &lt;strong&gt;&lt;em&gt;hugo-acaemic&lt;/em&gt;&lt;/strong&gt; (except for the &lt;strong&gt;&lt;em&gt;exampleSite&lt;/em&gt;&lt;/strong&gt; folder, &lt;strong&gt;&lt;em&gt;theme.toml&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;README.md&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;LICENSE.md&lt;/em&gt;&lt;/strong&gt;) to your directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; - again, overwrite any duplications.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;image_3.png&#34; alt=&#34;png&#34; /&gt;
-&lt;strong&gt;&lt;em&gt;Example of what your directory might look like before and after copying the necessary files.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you can see what your website currently looks like by changing to the directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; and typing:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This renders a local version of your website so you can see it and make changes before putting it online. Copy and paste the url output (e.g., &lt;strong&gt;&lt;em&gt;http://localhost:1313&lt;/em&gt;&lt;/strong&gt;) into your browser of choice to see your website.&lt;/p&gt;
-
-&lt;p&gt;At this point go ahead and spend some time customizing your website. I recommend reading the documentation of the theme you chose to help navigate the folder and create new content. For example, &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is the documentation for the academic theme. As you make changes, you should see that your website updates automatically in your browser - if for some reason it doesn&amp;rsquo;t, simply &lt;code&gt;ctrl+c&lt;/code&gt; in your terminal, re-execute &lt;code&gt;hugo server&lt;/code&gt;, and refresh your browser.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-5-hosting-your-website-on-github-pages&#34;&gt;Step 5: Hosting your website on GitHub Pages&lt;/h3&gt;
-
-&lt;p&gt;Once you&amp;rsquo;re ready to show your shiny new website to the world, we can host it on GitHub Pages.&lt;/p&gt;
-
-&lt;p&gt;The first thing you need to do is go to &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt; and create two empty repositories:&lt;/p&gt;
+&lt;p&gt;I particularly feel this way when wanting to contribute to others&amp;rsquo; open-source projects on GitHub. For this, we typically use the &amp;ldquo;fork-and-branch&amp;rdquo; workflow. I wanted to document my simple approach to this workflow here (for reference by my future self and others). The workflow comprises the following steps which are described in more detail in the subsequent sections:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;a repository with the same name as the website directory you created: &amp;lsquo;websitename&amp;rsquo;; and,&lt;/li&gt;
-&lt;li&gt;a repository with the name &amp;lsquo;yourgithubusername.github.io&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;Fork a GitHub repository: navigate to a repository on GitHub and click the &lt;code&gt;Fork&lt;/code&gt; button.&lt;/li&gt;
+&lt;li&gt;Clone the repository locally: &lt;code&gt;git clone https://github.com/user/repo.git&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add remote called &amp;ldquo;upstream&amp;rdquo; pointing to the original repository: &lt;code&gt;git remote add upstream https://github.com/user/repo.git&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Checkout a new branch (here called &amp;ldquo;new_feature&amp;rdquo;): &lt;code&gt;git checkout -b new_feature&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make desired changes to the local repository on this branch.&lt;/li&gt;
+&lt;li&gt;Push changes to your remote repository: &lt;code&gt;git push origin new_feature&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Open a pull request on GitHub merging your changes with the upstream (original) repository.&lt;/li&gt;
+&lt;li&gt;Once the pull request is accepted, you&amp;rsquo;ll want to pull those changes into your origin (forked repository). Change to master: &lt;code&gt;git checkout master&lt;/code&gt; and pull: &lt;code&gt;git pull upstream master&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Delete your feature branch using the GitHub website or, delete the local branch: &lt;code&gt;git branch -d new_feature&lt;/code&gt;, and delete the remote: &lt;code&gt;git push origin --delete new_feature&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you haven&amp;rsquo;t created a repository before, simply click your GitHub profile at the top right-hand corner of the screen to see a drop-down menu, click &lt;strong&gt;&lt;em&gt;Your repositories&lt;/em&gt;&lt;/strong&gt; and on that page you will se a green button &lt;strong&gt;&lt;em&gt;New&lt;/em&gt;&lt;/strong&gt; which will help you create a repository. Once you&amp;rsquo;ve done that, copy the https key from the repository you created with the same name as your website and then in the terminal &lt;code&gt;cd&lt;/code&gt; to your local directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; and type:&lt;/p&gt;
+&lt;h3 id=&#34;1-forking-a-github-repository&#34;&gt;1. Forking a GitHub Repository&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt; $ git init
+&lt;p&gt;The first step is to fork the GitHub repository you want to work on. A &amp;ldquo;fork&amp;rdquo; is just an independent copy of a repository that you can develop on without affecting the original. To fork a repository, find it on GitHub and then click the &lt;code&gt;Fork&lt;/code&gt; button.&lt;/p&gt;
 
- $ git remote add origin https://github.com/User/websitename.git
+&lt;h3 id=&#34;2-clone-the-repository-locally&#34;&gt;2. Clone the repository locally&lt;/h3&gt;
 
- $ git push -u origin master
+&lt;p&gt;Before you can make changes to the repository you&amp;rsquo;ll first want to make a local copy on your computer. This is as simple as using &lt;code&gt;git clone&lt;/code&gt; on the forked repository. Navigate to your forked repository on GitHub, click the &amp;ldquo;Clone or download&amp;rdquo; button and copy the url. Then, at the command line, clone the repository, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/user/repo.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This will create a git directory, link it to the remote GitHub repository and then push the contents of the local directory to the remote. Note that the &lt;code&gt;-u&lt;/code&gt; argument specifies the master branch of the remote as &amp;ldquo;upstream&amp;rdquo;, meaning that in the future, a simple &lt;code&gt;git push&lt;/code&gt; will suffice when pushing changes to the remote.&lt;/p&gt;
+&lt;h3 id=&#34;3-add-a-remote&#34;&gt;3. Add a remote&lt;/h3&gt;
 
-&lt;p&gt;Now copy the https key from the repository you created with the name &lt;strong&gt;&lt;em&gt;yourgithubusername.github.io&lt;/em&gt;&lt;/strong&gt; and copy the https key. Then &lt;code&gt;cd&lt;/code&gt; back to your initial &lt;strong&gt;&lt;em&gt;websites&lt;/em&gt;&lt;/strong&gt; directory and type:&lt;/p&gt;
+&lt;p&gt;When you cloned the forked repository onto your local computer, git automatically added a remote repository named &amp;ldquo;origin&amp;rdquo; pointing to the forked repository on GitHub. This means that when you do &lt;code&gt;git add&lt;/code&gt;/&lt;code&gt;git commit&lt;/code&gt;/&lt;code&gt;git push&lt;/code&gt; you can push your local changes to the forked repository.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/User/yourgithubusername.github.io.git # Clone the remote repo
+&lt;p&gt;However, the goal here is to contribute to the original repository and we want to keep up to date with the original. While we are making changes, others might also be making changes and the original repository might be getting updated during the time you are adding a feature. So we want to add another remote pointing to the original repository so that we can periodically &lt;code&gt;git pull&lt;/code&gt; any changes that have occurred in that repository such that we are working on the must up-to-date version of the code. We usually call this remote &amp;ldquo;upstream&amp;rdquo; and can add it using:&lt;/p&gt;
 
-$ cd websitename # Change directory
-
-$ hugo -d ../yourgithubusername.github.io # Deploy your website
-
-$ cd ../yourgithubusername.github.io
-
-$ git add .
-
-$ git commit -m &amp;quot;first commit&amp;quot;
-
-$ git push -u origin master
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git remote add upstream https://github.com/user/repo.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;And that&amp;rsquo;s it! Go to GitHub and go to the repository &lt;strong&gt;&lt;em&gt;yourgithubusername.github.io&lt;/em&gt;&lt;/strong&gt;, click the settings tab near the top of the page and scroll down to the subheading &lt;strong&gt;&lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/strong&gt; where you will see the link to your new website: &lt;code&gt;http://yourgitubusername.github.io&lt;/code&gt;. Click the link to see your website out in the wild. Congratulations - you can now show off your work to the world (wide web)!&lt;/p&gt;
+&lt;p&gt;You can verify that you now have two remotes, &amp;ldquo;origin&amp;rdquo; and &amp;ldquo;upstream&amp;rdquo; using the following:&lt;/p&gt;
 
-&lt;h3 id=&#34;step-5-1-updating-your-website&#34;&gt;Step 5.1: Updating your website&lt;/h3&gt;
-
-&lt;p&gt;If you are going to have content on your website that will change over time (e.g., writing posts, updating research projects, changing your job title, etc.) then you&amp;rsquo;ll need to know how to make these changes to your website. Luckily, this is as easy as pie. Make any changes/additions to your website in your local directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; (remember to use &lt;code&gt;hugo server&lt;/code&gt; to render a local version of your website that you can view before deploying it online). Once you&amp;rsquo;ve made your changes make sure you&amp;rsquo;re in the &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; directory and type the following commands in terminal to push your local changes to the remote, re-deploy your website &lt;code&gt;yourgithubusername.github.io&lt;/code&gt; and then push that to the remote too:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git add .
-
-$ git commit -m &amp;quot;some changes&amp;quot;
-
-$ git push # push all changes to the remote
-
-$ hugo -d ../yourgithubusername.github.io # re-deploy website
-
-$ cd ../yourgithubusername.github.io
-
-$ git add .
-
-$ git commit -m &amp;quot;some changes&amp;quot;
-
-$ git push
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git remote -v
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;After this, you may need to wait ~10 minutes for the changes to take effect on the online version of your website.&lt;/p&gt;
+&lt;h3 id=&#34;4-checkout-a-new-branch&#34;&gt;4. Checkout a new branch&lt;/h3&gt;
 
-&lt;!-- ## Edit your post metadata
+&lt;p&gt;Okay, so now we&amp;rsquo;ve made a fork of the repository we want to work on, we&amp;rsquo;ve cloned it to our local computer and also added a remote pointing back to the original repository. Now we can start making our desired changes. To do this, we are going to want to create a branch to work on. This branch will be independent of the clean, functioning &amp;ldquo;master&amp;rdquo; code and is a safe place for you to delete, modify and add code. You can actually have multiple branches (for different features) that you&amp;rsquo;re working on at the same time. To create a branch called &amp;ldquo;new_feature&amp;rdquo;, use the following:&lt;/p&gt;
 
-Open `index.md` in your text editor and edit the title etc. in the [front matter](https://sourcethemes.com/academic/docs/front-matter/) according to your preference.
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git checkout -b new_feature
+&lt;/code&gt;&lt;/pre&gt;
 
-To set a [featured image](https://sourcethemes.com/academic/docs/managing-content/#featured-image), place an image named `featured` into your post&#39;s folder.
+&lt;p&gt;You can verify that you created the branch by using the following command which will show you all your local and remote branches:&lt;/p&gt;
 
-For other tips, such as using math, see the guide on [writing content with Academic](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git branch -a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;5-make-changes&#34;&gt;5. Make changes&lt;/h3&gt;
+
+&lt;p&gt;Now that you have an independent workspace (a branch) to work on, that will not break any of the existing code, you can get to work implementing your changes. As you work you will &lt;code&gt;add&lt;/code&gt; and &lt;code&gt;commit&lt;/code&gt; changes you make. It is likely that the longer you take to implement your changes, the more changes could be made to the original &amp;ldquo;upstream&amp;rdquo; code - which could be problematic, especially if the code you are changing on your branch also gets changed in the upstream repository, which can leave you with a bunch of troublesome &amp;ldquo;merge conflicts&amp;rdquo; to deal with later on. If you want to make sure your branch stays up-to-date with the original repository you forked, you&amp;rsquo;ll need to do two things. Firstly, update your &amp;ldquo;master&amp;rdquo; fork of the original repository by checking out the master branch and pulling from the upstream repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git checkout master
+$ git pull upstream master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, go back to your branch and merge it with the master to incorporate any new changes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git checkout new_feature
+$ git merge master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;6-push-changes&#34;&gt;6. Push changes&lt;/h3&gt;
+
+&lt;p&gt;When you&amp;rsquo;ve made all the changes you want to make to the code you&amp;rsquo;ll want to push it to your remote &amp;ldquo;origin&amp;rdquo; to get it ready to show to the maintainers of the &amp;ldquo;upstream&amp;rdquo; (original) repository you wanted to contribute to in the first place. To do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git push origin new_feature
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will push your branch to your forked copy of the original repository.&lt;/p&gt;
+
+&lt;h3 id=&#34;7-open-a-pull-request&#34;&gt;7. Open a pull request&lt;/h3&gt;
+
+&lt;p&gt;Finally, we can open a &amp;ldquo;pull request&amp;rdquo; which essentially asks the maintainers of the original repository to take a look at and hopefully integrate your code changes into their repository. To open a pull request, go to the GitHub website, navigate to your &amp;ldquo;new_feature&amp;rdquo; branch and follow the prompts to open a pull request. Note that for many popular repositories, there will be a number of tasks you should complete before opening a pull request. For example, checking that the code still passes a number of pre-written tests, that the documentation still renders, etc. These kinds of guidelines for contributing to a repository are typically included in a repository&amp;rsquo;s root directory in a file called something like &amp;ldquo;contributing.md&amp;rdquo;.&lt;/p&gt;
+
+&lt;h3 id=&#34;8-updating-your-fork&#34;&gt;8. Updating your fork&lt;/h3&gt;
+
+&lt;p&gt;Once the maintainers accept your changes, the code you wrote will now be incorporated into the original repository. Hooray! Once this is done, you&amp;rsquo;ll want to update your fork of the original repository (because it now includes the changes you added through your branch and pull request workflow). Locally, we will make sure we are on the master branch, and we will pull changes from the upstream (original) repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git checkout master
+$ git pull upstream master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;9-deleting-branches&#34;&gt;9. Deleting branches&lt;/h3&gt;
+
+&lt;p&gt;Finally we can now delete our feature branch (both locally and remotely) because we no longer need it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git branch -d new_feature
+$ git push origin --delete new_feature
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that during the pull request workflow on GitHub, you may have already deleted your feature branch by following prompts on GitHub which is fine too.&lt;/p&gt;
 </description>
     </item>
     
@@ -313,7 +242,16 @@ For other tips, such as using math, see the guide on [writing content with Acade
 
 &lt;p&gt;I recently decided I wanted to create this personal website to serve as my online bio and to display various research and personal projects I am/have worked on. To my surprise, this actually turned out to be much easier than anticipated! So in this brief post I&amp;rsquo;ll walk you through how I created this website (for free!) in 5 simple steps using the static site generator &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; and the static site hosting service provided by &lt;a href=&#34;https://pages.github.com/&#34; target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-1-install-hugo-and-get-a-github-account&#34;&gt;Step 1: Install Hugo and get a GitHub account&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#1&#34;&gt;Install Hugo and get a GitHub account&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2&#34;&gt;Set up a workspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3&#34;&gt;Choose a theme for your website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4&#34;&gt;Creating your website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#5&#34;&gt;Hosting your website on GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#6&#34;&gt;Updating your website&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;step-1-install-hugo-and-get-a-github-account-a-name-1-a&#34;&gt;Step 1: Install Hugo and get a GitHub account &lt;a name=&#34;1&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;As I&amp;rsquo;m a mac user, I&amp;rsquo;ll provide instructions here for installing Hugo on macOS. For instructions on installing Hugo on Windows or Linux, go to the &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34; target=&#34;_blank&#34;&gt;Hugo Installation Page&lt;/a&gt; and then skip to Step 2. To install Hugo on macOS, you&amp;rsquo;ll ned both Homebrew and Go. Homebrew is a free and open-source software package management system that simplifies the installation of software on macOS and Go is a programming language created by Google that Hugo will leverage to create your website framework. If you don&amp;rsquo;t have Homebrew or Go installed on your computer, run the following in the terminal:&lt;/p&gt;
 
@@ -329,7 +267,7 @@ $ brew install go
 
 &lt;p&gt;Finally, if you don&amp;rsquo;t already have a GitHub account, head over to the &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub website&lt;/a&gt; and create one.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-2-set-up-a-workspace&#34;&gt;Step 2: Set up a workspace&lt;/h3&gt;
+&lt;h3 id=&#34;step-2-set-up-a-workspace-a-name-2-a&#34;&gt;Step 2: Set up a workspace &lt;a name=&#34;2&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;The next thing we need to do is create a directory from which we will build our website, this can be anywhere you like on your computer. You can create a directory using the macOS Finder or Windows File Explorer GUIs, or alternatively by using the command line. For example, the code below creates a new directory called &lt;strong&gt;&lt;em&gt;websites&lt;/em&gt;&lt;/strong&gt; in the &lt;strong&gt;&lt;em&gt;Documents&lt;/em&gt;&lt;/strong&gt; folder:&lt;/p&gt;
 
@@ -376,7 +314,7 @@ config.toml	data		static
 
 &lt;p&gt;These files and folders form the framework of your Hugo site. We&amp;rsquo;ll explore them a little more later but for now, notice the &lt;strong&gt;&lt;em&gt;themes&lt;/em&gt;&lt;/strong&gt; folder. In the next step we will select a theme for your website and place it in this folder.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-3-choose-a-theme-for-your-website&#34;&gt;Step 3: Choose a theme for your website!&lt;/h3&gt;
+&lt;h3 id=&#34;step-3-choose-a-theme-for-your-website-a-name-3-a&#34;&gt;Step 3: Choose a theme for your website! &lt;a name=&#34;3&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;With Hugo you can create your very own website theme or download one of many different pre-made, open source themes. There are plenty of really great pre-made themes and they are perfect for getting your website up and running as quickly as possible. Head over to the &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo themes page&lt;/a&gt; and select a theme for your website. I used the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;Academic theme&lt;/a&gt; for my website.&lt;/p&gt;
 
@@ -395,7 +333,7 @@ config.toml	data		static
 
 &lt;p&gt;You can type &lt;code&gt;ls&lt;/code&gt; to see that you now have a directory called &lt;strong&gt;&lt;em&gt;hugo-academic&lt;/em&gt;&lt;/strong&gt; (or whatever other theme you chose). Now &lt;code&gt;cd&lt;/code&gt; into that directory and again type &lt;code&gt;ls&lt;/code&gt; to see the content of the directory; these are the files and folders you will need to create your website.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-4-creating-your-website&#34;&gt;Step 4: Creating your website&lt;/h3&gt;
+&lt;h3 id=&#34;step-4-creating-your-website-a-name-4-a&#34;&gt;Step 4: Creating your website &lt;a name=&#34;4&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;I found that the quickest (and dirtiest) way to get your website up and running is to simply copy everything in the folder &lt;strong&gt;&lt;em&gt;exampleSite&lt;/em&gt;&lt;/strong&gt; to your directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; - overwrite any duplications. Once you&amp;rsquo;ve done that, go ahead and copy all the other folders and files in &lt;strong&gt;&lt;em&gt;hugo-acaemic&lt;/em&gt;&lt;/strong&gt; (except for the &lt;strong&gt;&lt;em&gt;exampleSite&lt;/em&gt;&lt;/strong&gt; folder, &lt;strong&gt;&lt;em&gt;theme.toml&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;README.md&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;LICENSE.md&lt;/em&gt;&lt;/strong&gt;) to your directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; - again, overwrite any duplications.&lt;/p&gt;
 
@@ -411,7 +349,7 @@ config.toml	data		static
 
 &lt;p&gt;At this point go ahead and spend some time customizing your website. I recommend reading the documentation of the theme you chose to help navigate the folder and create new content. For example, &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is the documentation for the academic theme. As you make changes, you should see that your website updates automatically in your browser - if for some reason it doesn&amp;rsquo;t, simply &lt;code&gt;ctrl+c&lt;/code&gt; in your terminal, re-execute &lt;code&gt;hugo server&lt;/code&gt;, and refresh your browser.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-5-hosting-your-website-on-github-pages&#34;&gt;Step 5: Hosting your website on GitHub Pages&lt;/h3&gt;
+&lt;h3 id=&#34;step-5-hosting-your-website-on-github-pages-a-name-5-a&#34;&gt;Step 5: Hosting your website on GitHub Pages &lt;a name=&#34;5&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Once you&amp;rsquo;re ready to show your shiny new website to the world, we can host it on GitHub Pages.&lt;/p&gt;
 
@@ -452,7 +390,7 @@ $ git push -u origin master
 
 &lt;p&gt;And that&amp;rsquo;s it! Go to GitHub and go to the repository &lt;strong&gt;&lt;em&gt;yourgithubusername.github.io&lt;/em&gt;&lt;/strong&gt;, click the settings tab near the top of the page and scroll down to the subheading &lt;strong&gt;&lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/strong&gt; where you will see the link to your new website: &lt;code&gt;http://yourgitubusername.github.io&lt;/code&gt;. Click the link to see your website out in the wild. Congratulations - you can now show off your work to the world (wide web)!&lt;/p&gt;
 
-&lt;h3 id=&#34;step-5-1-updating-your-website&#34;&gt;Step 5.1: Updating your website&lt;/h3&gt;
+&lt;h3 id=&#34;step-6-updating-your-website-a-name-6-a&#34;&gt;Step 6: Updating your website &lt;a name=&#34;6&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;If you are going to have content on your website that will change over time (e.g., writing posts, updating research projects, changing your job title, etc.) then you&amp;rsquo;ll need to know how to make these changes to your website. Luckily, this is as easy as pie. Make any changes/additions to your website in your local directory &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; (remember to use &lt;code&gt;hugo server&lt;/code&gt; to render a local version of your website that you can view before deploying it online). Once you&amp;rsquo;ve made your changes make sure you&amp;rsquo;re in the &lt;strong&gt;&lt;em&gt;websitename&lt;/em&gt;&lt;/strong&gt; directory and type the following commands in terminal to push your local changes to the remote, re-deploy your website &lt;code&gt;yourgithubusername.github.io&lt;/code&gt; and then push that to the remote too:&lt;/p&gt;
 
