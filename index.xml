@@ -5,12 +5,32 @@
     <link>http://tomasbeuzen.github.io/</link>
       <atom:link href="http://tomasbeuzen.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
       <title>Tomas Beuzen</title>
       <link>http://tomasbeuzen.github.io/</link>
     </image>
+    
+    <item>
+      <title>Deploying machine learning models with Amazon SageMaker or Flask &amp; Heroku</title>
+      <link>http://tomasbeuzen.github.io/post/deploy-ml-models/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/post/deploy-ml-models/</guid>
+      <description>
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;I recently wrote up some &lt;a href=&#34;https://github.com/TomasBeuzen/ml-deploy-tutorial&#34; target=&#34;_blank&#34;&gt;tutorials on my GitHub&lt;/a&gt; to help data scientists deploy machine learning models. The aim of the tutorials is to provide a simple guide to deploying machine learning (ML) models for data scientists familiar with machine learning in a local environment, but interested in learning how to deploy their models. Deployment refers to the act of making your ML model available in a production environment, where it can be accessed and utilised by other software.&lt;/p&gt;
+
+&lt;p&gt;Perhaps surprisingly, deployment is a process that is quite unfamiliar to many data scientists - in large part due to the need for some level of familiarity with software engineering. Fortunately, there are many tools avaialble to help us data scientists with deploying our models. The tutorials focus on currently and commonly used tools for ML deployment and are overwhelmingly practical, aiming to provide a useful overview of these tools and a foundation for using and expanding upon them in future. Here is a current list of tutorials, click a link to get started (to follow these tutorials, I recommend cloning the GitHub repository to your local machine):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TomasBeuzen/ml-deploy-tutorial/deploy-with-sagemaker.ipynb&#34; target=&#34;_blank&#34;&gt;Building and deploying a machine learning model with Amazon Sagemaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TomasBeuzen/ml-deploy-tutorial/deploy-with-flask.ipynb&#34; target=&#34;_blank&#34;&gt;Deploying a machine learning model with Flask and Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Simultaneous feature preprocessing, feature selection, model selection, and hyperparameter tuning in scikit-learn with Pipeline and GridSearchCV</title>
@@ -455,6 +475,14 @@ For other tips, such as using math, see the guide on [writing content with Acade
     </item>
     
     <item>
+      <title>Machine Learning Model Deployment Tutorials</title>
+      <link>http://tomasbeuzen.github.io/project/deploy-ml/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://tomasbeuzen.github.io/project/deploy-ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
       <link>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
@@ -478,10 +506,10 @@ For other tips, such as using math, see the guide on [writing content with Acade
     </item>
     
     <item>
-      <title>Public Machine Learning Course</title>
-      <link>http://tomasbeuzen.github.io/project/bait-509/</link>
+      <title>Python Packaging Book</title>
+      <link>http://tomasbeuzen.github.io/project/py-pkgs/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/bait-509/</guid>
+      <guid>http://tomasbeuzen.github.io/project/py-pkgs/</guid>
       <description></description>
     </item>
     
@@ -578,10 +606,10 @@ For other tips, such as using math, see the guide on [writing content with Acade
     </item>
     
     <item>
-      <title>Python Packaging Book</title>
-      <link>http://tomasbeuzen.github.io/project/py-pkgs/</link>
+      <title>Public Machine Learning Course</title>
+      <link>http://tomasbeuzen.github.io/project/bait-509/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/py-pkgs/</guid>
+      <guid>http://tomasbeuzen.github.io/project/bait-509/</guid>
       <description></description>
     </item>
     

@@ -4,29 +4,34 @@
   
   <url>
     <loc>http://tomasbeuzen.github.io/authors/admin/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://tomasbeuzen.github.io/authors/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://tomasbeuzen.github.io/post/deploy-ml-models/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tomasbeuzen.github.io/post/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -127,14 +132,25 @@
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/</loc>
+    <loc>http://tomasbeuzen.github.io/tags/machine-learning/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/machine-learning/</loc>
-    <lastmod>2019-02-01T00:00:00+00:00</lastmod>
+    <loc>http://tomasbeuzen.github.io/project/deploy-ml/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomasbeuzen.github.io/project/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -162,13 +178,7 @@
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/project/bait-509/</loc>
+    <loc>http://tomasbeuzen.github.io/project/py-pkgs/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -283,7 +293,7 @@
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/py-pkgs/</loc>
+    <loc>http://tomasbeuzen.github.io/project/bait-509/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
   </url>
   
