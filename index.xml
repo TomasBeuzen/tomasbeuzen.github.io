@@ -184,7 +184,7 @@ clf.best_score_
 &lt;li&gt;Add remote called &amp;ldquo;upstream&amp;rdquo; pointing to the original repository: &lt;code&gt;git remote add upstream https://github.com/user/repo.git&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Checkout a new branch (here called &amp;ldquo;new_feature&amp;rdquo;): &lt;code&gt;git checkout -b new_feature&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Make desired changes to the local repository on this branch.&lt;/li&gt;
-&lt;li&gt;Push changes to your remote repository: &lt;code&gt;git push origin new_feature&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Pull new changes from remote: &lt;code&gt;git checkout master&lt;/code&gt;, &lt;code&gt;git pull upstream master&lt;/code&gt;. Sync dev branch: &lt;code&gt;git checkout new_feature&lt;/code&gt;, &lt;code&gt;git merge master&lt;/code&gt;. Push changes to your remote repository: &lt;code&gt;git push origin new_feature&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Open a pull request on GitHub merging your changes with the upstream (original) repository.&lt;/li&gt;
 &lt;li&gt;Once the pull request is accepted, you&amp;rsquo;ll want to pull those changes into your origin (forked repository). Change to master: &lt;code&gt;git checkout master&lt;/code&gt; and pull: &lt;code&gt;git pull upstream master&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Delete your feature branch using the GitHub website or, delete the local branch: &lt;code&gt;git branch -d new_feature&lt;/code&gt;, and delete the remote: &lt;code&gt;git push origin --delete new_feature&lt;/code&gt;.&lt;/li&gt;

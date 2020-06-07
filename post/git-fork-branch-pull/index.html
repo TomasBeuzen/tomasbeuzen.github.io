@@ -608,7 +608,7 @@
 <li>Add remote called &ldquo;upstream&rdquo; pointing to the original repository: <code>git remote add upstream https://github.com/user/repo.git</code>.</li>
 <li>Checkout a new branch (here called &ldquo;new_feature&rdquo;): <code>git checkout -b new_feature</code></li>
 <li>Make desired changes to the local repository on this branch.</li>
-<li>Push changes to your remote repository: <code>git push origin new_feature</code>.</li>
+<li>Pull new changes from remote: <code>git checkout master</code>, <code>git pull upstream master</code>. Sync dev branch: <code>git checkout new_feature</code>, <code>git merge master</code>. Push changes to your remote repository: <code>git push origin new_feature</code>.</li>
 <li>Open a pull request on GitHub merging your changes with the upstream (original) repository.</li>
 <li>Once the pull request is accepted, you&rsquo;ll want to pull those changes into your origin (forked repository). Change to master: <code>git checkout master</code> and pull: <code>git pull upstream master</code>.</li>
 <li>Delete your feature branch using the GitHub website or, delete the local branch: <code>git branch -d new_feature</code>, and delete the remote: <code>git push origin --delete new_feature</code>.</li>
