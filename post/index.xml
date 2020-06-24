@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/post/</link>
-      <atom:link href="http://tomasbeuzen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/post/</link>
+      <atom:link href="https://www.tomasbeuzen.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Posts</title>
-      <link>http://tomasbeuzen.github.io/post/</link>
+      <link>https://www.tomasbeuzen.com/post/</link>
     </image>
     
     <item>
       <title>Deploying machine learning models with Amazon SageMaker or Flask &amp; Heroku</title>
-      <link>http://tomasbeuzen.github.io/post/deploy-ml-models/</link>
+      <link>https://www.tomasbeuzen.com/post/deploy-ml-models/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/deploy-ml-models/</guid>
+      <guid>https://www.tomasbeuzen.com/post/deploy-ml-models/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -34,9 +34,9 @@
     
     <item>
       <title>Simultaneous feature preprocessing, feature selection, model selection, and hyperparameter tuning in scikit-learn with Pipeline and GridSearchCV</title>
-      <link>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</link>
+      <link>https://www.tomasbeuzen.com/post/scikit-learn-gridsearch-pipelines/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</guid>
+      <guid>https://www.tomasbeuzen.com/post/scikit-learn-gridsearch-pipelines/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -141,9 +141,9 @@ clf.best_score_
     
     <item>
       <title>The Git Fork-Branch-Pull Workflow</title>
-      <link>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</link>
+      <link>https://www.tomasbeuzen.com/post/git-fork-branch-pull/</link>
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</guid>
+      <guid>https://www.tomasbeuzen.com/post/git-fork-branch-pull/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -253,9 +253,9 @@ $ git push origin --delete new_feature
     
     <item>
       <title>Building your own website with Hugo and GitHub Pages</title>
-      <link>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</link>
+      <link>https://www.tomasbeuzen.com/post/making-a-website-with-hugo/</link>
       <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</guid>
+      <guid>https://www.tomasbeuzen.com/post/making-a-website-with-hugo/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;

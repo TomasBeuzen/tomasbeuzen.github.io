@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/</link>
-      <atom:link href="http://tomasbeuzen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/</link>
+      <atom:link href="https://www.tomasbeuzen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Tomas Beuzen</title>
-      <link>http://tomasbeuzen.github.io/</link>
+      <link>https://www.tomasbeuzen.com/</link>
     </image>
     
     <item>
       <title>Deploying machine learning models with Amazon SageMaker or Flask &amp; Heroku</title>
-      <link>http://tomasbeuzen.github.io/post/deploy-ml-models/</link>
+      <link>https://www.tomasbeuzen.com/post/deploy-ml-models/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/deploy-ml-models/</guid>
+      <guid>https://www.tomasbeuzen.com/post/deploy-ml-models/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -34,9 +34,9 @@
     
     <item>
       <title>Simultaneous feature preprocessing, feature selection, model selection, and hyperparameter tuning in scikit-learn with Pipeline and GridSearchCV</title>
-      <link>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</link>
+      <link>https://www.tomasbeuzen.com/post/scikit-learn-gridsearch-pipelines/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</guid>
+      <guid>https://www.tomasbeuzen.com/post/scikit-learn-gridsearch-pipelines/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -141,9 +141,9 @@ clf.best_score_
     
     <item>
       <title>Controls of variability in berm and dune storm erosion</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-jgr/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-jgr/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-jgr/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-jgr/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -164,9 +164,9 @@ clf.best_score_
     
     <item>
       <title>The Git Fork-Branch-Pull Workflow</title>
-      <link>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</link>
+      <link>https://www.tomasbeuzen.com/post/git-fork-branch-pull/</link>
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</guid>
+      <guid>https://www.tomasbeuzen.com/post/git-fork-branch-pull/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -276,9 +276,9 @@ $ git push origin --delete new_feature
     
     <item>
       <title>Building your own website with Hugo and GitHub Pages</title>
-      <link>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</link>
+      <link>https://www.tomasbeuzen.com/post/making-a-website-with-hugo/</link>
       <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</guid>
+      <guid>https://www.tomasbeuzen.com/post/making-a-website-with-hugo/</guid>
       <description>
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
@@ -468,25 +468,25 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Calorie Calculator Web App</title>
-      <link>http://tomasbeuzen.github.io/project/calocrunch/</link>
+      <link>https://www.tomasbeuzen.com/project/calocrunch/</link>
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/calocrunch/</guid>
+      <guid>https://www.tomasbeuzen.com/project/calocrunch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning Model Deployment Tutorials</title>
-      <link>http://tomasbeuzen.github.io/project/deploy-ml/</link>
+      <link>https://www.tomasbeuzen.com/project/deploy-ml/</link>
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/deploy-ml/</guid>
+      <guid>https://www.tomasbeuzen.com/project/deploy-ml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -507,17 +507,17 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Python Packaging Book</title>
-      <link>http://tomasbeuzen.github.io/project/py-pkgs/</link>
+      <link>https://www.tomasbeuzen.com/project/py-pkgs/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/py-pkgs/</guid>
+      <guid>https://www.tomasbeuzen.com/project/py-pkgs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A variable selection package driving Netica with Python</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-cvnvs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-cvnvs/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -538,9 +538,9 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Ensemble models from machine learning: an example of wave runup and coastal dune erosion</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-gp/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-gp/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-gp/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-gp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -561,9 +561,9 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>A comparison of methods for discretizing continuous variables in Bayesian Networks</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-dis/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-dis/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-dis/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-dis/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -584,9 +584,9 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Bayesian Networks in coastal engineering: Distinguishing descriptive and predictive applications</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bn/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bn/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bn/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bn/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -607,17 +607,17 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Public Machine Learning Course</title>
-      <link>http://tomasbeuzen.github.io/project/bait-509/</link>
+      <link>https://www.tomasbeuzen.com/project/bait-509/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/bait-509/</guid>
+      <guid>https://www.tomasbeuzen.com/project/bait-509/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Laboratory investigation of the Bruun Rule and beach response to sea level rise</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -638,9 +638,9 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -661,9 +661,9 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-boils1/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-boils1/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-boils1/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-boils1/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -684,57 +684,57 @@ For other tips, such as using math, see the guide on [writing content with Acade
     
     <item>
       <title>Custom Apple Watch faces</title>
-      <link>http://tomasbeuzen.github.io/project/apple-watch-faces/</link>
+      <link>https://www.tomasbeuzen.com/project/apple-watch-faces/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/apple-watch-faces/</guid>
+      <guid>https://www.tomasbeuzen.com/project/apple-watch-faces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NRL game predictions</title>
-      <link>http://tomasbeuzen.github.io/project/nrl-prediction/</link>
+      <link>https://www.tomasbeuzen.com/project/nrl-prediction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/nrl-prediction/</guid>
+      <guid>https://www.tomasbeuzen.com/project/nrl-prediction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Predicting wave runup on beaches.</title>
-      <link>http://tomasbeuzen.github.io/project/runup-prediction/</link>
+      <link>https://www.tomasbeuzen.com/project/runup-prediction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/runup-prediction/</guid>
+      <guid>https://www.tomasbeuzen.com/project/runup-prediction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UNSW Water Research Centre jersey designs.</title>
-      <link>http://tomasbeuzen.github.io/project/unsw-jersey/</link>
+      <link>https://www.tomasbeuzen.com/project/unsw-jersey/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/unsw-jersey/</guid>
+      <guid>https://www.tomasbeuzen.com/project/unsw-jersey/</guid>
       <description></description>
     </item>
     
     <item>
       <title>World Water Monitoring Day outreach program.</title>
-      <link>http://tomasbeuzen.github.io/project/unsw-wwd/</link>
+      <link>https://www.tomasbeuzen.com/project/unsw-wwd/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/unsw-wwd/</guid>
+      <guid>https://www.tomasbeuzen.com/project/unsw-wwd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pybeach - a Python package for locating the dune toe on cross-shore beach profile transects.</title>
-      <link>http://tomasbeuzen.github.io/project/autobeach/</link>
+      <link>https://www.tomasbeuzen.com/project/autobeach/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/autobeach/</guid>
+      <guid>https://www.tomasbeuzen.com/project/autobeach/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Predicting storm erosion on sandy coastlines using a Bayesian network</title>
-      <link>http://tomasbeuzen.github.io/publication/conference-paper-cp1/</link>
+      <link>https://www.tomasbeuzen.com/publication/conference-paper-cp1/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/conference-paper-cp1/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/conference-paper-cp1/</guid>
       <description>&lt;!--
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;

@@ -3,514 +3,514 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/admin/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/admin/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/post/deploy-ml-models/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/post/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/post/scikit-learn-gridsearch-pipelines/</loc>
+    <loc>https://www.tomasbeuzen.com/post/deploy-ml-models/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/scikit-learn-gridsearch-pipelines/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication_types/2/</loc>
+    <loc>https://www.tomasbeuzen.com/publication_types/2/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/bayesian-network/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/bayesian-network/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-jgr/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-jgr/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication_types/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/publication/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/</loc>
+    <loc>https://www.tomasbeuzen.com/publication_types/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/tomas-beuzen/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tags/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/beach/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/tomas-beuzen/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/data/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/beach/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/dune/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/data/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/dune/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/storm/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/erosion/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/post/git-fork-branch-pull/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/storm/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/git-fork-branch-pull/</loc>
     <lastmod>2019-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/post/making-a-website-with-hugo/</loc>
+    <loc>https://www.tomasbeuzen.com/post/making-a-website-with-hugo/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/calocrunch/</loc>
+    <loc>https://www.tomasbeuzen.com/project/calocrunch/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/data-science/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/graphics/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/data-science/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/machine-learning/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/graphics/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/deploy-ml/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/outreach/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/machine-learning/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/</loc>
+    <loc>https://www.tomasbeuzen.com/project/deploy-ml/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tags/outreach/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/coastal/</loc>
+    <loc>https://www.tomasbeuzen.com/project/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tags/coastal/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/dune-toe/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/dune-toe/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/runup/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/runup/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/py-pkgs/</loc>
+    <loc>https://www.tomasbeuzen.com/project/py-pkgs/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-cvnvs/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-gp/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-gp/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/evan-goldstein/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/gaussian-process/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/evan-goldstein/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/joshua-simmons/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/gaussian-process/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/kristen-splinter/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/joshua-simmons/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/overfitting/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/kristen-splinter/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/variable-selection/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/overfitting/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-dis/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/variable-selection/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-dis/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/lucy-marshall/</loc>
-    <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/discretization/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/lucy-marshall/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/model-fitting/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/discretization/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-bn/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/model-fitting/</loc>
+    <lastmod>2018-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-bn/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/ian-turner/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/ian-turner/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/margaret-palmsten/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/margaret-palmsten/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/mitchell-harley/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/mitchell-harley/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/coastal-modelling/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/coastal-modelling/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/coastal-processes/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/coastal-processes/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/storm-erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/storm-erosion/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/bait-509/</loc>
+    <loc>https://www.tomasbeuzen.com/project/bait-509/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/alex-atkinson/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/alex-atkinson/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/alexander-atkinson/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/alexander-atkinson/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/bruun-rule/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/bruun-rule/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/chris-blenkinsopp/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/chris-blenkinsopp/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/david-callaghan/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/david-callaghan/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/florent-birrien/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/florent-birrien/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/francois-flocard/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/francois-flocard/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/peter-nielsen/</loc>
-    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-bruun/</loc>
-    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/authors/roshanka-ranasinghe/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/peter-nielsen/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/tom-baldock/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-bruun/</loc>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/authors/roshanka-ranasinghe/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/coastal-erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/tom-baldock/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/coastal-management/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/coastal-erosion/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/sea-level-rise/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/coastal-management/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/seawalls/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/sea-level-rise/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/sediment-transport/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/seawalls/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/alexander-horner-devine/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/sediment-transport/</loc>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/authors/alexander-horner-devine/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/authors/chris-chickadel/</loc>
+    <loc>https://www.tomasbeuzen.com/authors/chris-chickadel/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/journal-article-boils1/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/journal-article-boils1/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/aeration/</loc>
-    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/rivers/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/aeration/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/stratification/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/rivers/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/thermal-imaging/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/stratification/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/turbulence/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/thermal-imaging/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/apple-watch-faces/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/turbulence/</loc>
+    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/apple-watch-faces/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/nrl-prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/project/nrl-prediction/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/runup-prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/project/runup-prediction/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/prediction/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/unsw-jersey/</loc>
+    <loc>https://www.tomasbeuzen.com/project/unsw-jersey/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/unsw-wwd/</loc>
+    <loc>https://www.tomasbeuzen.com/project/unsw-wwd/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/project/autobeach/</loc>
+    <loc>https://www.tomasbeuzen.com/project/autobeach/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication_types/1/</loc>
+    <loc>https://www.tomasbeuzen.com/publication_types/1/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/publication/conference-paper-cp1/</loc>
+    <loc>https://www.tomasbeuzen.com/publication/conference-paper-cp1/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/shoreline-erosion/</loc>
-    <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://tomasbeuzen.github.io/tags/shoreline-prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/shoreline-erosion/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/tags/storms/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/shoreline-prediction/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tomasbeuzen.github.io/categories/</loc>
+    <loc>https://www.tomasbeuzen.com/tags/storms/</loc>
+    <lastmod>2015-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/categories/</loc>
     <priority>0</priority>
   </url>
   

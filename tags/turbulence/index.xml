@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>turbulence | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/turbulence/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/turbulence/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/turbulence/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/turbulence/index.xml" rel="self" type="application/rss+xml" />
     <description>turbulence</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Dec 2016 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>turbulence</title>
-      <link>http://tomasbeuzen.github.io/tags/turbulence/</link>
+      <link>https://www.tomasbeuzen.com/tags/turbulence/</link>
     </image>
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-boils1/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-boils1/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-boils1/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-boils1/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

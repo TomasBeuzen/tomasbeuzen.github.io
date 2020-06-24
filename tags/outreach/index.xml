@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Outreach | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/outreach/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/outreach/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/outreach/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/outreach/index.xml" rel="self" type="application/rss+xml" />
     <description>Outreach</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Outreach</title>
-      <link>http://tomasbeuzen.github.io/tags/outreach/</link>
+      <link>https://www.tomasbeuzen.com/tags/outreach/</link>
     </image>
     
     <item>
       <title>Machine Learning Model Deployment Tutorials</title>
-      <link>http://tomasbeuzen.github.io/project/deploy-ml/</link>
+      <link>https://www.tomasbeuzen.com/project/deploy-ml/</link>
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/deploy-ml/</guid>
+      <guid>https://www.tomasbeuzen.com/project/deploy-ml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python Packaging Book</title>
-      <link>http://tomasbeuzen.github.io/project/py-pkgs/</link>
+      <link>https://www.tomasbeuzen.com/project/py-pkgs/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/py-pkgs/</guid>
+      <guid>https://www.tomasbeuzen.com/project/py-pkgs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Public Machine Learning Course</title>
-      <link>http://tomasbeuzen.github.io/project/bait-509/</link>
+      <link>https://www.tomasbeuzen.com/project/bait-509/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/bait-509/</guid>
+      <guid>https://www.tomasbeuzen.com/project/bait-509/</guid>
       <description></description>
     </item>
     
     <item>
       <title>World Water Monitoring Day outreach program.</title>
-      <link>http://tomasbeuzen.github.io/project/unsw-wwd/</link>
+      <link>https://www.tomasbeuzen.com/project/unsw-wwd/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/unsw-wwd/</guid>
+      <guid>https://www.tomasbeuzen.com/project/unsw-wwd/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/publication_types/2/</link>
-      <atom:link href="http://tomasbeuzen.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/publication_types/2/</link>
+      <atom:link href="https://www.tomasbeuzen.com/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>2</title>
-      <link>http://tomasbeuzen.github.io/publication_types/2/</link>
+      <link>https://www.tomasbeuzen.com/publication_types/2/</link>
     </image>
     
     <item>
       <title>Controls of variability in berm and dune storm erosion</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-jgr/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-jgr/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-jgr/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-jgr/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -37,9 +37,9 @@
     
     <item>
       <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-pybeach/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -60,9 +60,9 @@
     
     <item>
       <title>A variable selection package driving Netica with Python</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-cvnvs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-cvnvs/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-cvnvs/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -83,9 +83,9 @@
     
     <item>
       <title>Ensemble models from machine learning: an example of wave runup and coastal dune erosion</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-gp/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-gp/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-gp/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-gp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -106,9 +106,9 @@
     
     <item>
       <title>A comparison of methods for discretizing continuous variables in Bayesian Networks</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-dis/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-dis/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-dis/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-dis/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -129,9 +129,9 @@
     
     <item>
       <title>Bayesian Networks in coastal engineering: Distinguishing descriptive and predictive applications</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bn/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bn/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bn/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bn/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -152,9 +152,9 @@
     
     <item>
       <title>Laboratory investigation of the Bruun Rule and beach response to sea level rise</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -175,9 +175,9 @@
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -198,9 +198,9 @@
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-boils1/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-boils1/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-boils1/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-boils1/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bruun rule | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/bruun-rule/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/bruun-rule/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/bruun-rule/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/bruun-rule/index.xml" rel="self" type="application/rss+xml" />
     <description>Bruun rule</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Bruun rule</title>
-      <link>http://tomasbeuzen.github.io/tags/bruun-rule/</link>
+      <link>https://www.tomasbeuzen.com/tags/bruun-rule/</link>
     </image>
     
     <item>
       <title>Laboratory investigation of the Bruun Rule and beach response to sea level rise</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun2/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun2/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -37,9 +37,9 @@
     
     <item>
       <title>Physical model study of beach profile evolution by sea level rise in the presence of seawalls</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bruun/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bruun/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bruun/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bruun/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

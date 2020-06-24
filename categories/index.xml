@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/categories/</link>
-      <atom:link href="http://tomasbeuzen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/categories/</link>
+      <atom:link href="https://www.tomasbeuzen.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Categories</title>
-      <link>http://tomasbeuzen.github.io/categories/</link>
+      <link>https://www.tomasbeuzen.com/categories/</link>
     </image>
     
   </channel>

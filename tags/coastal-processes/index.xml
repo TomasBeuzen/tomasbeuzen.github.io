@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>coastal processes | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/coastal-processes/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/coastal-processes/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/coastal-processes/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/coastal-processes/index.xml" rel="self" type="application/rss+xml" />
     <description>coastal processes</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>coastal processes</title>
-      <link>http://tomasbeuzen.github.io/tags/coastal-processes/</link>
+      <link>https://www.tomasbeuzen.com/tags/coastal-processes/</link>
     </image>
     
     <item>
       <title>Bayesian Networks in coastal engineering: Distinguishing descriptive and predictive applications</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-bn/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-bn/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-bn/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-bn/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

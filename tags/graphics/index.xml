@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graphics | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/graphics/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/graphics/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
     <description>Graphics</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Graphics</title>
-      <link>http://tomasbeuzen.github.io/tags/graphics/</link>
+      <link>https://www.tomasbeuzen.com/tags/graphics/</link>
     </image>
     
     <item>
       <title>Calorie Calculator Web App</title>
-      <link>http://tomasbeuzen.github.io/project/calocrunch/</link>
+      <link>https://www.tomasbeuzen.com/project/calocrunch/</link>
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/calocrunch/</guid>
+      <guid>https://www.tomasbeuzen.com/project/calocrunch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Custom Apple Watch faces</title>
-      <link>http://tomasbeuzen.github.io/project/apple-watch-faces/</link>
+      <link>https://www.tomasbeuzen.com/project/apple-watch-faces/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/apple-watch-faces/</guid>
+      <guid>https://www.tomasbeuzen.com/project/apple-watch-faces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UNSW Water Research Centre jersey designs.</title>
-      <link>http://tomasbeuzen.github.io/project/unsw-jersey/</link>
+      <link>https://www.tomasbeuzen.com/project/unsw-jersey/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/project/unsw-jersey/</guid>
+      <guid>https://www.tomasbeuzen.com/project/unsw-jersey/</guid>
       <description></description>
     </item>
     

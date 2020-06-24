@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gaussian process | Tomas Beuzen</title>
-    <link>http://tomasbeuzen.github.io/tags/gaussian-process/</link>
-      <atom:link href="http://tomasbeuzen.github.io/tags/gaussian-process/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.tomasbeuzen.com/tags/gaussian-process/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tags/gaussian-process/index.xml" rel="self" type="application/rss+xml" />
     <description>Gaussian process</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://tomasbeuzen.github.io/img/icon-192.png</url>
+      <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Gaussian process</title>
-      <link>http://tomasbeuzen.github.io/tags/gaussian-process/</link>
+      <link>https://www.tomasbeuzen.com/tags/gaussian-process/</link>
     </image>
     
     <item>
       <title>Ensemble models from machine learning: an example of wave runup and coastal dune erosion</title>
-      <link>http://tomasbeuzen.github.io/publication/journal-article-gp/</link>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-gp/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://tomasbeuzen.github.io/publication/journal-article-gp/</guid>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-gp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
