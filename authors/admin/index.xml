@@ -5,12 +5,244 @@
     <link>https://www.tomasbeuzen.com/authors/admin/</link>
       <atom:link href="https://www.tomasbeuzen.com/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.tomasbeuzen.com/img/icon-192.png</url>
       <title>Tomas Beuzen</title>
       <link>https://www.tomasbeuzen.com/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>Unsupervised clustering with mixed categorical and continuous data</title>
+      <link>https://www.tomasbeuzen.com/post/clustering-mixed-data/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/post/clustering-mixed-data/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Recently I had to do some clustering of data that contained both continuous and categorical features. Standard clustering algorithms like k-means and DBSCAN don&amp;rsquo;t work with categorical data. After doing some research, I found that there wasn&amp;rsquo;t really a standard approach to the problem. So, I came up with a few different approaches, the practical implementations of which I&amp;rsquo;m documenting here and which I plan to come back to investigate further at some point:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Cluster using e.g., k-means or DBSCAN, based on only the continuous features;&lt;/li&gt;
+&lt;li&gt;Numerically encode the categorical data before clustering with e.g., k-means or DBSCAN;&lt;/li&gt;
+&lt;li&gt;Use k-prototypes to directly cluster the mixed data;&lt;/li&gt;
+&lt;li&gt;Use FAMD (factor analysis of mixed data) to reduce the mixed data to a set of derived continuous features which can then be clustered.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I&amp;rsquo;ll describe each approach in a little more detail below, but first, if you plan to follow along, you&amp;rsquo;ll need to install the &lt;a href=&#34;https://github.com/kormilitzin/Prince&#34; target=&#34;_blank&#34;&gt;prince&lt;/a&gt; and &lt;a href=&#34;https://github.com/nicodv/kmodes&#34; target=&#34;_blank&#34;&gt;kmodes&lt;/a&gt; Python packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pip install prince
+pip install kmodes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The post comes with a Jupyter notebook which you can find &lt;a href=&#34;https://github.com/TomasBeuzen/machine-learning-tutorials/blob/master/ml-clustering/clustering-mixed-data.ipynb&#34; target=&#34;_blank&#34;&gt;here on Github&lt;/a&gt;. Let&amp;rsquo;s get to our Python imports:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import pandas as pd
+from prince import FAMD
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+from kmodes.kprototypes import KPrototypes
+from sklearn.preprocessing import StandardScaler
+random_state = 1234
+pd.options.plotting.backend = &amp;quot;plotly&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I also defined a custom plotting function to use in this post which leverages Pandas brand new &lt;a href=&#34;https://plotly.com/python/pandas-backend/&#34; target=&#34;_blank&#34;&gt;plotly plotting backend&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def plot_cluster(X, y, title=&amp;quot;Cluster plot&amp;quot;):
+    fig = X.plot.scatter(x=&#39;X1&#39;, y=&#39;X2&#39;, color=y)
+    fig.update_layout(autosize=False, width=500, height=500,
+                  coloraxis = dict(showscale=False, colorscale=&#39;Portland&#39;),
+                  font=dict(size=18),
+                  title=dict(text=title, x=0.5, y=0.95, xanchor=&#39;center&#39;))
+    fig.update_traces(marker=dict(size=15))
+    return fig
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, I&amp;rsquo;ll create some synthetic data to demonstrate the clustering methods discussed in this post. The data will have 50 observations, 3 features and 3 clusters. I standardise the numerical data with sklearn&amp;rsquo;s &lt;code&gt;StandardScaler()&lt;/code&gt; for clustering purposes (to make sure all features are on the same scale), and pretty arbitrarily convert one of the features to a categorical of &amp;ldquo;LOW&amp;rdquo; and &amp;ldquo;HIGH&amp;rdquo; values to demonstrate different approaches to clustering mixed data.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X, y = make_blobs(n_samples=50, centers=3, n_features=3, random_state=random_state)
+X = pd.DataFrame(X, columns=[&#39;X1&#39;, &#39;X2&#39;, &#39;X3&#39;])
+X[&#39;X3&#39;] = np.where(X[&#39;X3&#39;] &amp;lt; 0, &#39;LOW&#39;, &#39;HIGH&#39;)
+con_feats = [&#39;X1&#39;, &#39;X2&#39;] 
+cat_feats = [&#39;X3&#39;]
+scale = StandardScaler()
+X[con_feats] = scale.fit_transform(X[con_feats])
+X.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;X1&lt;/th&gt;
+&lt;th&gt;X2&lt;/th&gt;
+&lt;th&gt;X3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-0.495194&lt;/td&gt;
+&lt;td&gt;0.963114&lt;/td&gt;
+&lt;td&gt;HIGH&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-0.548021&lt;/td&gt;
+&lt;td&gt;-1.762852&lt;/td&gt;
+&lt;td&gt;LOW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1.101047&lt;/td&gt;
+&lt;td&gt;0.935499&lt;/td&gt;
+&lt;td&gt;LOW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;-0.694720&lt;/td&gt;
+&lt;td&gt;-1.779252&lt;/td&gt;
+&lt;td&gt;LOW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1.261093&lt;/td&gt;
+&lt;td&gt;0.964404&lt;/td&gt;
+&lt;td&gt;LOW&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Let&amp;rsquo;s plot our synthetic data (using our two continuous features as the &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; axes). There are 3 quite distinct blobs shown in blue, red, and yellow. However, there is a bit of mixture evident in the blue and red blobs and it will be interesting to explore how our different clustering approaches can capture this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_cluster(X, y, title=&amp;quot;True Data&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;plot_1.png&#34; alt=&#34;png&#34; /&gt;
+&lt;strong&gt;&lt;em&gt;Figure 1: Scatter plot of synthetic data coloured by true labels.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-cluster-based-on-continuous-data-only&#34;&gt;1. Cluster based on continuous data only&lt;/h2&gt;
+
+&lt;p&gt;The first question I asked myself when dealing with my mixed data was &amp;ldquo;Do I really need the information contained in the categorical features to extract patterns in my dataset?&amp;rdquo;. It could be that the continuous features available to you in your mixed data are adequate for grouping the data into representative clusters. So the first thing we&amp;rsquo;ll try here is to simply ignore our single categorical feature (which standard algorithms like k-means and DBSCAN don&amp;rsquo;t like), and only cluster based on our continuous features.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model = KMeans(n_clusters=3, random_state=random_state).fit(X[con_feats])
+pred = model.labels_
+plot_cluster(X, pred, title=&amp;quot;Continuous Only&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;plot_2.png&#34; alt=&#34;png&#34; /&gt;
+&lt;strong&gt;&lt;em&gt;Figure 2: Clustering based on only the continuous features.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The results are not too bad, we pick up the 3 main clusters, but do not identify that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;) evident in the true data (Figure 1).&lt;/p&gt;
+
+&lt;h2 id=&#34;2-encode-the-cateogircal-data-before-clustering&#34;&gt;2. Encode the cateogircal data before clustering&lt;/h2&gt;
+
+&lt;p&gt;Next we&amp;rsquo;ll try encoding the categorical data using one hot encoding so that we can include it in k-means clustering (note that you may also want to try scaling the data after OHE but I didn&amp;rsquo;t do that here for succinctness).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model = KMeans(n_clusters=3, random_state=random_state).fit(pd.get_dummies(X))
+pred = model.labels_
+plot_cluster(X, pred, title=&amp;quot;Encoded Categorical Data&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;plot_3.png&#34; alt=&#34;png&#34; /&gt;
+&lt;strong&gt;&lt;em&gt;Figure 3: Clustering after one hot encoding the categorical feature.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The results are better than before, we get our 3 blobs, plus we identify some of that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;3-use-the-k-prototypes-algorithm&#34;&gt;3. Use the k-prototypes algorithm&lt;/h2&gt;
+
+&lt;p&gt;The k-prototypes algorithm can work directly with the categorical data, without the need for encoding. I defer to the &lt;a href=&#34;https://github.com/nicodv/kmodes&#34; target=&#34;_blank&#34;&gt;k-prototypes documentation&lt;/a&gt; and the original paper by &lt;a href=&#34;https://grid.cs.gsu.edu/~wkim/index_files/papers/kprototype.pdf&#34; target=&#34;_blank&#34;&gt;Huang (1997)&lt;/a&gt; for an explanation of how the algorithm works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pred = KPrototypes(n_clusters=3).fit_predict(X, categorical=[2])
+plot_cluster(X, pred.astype(float), title=&amp;quot;k-prototypes&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;plot_4.png&#34; alt=&#34;png&#34; /&gt;
+&lt;strong&gt;&lt;em&gt;Figure 4: Clustering using k-prototypes.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The results are similar to the above, we get our 3 blobs, plus we identify some of that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;4-use-famd-to-create-continuous-features-for-clustering&#34;&gt;4. Use FAMD to create continuous features for clustering&lt;/h2&gt;
+
+&lt;p&gt;Our final approach is to use FAMD (factor analysis for mixed data) to convert our mixed continuous and categorical data into derived continuous components (I chose 3 components here). I defer to the &lt;a href=&#34;https://github.com/kormilitzin/Prince&#34; target=&#34;_blank&#34;&gt;Prince documentation&lt;/a&gt; for an explanation of how the FAMD algorithm works.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the 3 derived components for the first 5 observations in our synthetic dataset.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;famd = FAMD(n_components=3).fit(X)
+famd.row_coordinates(X).head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Component 1&lt;/th&gt;
+&lt;th&gt;Component 2&lt;/th&gt;
+&lt;th&gt;Component 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-0.134396&lt;/td&gt;
+&lt;td&gt;7.103708&lt;/td&gt;
+&lt;td&gt;-0.530751&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;7.067240&lt;/td&gt;
+&lt;td&gt;0.113685&lt;/td&gt;
+&lt;td&gt;1.561657&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;7.090335&lt;/td&gt;
+&lt;td&gt;0.082113&lt;/td&gt;
+&lt;td&gt;-1.083236&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;7.060651&lt;/td&gt;
+&lt;td&gt;0.122537&lt;/td&gt;
+&lt;td&gt;1.649692&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;7.097300&lt;/td&gt;
+&lt;td&gt;0.072753&lt;/td&gt;
+&lt;td&gt;-1.186533&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model = KMeans(n_clusters=3, random_state=random_state).fit(famd.row_coordinates(X))
+pred = model.labels_
+plot_cluster(X, pred, title=&amp;quot;FAMD + Clustering&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;plot_5.png&#34; alt=&#34;png&#34; /&gt;
+&lt;strong&gt;&lt;em&gt;Figure 5: Clustering using FAMD.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The results are interesting here, we do get our 3 blobs but the bottom left blob is not very uniform. However, we perfectly identify the mixed labels around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;), which no previous approach has been able to do.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;In this post I documented a few approaches for clustering mixed continuous and categorical data. As always with data science, there is no one approach suited to all problems - in my opinion, clustering in particular is as much an art as a science. But, for the specific real-world application I was working on, I ended up going with approach number 4 (FAMD + clustering), because it yielded the best results for my dataset (which was significantly more complex than the one in this post, with ~400 mixed categorical and continuous features).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deploying machine learning models with Amazon SageMaker or Flask &amp; Heroku</title>
@@ -446,7 +678,7 @@ For other tips, such as using math, see the guide on [writing content with Acade
     <item>
       <title></title>
       <link>https://www.tomasbeuzen.com/authors/admin/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
       <guid>https://www.tomasbeuzen.com/authors/admin/</guid>
       <description>&lt;div class=text-justify&gt;I&#39;m currently a postdoctoral teaching and learning fellow with the Master of Data Science program at the University of British Columbia, Vancouver, Canada. I have experience in research, teaching, and engineering consulting. I have a background in the Earth sciences and civil engineering, but now teach and practice data science. In particular, I&#39;m interested in the practical application of data science to solving real-world problems 🌏.&lt;/div&gt;
 </description>

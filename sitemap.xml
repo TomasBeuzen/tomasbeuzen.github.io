@@ -4,29 +4,34 @@
   
   <url>
     <loc>https://www.tomasbeuzen.com/authors/admin/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tomasbeuzen.com/authors/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/</loc>
+    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/</loc>
+    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/clustering-mixed-data/</loc>
+    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tomasbeuzen.com/post/deploy-ml-models/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/post/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
