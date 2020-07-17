@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.3072054fc61fe865aa34bcb366de141d.css">
+  <link rel="stylesheet" href="/css/academic.min.ce53f5d1ff75f9f89bb1c243b514bb45.css">
 
   
 
@@ -348,28 +348,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
-        </li>
-
-        
-        
-
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -605,17 +583,12 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h3 id="introduction">Introduction</h3>
-
+      <h3 id="introduction">Introduction</h3>
 <p>I primarily use Git and GitHub for my open-source work. However, if your anything like me, using these tools sometimes feels like a bit of a black box, nicely summarised by this xkcd comic:</p>
-
-<p><img src="image_2.png" alt="png" />
-<strong><em>Git. Source: <a href="https://xkcd.com/1597/" target="_blank">xkcd.com</a></em></strong></p>
-
+<p><img src="image_2.png" alt="png">
+<strong><em>Git. Source: 
+<a href="https://xkcd.com/1597/" target="_blank" rel="noopener">xkcd.com</a></em></strong></p>
 <p>I particularly feel this way when wanting to contribute to others&rsquo; open-source projects on GitHub. For this, we typically use the &ldquo;fork-and-branch&rdquo; workflow. I wanted to document my simple approach to this workflow here (for reference by my future self and others). The workflow comprises the following steps which are described in more detail in the subsequent sections:</p>
-
 <ol>
 <li>Fork a GitHub repository: navigate to a repository on GitHub and click the <code>Fork</code> button.</li>
 <li>Clone the repository locally: <code>git clone https://github.com/user/repo.git</code>.</li>
@@ -627,88 +600,44 @@
 <li>Once the pull request is accepted, you&rsquo;ll want to pull those changes into your origin (forked repository). Change to master: <code>git checkout master</code> and pull: <code>git pull upstream master</code>.</li>
 <li>Delete your feature branch using the GitHub website or, delete the local branch: <code>git branch -d new_feature</code>, and delete the remote: <code>git push origin --delete new_feature</code>.</li>
 </ol>
-
 <h3 id="1-forking-a-github-repository">1. Forking a GitHub Repository</h3>
-
 <p>The first step is to fork the GitHub repository you want to work on. A &ldquo;fork&rdquo; is just an independent copy of a repository that you can develop on without affecting the original. To fork a repository, find it on GitHub and then click the <code>Fork</code> button.</p>
-
 <h3 id="2-clone-the-repository-locally">2. Clone the repository locally</h3>
-
 <p>Before you can make changes to the repository you&rsquo;ll first want to make a local copy on your computer. This is as simple as using <code>git clone</code> on the forked repository. Navigate to your forked repository on GitHub, click the &ldquo;Clone or download&rdquo; button and copy the url. Then, at the command line, clone the repository, for example:</p>
-
-<pre><code class="language-shell">$ git clone https://github.com/user/repo.git
-</code></pre>
-
-<h3 id="3-add-a-remote">3. Add a remote</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/user/repo.git
+</code></pre></div><h3 id="3-add-a-remote">3. Add a remote</h3>
 <p>When you cloned the forked repository onto your local computer, git automatically added a remote repository named &ldquo;origin&rdquo; pointing to the forked repository on GitHub. This means that when you do <code>git add</code>/<code>git commit</code>/<code>git push</code> you can push your local changes to the forked repository.</p>
-
 <p>However, the goal here is to contribute to the original repository and we want to keep up to date with the original. While we are making changes, others might also be making changes and the original repository might be getting updated during the time you are adding a feature. So we want to add another remote pointing to the original repository so that we can periodically <code>git pull</code> any changes that have occurred in that repository such that we are working on the must up-to-date version of the code. We usually call this remote &ldquo;upstream&rdquo; and can add it using:</p>
-
-<pre><code class="language-shell">$ git remote add upstream https://github.com/user/repo.git
-</code></pre>
-
-<p>You can verify that you now have two remotes, &ldquo;origin&rdquo; and &ldquo;upstream&rdquo; using the following:</p>
-
-<pre><code class="language-shell">$ git remote -v
-</code></pre>
-
-<h3 id="4-checkout-a-new-branch">4. Checkout a new branch</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git remote add upstream https://github.com/user/repo.git
+</code></pre></div><p>You can verify that you now have two remotes, &ldquo;origin&rdquo; and &ldquo;upstream&rdquo; using the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git remote -v
+</code></pre></div><h3 id="4-checkout-a-new-branch">4. Checkout a new branch</h3>
 <p>Okay, so now we&rsquo;ve made a fork of the repository we want to work on, we&rsquo;ve cloned it to our local computer and also added a remote pointing back to the original repository. Now we can start making our desired changes. To do this, we are going to want to create a branch to work on. This branch will be independent of the clean, functioning &ldquo;master&rdquo; code and is a safe place for you to delete, modify and add code. You can actually have multiple branches (for different features) that you&rsquo;re working on at the same time. To create a branch called &ldquo;new_feature&rdquo;, use the following:</p>
-
-<pre><code class="language-shell">$ git checkout -b new_feature
-</code></pre>
-
-<p>You can verify that you created the branch by using the following command which will show you all your local and remote branches:</p>
-
-<pre><code class="language-shell">$ git branch -a
-</code></pre>
-
-<h3 id="5-make-changes">5. Make changes</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout -b new_feature
+</code></pre></div><p>You can verify that you created the branch by using the following command which will show you all your local and remote branches:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch -a
+</code></pre></div><h3 id="5-make-changes">5. Make changes</h3>
 <p>Now that you have an independent workspace (a branch) to work on, that will not break any of the existing code, you can get to work implementing your changes. As you work you will <code>add</code> and <code>commit</code> changes you make. It is likely that the longer you take to implement your changes, the more changes could be made to the original &ldquo;upstream&rdquo; code - which could be problematic, especially if the code you are changing on your branch also gets changed in the upstream repository, which can leave you with a bunch of troublesome &ldquo;merge conflicts&rdquo; to deal with later on. If you want to make sure your branch stays up-to-date with the original repository you forked, you&rsquo;ll need to do two things. Firstly, update your &ldquo;master&rdquo; fork of the original repository by checking out the master branch and pulling from the upstream repository:</p>
-
-<pre><code class="language-shell">$ git checkout master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout master
 $ git pull upstream master
-</code></pre>
-
-<p>Then, go back to your branch and merge it with the master to incorporate any new changes:</p>
-
-<pre><code class="language-shell">$ git checkout new_feature
+</code></pre></div><p>Then, go back to your branch and merge it with the master to incorporate any new changes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout new_feature
 $ git merge master
-</code></pre>
-
-<h3 id="6-push-changes">6. Push changes</h3>
-
+</code></pre></div><h3 id="6-push-changes">6. Push changes</h3>
 <p>When you&rsquo;ve made all the changes you want to make to the code you&rsquo;ll want to push it to your remote &ldquo;origin&rdquo; to get it ready to show to the maintainers of the &ldquo;upstream&rdquo; (original) repository you wanted to contribute to in the first place. To do this:</p>
-
-<pre><code class="language-shell">$ git push origin new_feature
-</code></pre>
-
-<p>This will push your branch to your forked copy of the original repository.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push origin new_feature
+</code></pre></div><p>This will push your branch to your forked copy of the original repository.</p>
 <h3 id="7-open-a-pull-request">7. Open a pull request</h3>
-
 <p>Finally, we can open a &ldquo;pull request&rdquo; which essentially asks the maintainers of the original repository to take a look at and hopefully integrate your code changes into their repository. To open a pull request, go to the GitHub website, navigate to your &ldquo;new_feature&rdquo; branch and follow the prompts to open a pull request. Note that for many popular repositories, there will be a number of tasks you should complete before opening a pull request. For example, checking that the code still passes a number of pre-written tests, that the documentation still renders, etc. These kinds of guidelines for contributing to a repository are typically included in a repository&rsquo;s root directory in a file called something like &ldquo;contributing.md&rdquo;.</p>
-
 <h3 id="8-updating-your-fork">8. Updating your fork</h3>
-
 <p>Once the maintainers accept your changes, the code you wrote will now be incorporated into the original repository. Hooray! Once this is done, you&rsquo;ll want to update your fork of the original repository (because it now includes the changes you added through your branch and pull request workflow). Locally, we will make sure we are on the master branch, and we will pull changes from the upstream (original) repository:</p>
-
-<pre><code class="language-shell">$ git checkout master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout master
 $ git pull upstream master
-</code></pre>
-
-<h3 id="9-deleting-branches">9. Deleting branches</h3>
-
+</code></pre></div><h3 id="9-deleting-branches">9. Deleting branches</h3>
 <p>Finally we can now delete our feature branch (both locally and remotely) because we no longer need it:</p>
-
-<pre><code class="language-shell">$ git branch -d new_feature
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch -d new_feature
 $ git push origin --delete new_feature
-</code></pre>
-
-<p>Note that during the pull request workflow on GitHub, you may have already deleted your feature branch by following prompts on GitHub which is fine too.</p>
+</code></pre></div><p>Note that during the pull request workflow on GitHub, you may have already deleted your feature branch by following prompts on GitHub which is fine too.</p>
 
     </div>
 

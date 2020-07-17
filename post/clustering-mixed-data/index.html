@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.3072054fc61fe865aa34bcb366de141d.css">
+  <link rel="stylesheet" href="/css/academic.min.ce53f5d1ff75f9f89bb1c243b514bb45.css">
 
   
 
@@ -348,28 +348,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
-        </li>
-
-        
-        
-
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -605,63 +583,50 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h2 id="introduction">Introduction</h2>
-
+      <h2 id="introduction">Introduction</h2>
 <p>Recently I had to do some clustering of data that contained both continuous and categorical features. Standard clustering algorithms like k-means and DBSCAN don&rsquo;t work with categorical data. After doing some research, I found that there wasn&rsquo;t really a standard approach to the problem. So, I came up with a few different approaches, the practical implementations of which I&rsquo;m documenting here and which I plan to come back to investigate further at some point:</p>
-
 <ol>
 <li>Cluster using e.g., k-means or DBSCAN, based on only the continuous features;</li>
 <li>Numerically encode the categorical data before clustering with e.g., k-means or DBSCAN;</li>
 <li>Use k-prototypes to directly cluster the mixed data;</li>
 <li>Use FAMD (factor analysis of mixed data) to reduce the mixed data to a set of derived continuous features which can then be clustered.</li>
 </ol>
-
-<p>I&rsquo;ll describe each approach in a little more detail below, but first, if you plan to follow along, you&rsquo;ll need to install the <a href="https://github.com/kormilitzin/Prince" target="_blank">prince</a> and <a href="https://github.com/nicodv/kmodes" target="_blank">kmodes</a> Python packages:</p>
-
-<pre><code class="language-python">pip install prince
+<p>I&rsquo;ll describe each approach in a little more detail below, but first, if you plan to follow along, you&rsquo;ll need to install the 
+<a href="https://github.com/kormilitzin/Prince" target="_blank" rel="noopener">prince</a> and 
+<a href="https://github.com/nicodv/kmodes" target="_blank" rel="noopener">kmodes</a> Python packages:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install prince
 pip install kmodes
-</code></pre>
-
-<p>The post comes with a Jupyter notebook which you can find <a href="https://github.com/TomasBeuzen/machine-learning-tutorials/blob/master/ml-clustering/clustering-mixed-data.ipynb" target="_blank">here on Github</a>. Let&rsquo;s get to our Python imports:</p>
-
-<pre><code class="language-python">import numpy as np
-import pandas as pd
-from prince import FAMD
-from sklearn.datasets import make_blobs
-from sklearn.cluster import KMeans
-from kmodes.kprototypes import KPrototypes
-from sklearn.preprocessing import StandardScaler
-random_state = 1234
-pd.options.plotting.backend = &quot;plotly&quot;
-</code></pre>
-
-<p>I also defined a custom plotting function to use in this post which leverages Pandas brand new <a href="https://plotly.com/python/pandas-backend/" target="_blank">plotly plotting backend</a>:</p>
-
-<pre><code class="language-python">def plot_cluster(X, y, title=&quot;Cluster plot&quot;):
-    fig = X.plot.scatter(x='X1', y='X2', color=y)
-    fig.update_layout(autosize=False, width=500, height=500,
-                  coloraxis = dict(showscale=False, colorscale='Portland'),
-                  font=dict(size=18),
-                  title=dict(text=title, x=0.5, y=0.95, xanchor='center'))
-    fig.update_traces(marker=dict(size=15))
-    return fig
-</code></pre>
-
-<p>Finally, I&rsquo;ll create some synthetic data to demonstrate the clustering methods discussed in this post. The data will have 50 observations, 3 features and 3 clusters. I standardise the numerical data with sklearn&rsquo;s <code>StandardScaler()</code> for clustering purposes (to make sure all features are on the same scale), and pretty arbitrarily convert one of the features to a categorical of &ldquo;LOW&rdquo; and &ldquo;HIGH&rdquo; values to demonstrate different approaches to clustering mixed data.</p>
-
-<pre><code class="language-python">X, y = make_blobs(n_samples=50, centers=3, n_features=3, random_state=random_state)
-X = pd.DataFrame(X, columns=['X1', 'X2', 'X3'])
-X['X3'] = np.where(X['X3'] &lt; 0, 'LOW', 'HIGH')
-con_feats = ['X1', 'X2'] 
-cat_feats = ['X3']
-scale = StandardScaler()
-X[con_feats] = scale.fit_transform(X[con_feats])
-X.head()
-</code></pre>
-
-<table>
+</code></pre></div><p>The post comes with a Jupyter notebook which you can find 
+<a href="https://github.com/TomasBeuzen/machine-learning-tutorials/blob/master/ml-clustering/clustering-mixed-data.ipynb" target="_blank" rel="noopener">here on Github</a>. Let&rsquo;s get to our Python imports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">from</span> prince <span style="color:#f92672">import</span> FAMD
+<span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> make_blobs
+<span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans
+<span style="color:#f92672">from</span> kmodes.kprototypes <span style="color:#f92672">import</span> KPrototypes
+<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234</span>
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>plotting<span style="color:#f92672">.</span>backend <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plotly&#34;</span>
+</code></pre></div><p>I also defined a custom plotting function to use in this post which leverages Pandas brand new 
+<a href="https://plotly.com/python/pandas-backend/" target="_blank" rel="noopener">plotly plotting backend</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_cluster</span>(X, y, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Cluster plot&#34;</span>):
+    fig <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>scatter(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;X1&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;X2&#39;</span>, color<span style="color:#f92672">=</span>y)
+    fig<span style="color:#f92672">.</span>update_layout(autosize<span style="color:#f92672">=</span>False, width<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>,
+                  coloraxis <span style="color:#f92672">=</span> dict(showscale<span style="color:#f92672">=</span>False, colorscale<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Portland&#39;</span>),
+                  font<span style="color:#f92672">=</span>dict(size<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>),
+                  title<span style="color:#f92672">=</span>dict(text<span style="color:#f92672">=</span>title, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.95</span>, xanchor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>))
+    fig<span style="color:#f92672">.</span>update_traces(marker<span style="color:#f92672">=</span>dict(size<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>))
+    <span style="color:#66d9ef">return</span> fig
+</code></pre></div><p>Finally, I&rsquo;ll create some synthetic data to demonstrate the clustering methods discussed in this post. The data will have 50 observations, 3 features and 3 clusters. I standardise the numerical data with sklearn&rsquo;s <code>StandardScaler()</code> for clustering purposes (to make sure all features are on the same scale), and pretty arbitrarily convert one of the features to a categorical of &ldquo;LOW&rdquo; and &ldquo;HIGH&rdquo; values to demonstrate different approaches to clustering mixed data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X, y <span style="color:#f92672">=</span> make_blobs(n_samples<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>, centers<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, n_features<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span>random_state)
+X <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(X, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;X1&#39;</span>, <span style="color:#e6db74">&#39;X2&#39;</span>, <span style="color:#e6db74">&#39;X3&#39;</span>])
+X[<span style="color:#e6db74">&#39;X3&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>where(X[<span style="color:#e6db74">&#39;X3&#39;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;LOW&#39;</span>, <span style="color:#e6db74">&#39;HIGH&#39;</span>)
+con_feats <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;X1&#39;</span>, <span style="color:#e6db74">&#39;X2&#39;</span>] 
+cat_feats <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;X3&#39;</span>]
+scale <span style="color:#f92672">=</span> StandardScaler()
+X[con_feats] <span style="color:#f92672">=</span> scale<span style="color:#f92672">.</span>fit_transform(X[con_feats])
+X<span style="color:#f92672">.</span>head()
+</code></pre></div><table>
 <thead>
 <tr>
 <th></th>
@@ -670,7 +635,6 @@ X.head()
 <th>X3</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
@@ -678,28 +642,24 @@ X.head()
 <td>0.963114</td>
 <td>HIGH</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td>-0.548021</td>
 <td>-1.762852</td>
 <td>LOW</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>1.101047</td>
 <td>0.935499</td>
 <td>LOW</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td>-0.694720</td>
 <td>-1.779252</td>
 <td>LOW</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td>1.261093</td>
@@ -708,67 +668,42 @@ X.head()
 </tr>
 </tbody>
 </table>
-
 <p>Let&rsquo;s plot our synthetic data (using our two continuous features as the <code>x</code> and <code>y</code> axes). There are 3 quite distinct blobs shown in blue, red, and yellow. However, there is a bit of mixture evident in the blue and red blobs and it will be interesting to explore how our different clustering approaches can capture this.</p>
-
-<pre><code class="language-python">plot_cluster(X, y, title=&quot;True Data&quot;)
-</code></pre>
-
-<p><img src="plot_1.png" alt="png" />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plot_cluster(X, y, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;True Data&#34;</span>)
+</code></pre></div><p><img src="plot_1.png" alt="png">
 <strong><em>Figure 1: Scatter plot of synthetic data coloured by true labels.</em></strong></p>
-
 <h2 id="1-cluster-based-on-continuous-data-only">1. Cluster based on continuous data only</h2>
-
 <p>The first question I asked myself when dealing with my mixed data was &ldquo;Do I really need the information contained in the categorical features to extract patterns in my dataset?&rdquo;. It could be that the continuous features available to you in your mixed data are adequate for grouping the data into representative clusters. So the first thing we&rsquo;ll try here is to simply ignore our single categorical feature (which standard algorithms like k-means and DBSCAN don&rsquo;t like), and only cluster based on our continuous features.</p>
-
-<pre><code class="language-python">model = KMeans(n_clusters=3, random_state=random_state).fit(X[con_feats])
-pred = model.labels_
-plot_cluster(X, pred, title=&quot;Continuous Only&quot;)
-</code></pre>
-
-<p><img src="plot_2.png" alt="png" />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span>random_state)<span style="color:#f92672">.</span>fit(X[con_feats])
+pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>labels_
+plot_cluster(X, pred, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Continuous Only&#34;</span>)
+</code></pre></div><p><img src="plot_2.png" alt="png">
 <strong><em>Figure 2: Clustering based on only the continuous features.</em></strong></p>
-
 <p>The results are not too bad, we pick up the 3 main clusters, but do not identify that mixed data around (<code>X1=-1</code>, <code>X2=0</code>) evident in the true data (Figure 1).</p>
-
 <h2 id="2-encode-the-cateogircal-data-before-clustering">2. Encode the cateogircal data before clustering</h2>
-
 <p>Next we&rsquo;ll try encoding the categorical data using one hot encoding so that we can include it in k-means clustering (note that you may also want to try scaling the data after OHE but I didn&rsquo;t do that here for succinctness).</p>
-
-<pre><code class="language-python">model = KMeans(n_clusters=3, random_state=random_state).fit(pd.get_dummies(X))
-pred = model.labels_
-plot_cluster(X, pred, title=&quot;Encoded Categorical Data&quot;)
-</code></pre>
-
-<p><img src="plot_3.png" alt="png" />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span>random_state)<span style="color:#f92672">.</span>fit(pd<span style="color:#f92672">.</span>get_dummies(X))
+pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>labels_
+plot_cluster(X, pred, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Encoded Categorical Data&#34;</span>)
+</code></pre></div><p><img src="plot_3.png" alt="png">
 <strong><em>Figure 3: Clustering after one hot encoding the categorical feature.</em></strong></p>
-
 <p>The results are better than before, we get our 3 blobs, plus we identify some of that mixed data around (<code>X1=-1</code>, <code>X2=0</code>).</p>
-
 <h2 id="3-use-the-k-prototypes-algorithm">3. Use the k-prototypes algorithm</h2>
-
-<p>The k-prototypes algorithm can work directly with the categorical data, without the need for encoding. I defer to the <a href="https://github.com/nicodv/kmodes" target="_blank">k-prototypes documentation</a> and the original paper by <a href="https://grid.cs.gsu.edu/~wkim/index_files/papers/kprototype.pdf" target="_blank">Huang (1997)</a> for an explanation of how the algorithm works.</p>
-
-<pre><code class="language-python">pred = KPrototypes(n_clusters=3).fit_predict(X, categorical=[2])
-plot_cluster(X, pred.astype(float), title=&quot;k-prototypes&quot;)
-</code></pre>
-
-<p><img src="plot_4.png" alt="png" />
+<p>The k-prototypes algorithm can work directly with the categorical data, without the need for encoding. I defer to the 
+<a href="https://github.com/nicodv/kmodes" target="_blank" rel="noopener">k-prototypes documentation</a> and the original paper by 
+<a href="https://grid.cs.gsu.edu/~wkim/index_files/papers/kprototype.pdf" target="_blank" rel="noopener">Huang (1997)</a> for an explanation of how the algorithm works.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pred <span style="color:#f92672">=</span> KPrototypes(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>fit_predict(X, categorical<span style="color:#f92672">=</span>[<span style="color:#ae81ff">2</span>])
+plot_cluster(X, pred<span style="color:#f92672">.</span>astype(float), title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;k-prototypes&#34;</span>)
+</code></pre></div><p><img src="plot_4.png" alt="png">
 <strong><em>Figure 4: Clustering using k-prototypes.</em></strong></p>
-
 <p>The results are similar to the above, we get our 3 blobs, plus we identify some of that mixed data around (<code>X1=-1</code>, <code>X2=0</code>).</p>
-
 <h2 id="4-use-famd-to-create-continuous-features-for-clustering">4. Use FAMD to create continuous features for clustering</h2>
-
-<p>Our final approach is to use FAMD (factor analysis for mixed data) to convert our mixed continuous and categorical data into derived continuous components (I chose 3 components here). I defer to the <a href="https://github.com/kormilitzin/Prince" target="_blank">Prince documentation</a> for an explanation of how the FAMD algorithm works.</p>
-
+<p>Our final approach is to use FAMD (factor analysis for mixed data) to convert our mixed continuous and categorical data into derived continuous components (I chose 3 components here). I defer to the 
+<a href="https://github.com/kormilitzin/Prince" target="_blank" rel="noopener">Prince documentation</a> for an explanation of how the FAMD algorithm works.</p>
 <p>Here is an example of the 3 derived components for the first 5 observations in our synthetic dataset.</p>
-
-<pre><code class="language-python">famd = FAMD(n_components=3).fit(X)
-famd.row_coordinates(X).head()
-</code></pre>
-
-<table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">famd <span style="color:#f92672">=</span> FAMD(n_components<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>fit(X)
+famd<span style="color:#f92672">.</span>row_coordinates(X)<span style="color:#f92672">.</span>head()
+</code></pre></div><table>
 <thead>
 <tr>
 <th></th>
@@ -777,7 +712,6 @@ famd.row_coordinates(X).head()
 <th>Component 3</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
@@ -785,28 +719,24 @@ famd.row_coordinates(X).head()
 <td>7.103708</td>
 <td>-0.530751</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td>7.067240</td>
 <td>0.113685</td>
 <td>1.561657</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>7.090335</td>
 <td>0.082113</td>
 <td>-1.083236</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td>7.060651</td>
 <td>0.122537</td>
 <td>1.649692</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td>7.097300</td>
@@ -815,19 +745,13 @@ famd.row_coordinates(X).head()
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-python">model = KMeans(n_clusters=3, random_state=random_state).fit(famd.row_coordinates(X))
-pred = model.labels_
-plot_cluster(X, pred, title=&quot;FAMD + Clustering&quot;)
-</code></pre>
-
-<p><img src="plot_5.png" alt="png" />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span>random_state)<span style="color:#f92672">.</span>fit(famd<span style="color:#f92672">.</span>row_coordinates(X))
+pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>labels_
+plot_cluster(X, pred, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FAMD + Clustering&#34;</span>)
+</code></pre></div><p><img src="plot_5.png" alt="png">
 <strong><em>Figure 5: Clustering using FAMD.</em></strong></p>
-
 <p>The results are interesting here, we do get our 3 blobs but the bottom left blob is not very uniform. However, we perfectly identify the mixed labels around (<code>X1=-1</code>, <code>X2=0</code>), which no previous approach has been able to do.</p>
-
 <h2 id="summary">Summary</h2>
-
 <p>In this post I documented a few approaches for clustering mixed continuous and categorical data. As always with data science, there is no one approach suited to all problems - in my opinion, clustering in particular is as much an art as a science. But, for the specific real-world application I was working on, I ended up going with approach number 4 (FAMD + clustering), because it yielded the best results for my dataset (which was significantly more complex than the one in this post, with ~400 mixed categorical and continuous features).</p>
 
     </div>

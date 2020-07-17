@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.3072054fc61fe865aa34bcb366de141d.css">
+  <link rel="stylesheet" href="/css/academic.min.ce53f5d1ff75f9f89bb1c243b514bb45.css">
 
   
 
@@ -348,28 +348,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
-        </li>
-
-        
-        
-
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -605,190 +583,137 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h3 id="introduction">Introduction</h3>
-
-<p>I recently decided I wanted to create this personal website to serve as my online bio and to display various research and personal projects I am/have worked on. To my surprise, this actually turned out to be much easier than anticipated! So in this brief post I&rsquo;ll walk you through how I created this website (for free!) in 5 simple steps using the static site generator <a href="https://gohugo.io/" target="_blank">Hugo</a> and the static site hosting service provided by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
-
+      <h3 id="introduction">Introduction</h3>
+<p>I recently decided I wanted to create this personal website to serve as my online bio and to display various research and personal projects I am/have worked on. To my surprise, this actually turned out to be much easier than anticipated! So in this brief post I&rsquo;ll walk you through how I created this website (for free!) in 5 simple steps using the static site generator 
+<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> and the static site hosting service provided by 
+<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.</p>
 <ol>
-<li><a href="#1">Install Hugo and get a GitHub account</a></li>
-<li><a href="#2">Set up a workspace</a></li>
-<li><a href="#3">Choose a theme for your website</a></li>
-<li><a href="#4">Creating your website</a></li>
-<li><a href="#5">Hosting your website on GitHub Pages</a></li>
-<li><a href="#6">Updating your website</a></li>
+<li>
+<a href="#1">Install Hugo and get a GitHub account</a></li>
+<li>
+<a href="#2">Set up a workspace</a></li>
+<li>
+<a href="#3">Choose a theme for your website</a></li>
+<li>
+<a href="#4">Creating your website</a></li>
+<li>
+<a href="#5">Hosting your website on GitHub Pages</a></li>
+<li>
+<a href="#6">Updating your website</a></li>
 </ol>
-
-<h3 id="step-1-install-hugo-and-get-a-github-account-a-name-1-a">Step 1: Install Hugo and get a GitHub account <a name="1"></a></h3>
-
-<p>As I&rsquo;m a mac user, I&rsquo;ll provide instructions here for installing Hugo on macOS. For instructions on installing Hugo on Windows or Linux, go to the <a href="https://gohugo.io/getting-started/installing/" target="_blank">Hugo Installation Page</a> and then skip to Step 2. To install Hugo on macOS, you&rsquo;ll ned both Homebrew and Go. Homebrew is a free and open-source software package management system that simplifies the installation of software on macOS and Go is a programming language created by Google that Hugo will leverage to create your website framework. If you don&rsquo;t have Homebrew or Go installed on your computer, run the following in the terminal:</p>
-
-<pre><code class="language-shell">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<h3 id="step-1-install-hugo-and-get-a-github-account-a-name1a">Step 1: Install Hugo and get a GitHub account <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p>As I&rsquo;m a mac user, I&rsquo;ll provide instructions here for installing Hugo on macOS. For instructions on installing Hugo on Windows or Linux, go to the 
+<a href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener">Hugo Installation Page</a> and then skip to Step 2. To install Hugo on macOS, you&rsquo;ll ned both Homebrew and Go. Homebrew is a free and open-source software package management system that simplifies the installation of software on macOS and Go is a programming language created by Google that Hugo will leverage to create your website framework. If you don&rsquo;t have Homebrew or Go installed on your computer, run the following in the terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ /usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 
 $ brew install go
-</code></pre>
-
-<p>Now, to install Hugo simply type:</p>
-
-<pre><code class="language-shell">$ brew install hugo
-</code></pre>
-
-<p>Finally, if you don&rsquo;t already have a GitHub account, head over to the <a href="https://github.com/" target="_blank">GitHub website</a> and create one.</p>
-
-<h3 id="step-2-set-up-a-workspace-a-name-2-a">Step 2: Set up a workspace <a name="2"></a></h3>
-
+</code></pre></div><p>Now, to install Hugo simply type:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ brew install hugo
+</code></pre></div><p>Finally, if you don&rsquo;t already have a GitHub account, head over to the 
+<a href="https://github.com/" target="_blank" rel="noopener">GitHub website</a> and create one.</p>
+<h3 id="step-2-set-up-a-workspace-a-name2a">Step 2: Set up a workspace <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <p>The next thing we need to do is create a directory from which we will build our website, this can be anywhere you like on your computer. You can create a directory using the macOS Finder or Windows File Explorer GUIs, or alternatively by using the command line. For example, the code below creates a new directory called <strong><em>websites</em></strong> in the <strong><em>Documents</em></strong> folder:</p>
-
-<pre><code class="language-shell">$ cd ~/Documents
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/Documents
 
 $ mkdir websites
-</code></pre>
-
-<p>Now, from the command line, change into your new directory:</p>
-
-<pre><code class="language-shell">$ cd websites
-</code></pre>
-
-<p>In this directory we will use Hugo to create the framework for your website. Simply type the following with <strong><em>&ldquo;websitename&rdquo;</em></strong> replaced with whatever you want to call your website:</p>
-
-<pre><code class="language-shell">$ hugo new site websitename
-</code></pre>
-
-<p>After executing this command, you will see something like the following:</p>
-
-<pre><code class="language-shell">Congratulations! Your new Hugo site is created in ~/Documents/websitename.
+</code></pre></div><p>Now, from the command line, change into your new directory:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd websites
+</code></pre></div><p>In this directory we will use Hugo to create the framework for your website. Simply type the following with <strong><em>&ldquo;websitename&rdquo;</em></strong> replaced with whatever you want to call your website:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo new site websitename
+</code></pre></div><p>After executing this command, you will see something like the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Congratulations! Your new Hugo site is created in ~/Documents/websitename.
 
 Just a few more steps and you are ready to go:
 
 1. Download a theme into the same-named folder.
    Choose a theme from https://themes.gohugo.io/ or
-   create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+   create your own with the <span style="color:#e6db74">&#34;hugo new theme &lt;THEMENAME&gt;&#34;</span> command.
 2. Perhaps you want to add some content. You can add single files
-   with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
-3. Start the built-in live server via &quot;hugo server&quot;.
+   with <span style="color:#e6db74">&#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;</span>.
+3. Start the built-in live server via <span style="color:#e6db74">&#34;hugo server&#34;</span>.
 
-Visit https://gohugo.io/ for quickstart guide and full documentation.
-</code></pre>
-
-<p>Change into your newly created  <strong><em>websitename</em></strong> directory and view the contents using <code>ls</code>:</p>
-
-<pre><code class="language-shell">$ cd websitename
+Visit https://gohugo.io/ <span style="color:#66d9ef">for</span> quickstart guide and full documentation.
+</code></pre></div><p>Change into your newly created  <strong><em>websitename</em></strong> directory and view the contents using <code>ls</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd websitename
 
 $ ls
 
 archetypes	content		layouts		themes
 config.toml	data		static
-</code></pre>
-
-<p>These files and folders form the framework of your Hugo site. We&rsquo;ll explore them a little more later but for now, notice the <strong><em>themes</em></strong> folder. In the next step we will select a theme for your website and place it in this folder.</p>
-
-<h3 id="step-3-choose-a-theme-for-your-website-a-name-3-a">Step 3: Choose a theme for your website! <a name="3"></a></h3>
-
-<p>With Hugo you can create your very own website theme or download one of many different pre-made, open source themes. There are plenty of really great pre-made themes and they are perfect for getting your website up and running as quickly as possible. Head over to the <a href="https://themes.gohugo.io/" target="_blank">Hugo themes page</a> and select a theme for your website. I used the <a href="https://themes.gohugo.io/academic/" target="_blank">Academic theme</a> for my website.</p>
-
-<p><img src="image_2.png" alt="png" />
+</code></pre></div><p>These files and folders form the framework of your Hugo site. We&rsquo;ll explore them a little more later but for now, notice the <strong><em>themes</em></strong> folder. In the next step we will select a theme for your website and place it in this folder.</p>
+<h3 id="step-3-choose-a-theme-for-your-website-a-name3a">Step 3: Choose a theme for your website! <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p>With Hugo you can create your very own website theme or download one of many different pre-made, open source themes. There are plenty of really great pre-made themes and they are perfect for getting your website up and running as quickly as possible. Head over to the 
+<a href="https://themes.gohugo.io/" target="_blank" rel="noopener">Hugo themes page</a> and select a theme for your website. I used the 
+<a href="https://themes.gohugo.io/academic/" target="_blank" rel="noopener">Academic theme</a> for my website.</p>
+<p><img src="image_2.png" alt="png">
 <strong><em>The gallery of themes available to build a website with Hugo.</em></strong></p>
-
 <p>Once you&rsquo;ve found a theme you like, click the <strong><em>download</em></strong> button which will take you to the theme&rsquo;s GitHub repository. In the repository click the green <strong><em>Clone or download</em></strong> button and copy the https web URL. Go back to your terminal, <code>cd</code> to the <strong><em>themes</em></strong> directory and clone the repository:</p>
-
-<pre><code class="language-shell">$ cd themes
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd themes
 
 $ git clone https://github.com/gcushen/hugo-academic.git
 
 archetypes	content		layouts		themes
 config.toml	data		static
-</code></pre>
-
-<p>You can type <code>ls</code> to see that you now have a directory called <strong><em>hugo-academic</em></strong> (or whatever other theme you chose). Now <code>cd</code> into that directory and again type <code>ls</code> to see the content of the directory; these are the files and folders you will need to create your website.</p>
-
-<h3 id="step-4-creating-your-website-a-name-4-a">Step 4: Creating your website <a name="4"></a></h3>
-
+</code></pre></div><p>You can type <code>ls</code> to see that you now have a directory called <strong><em>hugo-academic</em></strong> (or whatever other theme you chose). Now <code>cd</code> into that directory and again type <code>ls</code> to see the content of the directory; these are the files and folders you will need to create your website.</p>
+<h3 id="step-4-creating-your-website-a-name4a">Step 4: Creating your website <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <p>I found that the quickest (and dirtiest) way to get your website up and running is to simply copy everything in the folder <strong><em>exampleSite</em></strong> to your directory <strong><em>websitename</em></strong> - overwrite any duplications. Once you&rsquo;ve done that, go ahead and copy all the other folders and files in <strong><em>hugo-acaemic</em></strong> (except for the <strong><em>exampleSite</em></strong> folder, <strong><em>theme.toml</em></strong>, <strong><em>README.md</em></strong> and <strong><em>LICENSE.md</em></strong>) to your directory <strong><em>websitename</em></strong> - again, overwrite any duplications.</p>
-
-<p><img src="image_3.png" alt="png" />
+<p><img src="image_3.png" alt="png">
 <strong><em>Example of what your directory might look like before and after copying the necessary files.</em></strong></p>
-
 <p>Now you can see what your website currently looks like by changing to the directory <strong><em>websitename</em></strong> and typing:</p>
-
-<pre><code class="language-shell">$ hugo server
-</code></pre>
-
-<p>This renders a local version of your website so you can see it and make changes before putting it online. Copy and paste the url output (e.g., <strong><em>http://localhost:1313</em></strong>) into your browser of choice to see your website.</p>
-
-<p>At this point go ahead and spend some time customizing your website. I recommend reading the documentation of the theme you chose to help navigate the folder and create new content. For example, <a href="https://sourcethemes.com/academic/docs/" target="_blank">here</a> is the documentation for the academic theme. As you make changes, you should see that your website updates automatically in your browser - if for some reason it doesn&rsquo;t, simply <code>ctrl+c</code> in your terminal, re-execute <code>hugo server</code>, and refresh your browser.</p>
-
-<h3 id="step-5-hosting-your-website-on-github-pages-a-name-5-a">Step 5: Hosting your website on GitHub Pages <a name="5"></a></h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo server
+</code></pre></div><p>This renders a local version of your website so you can see it and make changes before putting it online. Copy and paste the url output (e.g., <strong><em>http://localhost:1313</em></strong>) into your browser of choice to see your website.</p>
+<p>At this point go ahead and spend some time customizing your website. I recommend reading the documentation of the theme you chose to help navigate the folder and create new content. For example, 
+<a href="https://sourcethemes.com/academic/docs/" target="_blank" rel="noopener">here</a> is the documentation for the academic theme. As you make changes, you should see that your website updates automatically in your browser - if for some reason it doesn&rsquo;t, simply <code>ctrl+c</code> in your terminal, re-execute <code>hugo server</code>, and refresh your browser.</p>
+<h3 id="step-5-hosting-your-website-on-github-pages-a-name5a">Step 5: Hosting your website on GitHub Pages <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <p>Once you&rsquo;re ready to show your shiny new website to the world, we can host it on GitHub Pages.</p>
-
-<p>The first thing you need to do is go to <a href="https://github.com/" target="_blank">GitHub</a> and create two empty repositories:</p>
-
+<p>The first thing you need to do is go to 
+<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> and create two empty repositories:</p>
 <ol>
 <li>a repository with the same name as the website directory you created: &lsquo;websitename&rsquo;; and,</li>
 <li>a repository with the name &lsquo;yourgithubusername.github.io&rsquo;.</li>
 </ol>
-
 <p>If you haven&rsquo;t created a repository before, simply click your GitHub profile at the top right-hand corner of the screen to see a drop-down menu, click <strong><em>Your repositories</em></strong> and on that page you will se a green button <strong><em>New</em></strong> which will help you create a repository. Once you&rsquo;ve done that, copy the https key from the repository you created with the same name as your website and then in the terminal <code>cd</code> to your local directory <strong><em>websitename</em></strong> and type:</p>
-
-<pre><code class="language-shell"> $ git init
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> $ git init
 
  $ git remote add origin https://github.com/User/websitename.git
 
  $ git push -u origin master
-</code></pre>
-
-<p>This will create a git directory, link it to the remote GitHub repository and then push the contents of the local directory to the remote. Note that the <code>-u</code> argument specifies the master branch of the remote as &ldquo;upstream&rdquo;, meaning that in the future, a simple <code>git push</code> will suffice when pushing changes to the remote.</p>
-
+</code></pre></div><p>This will create a git directory, link it to the remote GitHub repository and then push the contents of the local directory to the remote. Note that the <code>-u</code> argument specifies the master branch of the remote as &ldquo;upstream&rdquo;, meaning that in the future, a simple <code>git push</code> will suffice when pushing changes to the remote.</p>
 <p>Now copy the https key from the repository you created with the name <strong><em>yourgithubusername.github.io</em></strong> and copy the https key. Then <code>cd</code> back to your initial <strong><em>websites</em></strong> directory and type:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/User/yourgithubusername.github.io.git <span style="color:#75715e"># Clone the remote repo</span>
 
-<pre><code class="language-shell">$ git clone https://github.com/User/yourgithubusername.github.io.git # Clone the remote repo
+$ cd websitename <span style="color:#75715e"># Change directory</span>
 
-$ cd websitename # Change directory
-
-$ hugo -d ../yourgithubusername.github.io # Deploy your website
+$ hugo -d ../yourgithubusername.github.io <span style="color:#75715e"># Deploy your website</span>
 
 $ cd ../yourgithubusername.github.io
 
 $ git add .
 
-$ git commit -m &quot;first commit&quot;
+$ git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
 
 $ git push -u origin master
-</code></pre>
-
-<p>And that&rsquo;s it! Go to GitHub and go to the repository <strong><em>yourgithubusername.github.io</em></strong>, click the settings tab near the top of the page and scroll down to the subheading <strong><em>GitHub Pages</em></strong> where you will see the link to your new website: <code>http://yourgitubusername.github.io</code>. Click the link to see your website out in the wild. Congratulations - you can now show off your work to the world (wide web)!</p>
-
-<h3 id="step-6-updating-your-website-a-name-6-a">Step 6: Updating your website <a name="6"></a></h3>
-
+</code></pre></div><p>And that&rsquo;s it! Go to GitHub and go to the repository <strong><em>yourgithubusername.github.io</em></strong>, click the settings tab near the top of the page and scroll down to the subheading <strong><em>GitHub Pages</em></strong> where you will see the link to your new website: <code>http://yourgitubusername.github.io</code>. Click the link to see your website out in the wild. Congratulations - you can now show off your work to the world (wide web)!</p>
+<h3 id="step-6-updating-your-website-a-name6a">Step 6: Updating your website <!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <p>If you are going to have content on your website that will change over time (e.g., writing posts, updating research projects, changing your job title, etc.) then you&rsquo;ll need to know how to make these changes to your website. Luckily, this is as easy as pie. Make any changes/additions to your website in your local directory <strong><em>websitename</em></strong> (remember to use <code>hugo server</code> to render a local version of your website that you can view before deploying it online). Once you&rsquo;ve made your changes make sure you&rsquo;re in the <strong><em>websitename</em></strong> directory and type the following commands in terminal to push your local changes to the remote, re-deploy your website <code>yourgithubusername.github.io</code> and then push that to the remote too:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git add .
 
-<pre><code class="language-shell">$ git add .
+$ git commit -m <span style="color:#e6db74">&#34;some changes&#34;</span>
 
-$ git commit -m &quot;some changes&quot;
+$ git push <span style="color:#75715e"># push all changes to the remote</span>
 
-$ git push # push all changes to the remote
-
-$ hugo -d ../yourgithubusername.github.io # re-deploy website
+$ hugo -d ../yourgithubusername.github.io <span style="color:#75715e"># re-deploy website</span>
 
 $ cd ../yourgithubusername.github.io
 
 $ git add .
 
-$ git commit -m &quot;some changes&quot;
+$ git commit -m <span style="color:#e6db74">&#34;some changes&#34;</span>
 
 $ git push
-</code></pre>
-
-<p>After this, you may need to wait ~10 minutes for the changes to take effect on the online version of your website.</p>
-
-<!-- ## Edit your post metadata
-
-Open `index.md` in your text editor and edit the title etc. in the [front matter](https://sourcethemes.com/academic/docs/front-matter/) according to your preference.
-
-To set a [featured image](https://sourcethemes.com/academic/docs/managing-content/#featured-image), place an image named `featured` into your post's folder.
-
-For other tips, such as using math, see the guide on [writing content with Academic](https://sourcethemes.com/academic/docs/writing-markdown-latex/). -->
+</code></pre></div><p>After this, you may need to wait ~10 minutes for the changes to take effect on the online version of your website.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
     </div>
 

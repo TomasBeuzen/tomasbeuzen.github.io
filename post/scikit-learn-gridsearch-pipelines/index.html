@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.3072054fc61fe865aa34bcb366de141d.css">
+  <link rel="stylesheet" href="/css/academic.min.ce53f5d1ff75f9f89bb1c243b514bb45.css">
 
   
 
@@ -348,28 +348,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
-        </li>
-
-        
-        
-
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -605,106 +583,85 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h3 id="introduction">Introduction</h3>
-
+      <h3 id="introduction">Introduction</h3>
 <p>Some of the key steps in a machine learning workflow are:</p>
-
 <ul>
 <li>feature preprocessing (encoding categorical features, scaling numeric features, transforming text data, etc.);</li>
 <li>feature selection (choosing which features to include in the model);</li>
 <li>model selection (choosing which machine learning estimator to use); and,</li>
 <li>hyperparameter tuning (determining the optimum hyperparameter values to use for each estimator).</li>
 </ul>
-
-<p>It can be difficult to perform these tasks in an accurate, efficient and reproducible manner. In particular, it is important to ensure that, during cross-validation, feature preprocessing and feature selection are based only on the training portion of data, preventing leakage from the validation set which could bias our results. In this short, practical post I&rsquo;ll demonstrate how to use <a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> to simultaneously perform the above steps. While the example given is somewhat contrived, the syntax and workflow are what is important here and can be applied to any machine learning workflow.</p>
-
+<p>It can be difficult to perform these tasks in an accurate, efficient and reproducible manner. In particular, it is important to ensure that, during cross-validation, feature preprocessing and feature selection are based only on the training portion of data, preventing leakage from the validation set which could bias our results. In this short, practical post I&rsquo;ll demonstrate how to use 
+<a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">scikit-learn</a> to simultaneously perform the above steps. While the example given is somewhat contrived, the syntax and workflow are what is important here and can be applied to any machine learning workflow.</p>
 <h3 id="step-1-import-dependencies">Step 1: Import dependencies</h3>
-
-<pre><code class="language-python">from sklearn.pipeline import Pipeline
-from sklearn.datasets import make_classification
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.feature_selection import SelectKBest, mutual_info_classif
-</code></pre>
-
-<h3 id="step-2-import-data">Step 2: Import data</h3>
-
-<p>We will create a synthetic binary classification dataset for this demonstration using the scikit-learn function <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html" target="_blank">make_classification</a>.</p>
-
-<pre><code class="language-python">X, y = make_classification(n_samples=1000,
-                           n_features=30,
-                           n_informative=5,
-                           n_redundant=5,
-                           n_classes=2,
-                           random_state=123)
-</code></pre>
-
-<h3 id="step-3-create-pipeline-framework">Step 3: Create pipeline framework</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.pipeline <span style="color:#f92672">import</span> Pipeline
+<span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> make_classification
+<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+<span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> GridSearchCV
+<span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+<span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LogisticRegression
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+<span style="color:#f92672">from</span> sklearn.feature_selection <span style="color:#f92672">import</span> SelectKBest, mutual_info_classif
+</code></pre></div><h3 id="step-2-import-data">Step 2: Import data</h3>
+<p>We will create a synthetic binary classification dataset for this demonstration using the scikit-learn function 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html" target="_blank" rel="noopener">make_classification</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X, y <span style="color:#f92672">=</span> make_classification(n_samples<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>,
+                           n_features<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>,
+                           n_informative<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+                           n_redundant<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+                           n_classes<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,
+                           random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>)
+</code></pre></div><h3 id="step-3-create-pipeline-framework">Step 3: Create pipeline framework</h3>
 <p>Using our synthetic dataset, we are going to set up a pipeline object that will:</p>
-
 <ul>
-<li>Standardize the data using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" target="_blank">StandardScaler</a>;</li>
-<li>Select the <code>k</code> best features from the data using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html" target="_blank">SelectKBest</a> and the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html" target="_blank">mutual information metric</a> (where <code>k</code> is a hyperparameter that we will tune during the fitting process); and,</li>
-<li>Use an estimator to model the data, here we will be trying a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank">LogisticRegression</a>, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank">RandomForestClassifier</a>, and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" target="_blank">KNeighborsClassifier</a>.</li>
+<li>Standardize the data using 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" target="_blank" rel="noopener">StandardScaler</a>;</li>
+<li>Select the <code>k</code> best features from the data using 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html" target="_blank" rel="noopener">SelectKBest</a> and the 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html" target="_blank" rel="noopener">mutual information metric</a> (where <code>k</code> is a hyperparameter that we will tune during the fitting process); and,</li>
+<li>Use an estimator to model the data, here we will be trying a 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank" rel="noopener">LogisticRegression</a>, 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank" rel="noopener">RandomForestClassifier</a>, and 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" target="_blank" rel="noopener">KNeighborsClassifier</a>.</li>
 </ul>
-
 <p>The syntax for creating this pipeline is shown below. To instantiate the <code>Pipeline</code> object I&rsquo;ve used  a <code>k</code> value in <code>SelectKBest</code> of 5 and I&rsquo;ve input <code>LogisticRegression</code> as the estimator, but these are simply placeholders for now and they will be varied during the fitting stage.</p>
-
-<pre><code class="language-python">pipe = Pipeline([('scaler', StandardScaler()),
-                 ('selector', SelectKBest(mutual_info_classif, k=5)),
-                 ('classifier', LogisticRegression())])
-</code></pre>
-
-<h3 id="step-4-create-search-space">Step 4: Create search space</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pipe <span style="color:#f92672">=</span> Pipeline([(<span style="color:#e6db74">&#39;scaler&#39;</span>, StandardScaler()),
+                 (<span style="color:#e6db74">&#39;selector&#39;</span>, SelectKBest(mutual_info_classif, k<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)),
+                 (<span style="color:#e6db74">&#39;classifier&#39;</span>, LogisticRegression())])
+</code></pre></div><h3 id="step-4-create-search-space">Step 4: Create search space</h3>
 <p>The next step is to define the space of hyperparameters and estimators we want to search through. We do this in the form of a dictionary and we use double underscore notation (<code>__</code>) to refer to the hyperparameters of different steps in our pipeline. We will be trying out different values of <code>k</code> for the feature selector <code>SelectKBest</code>, as well as different hyperparameter values for each of our three estimators as shown below.</p>
-
-<pre><code class="language-python">search_space = [{'selector__k': [5, 10, 20, 30]},
-                {'classifier': [LogisticRegression(solver='lbfgs')],
-                 'classifier__C': [0.01, 0.1, 1.0]},
-                {'classifier': [RandomForestClassifier(n_estimators=100)],
-                 'classifier__max_depth': [5, 10, None]},
-                {'classifier': [KNeighborsClassifier()],
-                 'classifier__n_neighbors': [3, 7, 11],
-                 'classifier__weights': ['uniform', 'distance']}]
-</code></pre>
-
-<h3 id="step-5-run-the-gridsearch">Step 5: Run the GridSearch</h3>
-
-<p>This is where the magic happens. We will now pass our pipeline into <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" target="_blank">GridSearchCV</a> to test our search space (of feature preprocessing, feature selection, model selection, and hyperparameter tuning combinations) using 10-fold cross-validation.</p>
-
-<pre><code class="language-python">clf = GridSearchCV(pipe, search_space, cv=10, verbose=0)
-clf = clf.fit(X, y)
-</code></pre>
-
-<h3 id="step-6-get-the-results">Step 6: Get the results</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">search_space <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;selector__k&#39;</span>: [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>]},
+                {<span style="color:#e6db74">&#39;classifier&#39;</span>: [LogisticRegression(solver<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lbfgs&#39;</span>)],
+                 <span style="color:#e6db74">&#39;classifier__C&#39;</span>: [<span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1.0</span>]},
+                {<span style="color:#e6db74">&#39;classifier&#39;</span>: [RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)],
+                 <span style="color:#e6db74">&#39;classifier__max_depth&#39;</span>: [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>, None]},
+                {<span style="color:#e6db74">&#39;classifier&#39;</span>: [KNeighborsClassifier()],
+                 <span style="color:#e6db74">&#39;classifier__n_neighbors&#39;</span>: [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>],
+                 <span style="color:#e6db74">&#39;classifier__weights&#39;</span>: [<span style="color:#e6db74">&#39;uniform&#39;</span>, <span style="color:#e6db74">&#39;distance&#39;</span>]}]
+</code></pre></div><h3 id="step-5-run-the-gridsearch">Step 5: Run the GridSearch</h3>
+<p>This is where the magic happens. We will now pass our pipeline into 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" target="_blank" rel="noopener">GridSearchCV</a> to test our search space (of feature preprocessing, feature selection, model selection, and hyperparameter tuning combinations) using 10-fold cross-validation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clf <span style="color:#f92672">=</span> GridSearchCV(pipe, search_space, cv<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+clf <span style="color:#f92672">=</span> clf<span style="color:#f92672">.</span>fit(X, y)
+</code></pre></div><h3 id="step-6-get-the-results">Step 6: Get the results</h3>
 <p>We can access the best result of our search using the <code>best_estimator_</code> attribute. For this particular case, the <code>KNeighborsClassifier</code> did the best, using <code>n_neighbors=3</code> and <code>weights='distance'</code>, along with the <code>k=5</code> best features chosen by <code>SelectKBest</code>. This combination had a 10-fold cross-validation accuracy of 0.958.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clf<span style="color:#f92672">.</span>best_estimator_
+Pipeline(memory<span style="color:#f92672">=</span>None,
+         steps<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;scaler&#39;</span>,
+                 StandardScaler(copy<span style="color:#f92672">=</span>True, with_mean<span style="color:#f92672">=</span>True, with_std<span style="color:#f92672">=</span>True)),
+                (<span style="color:#e6db74">&#39;selector&#39;</span>,
+                 SelectKBest(k<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+                             score_func<span style="color:#f92672">=&lt;</span>function mutual_info_classif at <span style="color:#ae81ff">0x1a1f91db00</span><span style="color:#f92672">&gt;</span>)),
+                (<span style="color:#e6db74">&#39;classifier&#39;</span>,
+                 KNeighborsClassifier(algorithm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;auto&#39;</span>, leaf_size<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>,
+                                      metric<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;minkowski&#39;</span>, metric_params<span style="color:#f92672">=</span>None,
+                                      n_jobs<span style="color:#f92672">=</span>None, n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, p<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,
+                                      weights<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;distance&#39;</span>))],
+         verbose<span style="color:#f92672">=</span>False)
 
-<pre><code class="language-python">clf.best_estimator_
-Pipeline(memory=None,
-         steps=[('scaler',
-                 StandardScaler(copy=True, with_mean=True, with_std=True)),
-                ('selector',
-                 SelectKBest(k=5,
-                             score_func=&lt;function mutual_info_classif at 0x1a1f91db00&gt;)),
-                ('classifier',
-                 KNeighborsClassifier(algorithm='auto', leaf_size=30,
-                                      metric='minkowski', metric_params=None,
-                                      n_jobs=None, n_neighbors=3, p=2,
-                                      weights='distance'))],
-         verbose=False)
-
-clf.best_score_
-0.958
-</code></pre>
-
+clf<span style="color:#f92672">.</span>best_score_
+<span style="color:#ae81ff">0.958</span>
+</code></pre></div>
     </div>
 
     

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Tomas Beuzen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Use probability and simulations to estimate the number of guests that will attend your event!">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://www.tomasbeuzen.com/post/party-planning-probability/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.ce53f5d1ff75f9f89bb1c243b514bb45.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-157992550-2', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://www.tomasbeuzen.com/post/party-planning-probability/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Tomas Beuzen">
+  <meta property="og:url" content="https://www.tomasbeuzen.com/post/party-planning-probability/">
+  <meta property="og:title" content="Party Planning with Probability | Tomas Beuzen">
+  <meta property="og:description" content="Use probability and simulations to estimate the number of guests that will attend your event!"><meta property="og:image" content="https://www.tomasbeuzen.com/post/party-planning-probability/featured.png">
+  <meta property="twitter:image" content="https://www.tomasbeuzen.com/post/party-planning-probability/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-07-10T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-07-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Party Planning with Probability | Tomas Beuzen</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Tomas Beuzen</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Party Planning with Probability</h1>
+
+  
+  <p class="page-subtitle">Use probability and simulations to estimate the number of guests that will attend your event!</p>
+  
+
+  
+
+
+
+<meta content="2020-07-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-07-10 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Tomas Beuzen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Jul 10, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://www.tomasbeuzen.com/post/party-planning-probability/&amp;text=Party%20Planning%20with%20Probability" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://www.tomasbeuzen.com/post/party-planning-probability/&amp;t=Party%20Planning%20with%20Probability" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Party%20Planning%20with%20Probability&amp;body=https://www.tomasbeuzen.com/post/party-planning-probability/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://www.tomasbeuzen.com/post/party-planning-probability/&amp;title=Party%20Planning%20with%20Probability" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Party%20Planning%20with%20Probability%20https://www.tomasbeuzen.com/post/party-planning-probability/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://www.tomasbeuzen.com/post/party-planning-probability/&amp;title=Party%20Planning%20with%20Probability" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 700px; max-height: 400px;">
+  <div style="position: relative">
+    <img src="/post/party-planning-probability/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <h2 id="introduction">Introduction</h2>
+<p>My partner recently tasked me with coming up with the guest list for our wedding. Coming up with the list was easy - but how many people could we expect to actually attend? We needed a number to give to the various vendors catering our wedding so, as a bonafide nerd, I turned to probability and simulation for the answer. The idea was to assign a &ldquo;probability of attendance&rdquo; for each guest on my list, treat each guest&rsquo;s attendance as a Bernoulli random variable, and run simulations to determine how many guests we might expect to attend the wedding.</p>
+<p>To this end, I whipped up a very simple Python package called pyguest which you can install with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ pip install pyguest
+</code></pre></div><h2 id="an-example">An Example</h2>
+<p>Let&rsquo;s walk through a quick example of how the package works. Below is the python code to create a hypothetical guest list, with each guest assigned a &ldquo;probability of attending&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+pd<span style="color:#f92672">.</span>options<span style="color:#f92672">.</span>plotting<span style="color:#f92672">.</span>backend <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plotly&#34;</span>
+
+np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">123</span>)
+guest <span style="color:#f92672">=</span> [f<span style="color:#e6db74">&#34;Guest {i}&#34;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">101</span>)]
+proba <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>
+
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(proba, index<span style="color:#f92672">=</span>guest, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Probability of Attending&#39;</span>])
+df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">8</span>)
+</code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th>Probability of Attending</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guest 1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Guest 2</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>Guest 3</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>Guest 4</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>Guest 5</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Guest 6</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Guest 7</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>Guest 8</td>
+<td>0.8</td>
+</tr>
+</tbody>
+</table>
+<p>We can use <code>pyguest</code> to simulate wedding attendance from this guest list. The idea is to treat each guest&rsquo;s attendance as a 
+<a href="https://en.wikipedia.org/wiki/Bernoulli_distribution" target="_blank" rel="noopener">Bernoulli random variable</a>. For each simulation, we run through all the guests in the list and record how many &ldquo;successes&rdquo; we have (i.e, how many guests attend the wedding based on their respective probabilities). I&rsquo;ve coded this up in pure NumPy and it&rsquo;s nice and fast - ten thousand simulations can be run in literally the blink of an eye. Here&rsquo;s the code to do it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyguest <span style="color:#f92672">import</span> simulate
+
+results <span style="color:#f92672">=</span> simulate(df[<span style="color:#e6db74">&#39;Probability of Attending&#39;</span>], simulations<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>_000)
+</code></pre></div><p>The <code>results</code> variable is an array containing the total number of attending guests in each of the 10,000 simulations. We can plot these results to help us understand how many of our 100 hypothetical guests will actually be attending the wedding.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(results)<span style="color:#f92672">.</span>hist(histnorm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;probability density&#39;</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">700</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span>)
+fig<span style="color:#f92672">.</span>update_xaxes(title_text<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Number of Guests&#39;</span>)
+fig<span style="color:#f92672">.</span>update_yaxes(title_text<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Probability of Attending&#39;</span>)
+fig<span style="color:#f92672">.</span>update_layout(showlegend<span style="color:#f92672">=</span>False,
+                  xaxis <span style="color:#f92672">=</span> dict(range<span style="color:#f92672">=</span>[<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">90</span>], tickmode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;linear&#39;</span>, tick0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">55</span>, dtick <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>))
+fig
+</code></pre></div><p>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+<div id="/plotly/plotly_graph.json" class="plotly" style="height:400px"></div>
+<script>
+    Plotly.d3.json("/plotly/plotly_graph.json", function (err, fig) {
+        Plotly.plot('\/plotly\/plotly_graph.json', fig.data, fig.layout, { responsive: true });
+    });
+</script></p>
+<h2 id="summary">Summary</h2>
+<p>There you have it! We originally had a hypothetical guest list of 100 people, each with an allocated &ldquo;probability of attendance&rdquo;. After running 10,000 simulations, we get a distribution of expected guest attenendance and can use this distribution to inform our future planning - want to be conservative? Plan for 85 guests. Want to live a little riskier? You might be able to get away with planning for 75 guests.</p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hubbfac3d8790fe63e08321a667f19ef68_817014_250x250_fill_q90_lanczos_center.JPG" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://www.tomasbeuzen.com/">Tomas Beuzen</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Teaching and Learning Fellow</h6>
+      <p class="card-text" itemprop="description">Postdoctoral Teaching and Learning Fellow for the Master of Data Science course at the University of British Columbia, Vancouver, Canada</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/TBeuzen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.com.au/citations?user=v8Di958AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/TomasBeuzen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.linkedin.com/in/tomas-beuzen-2b432a118" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://orcid.org/0000-0003-2762-9151" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/files/cv.pdf" >
+              <i class="ai ai-cv"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
