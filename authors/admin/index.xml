@@ -19,7 +19,8 @@
       <guid>https://www.tomasbeuzen.com/post/party-planning-probability/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;My partner recently tasked me with coming up with the guest list for our wedding. Coming up with the list was easy - but how many people could we expect to actually attend? We needed a number to give to the various vendors catering our wedding so, as a bonafide nerd, I turned to probability and simulation for the answer. The idea was to assign a &amp;ldquo;probability of attendance&amp;rdquo; for each guest on my list, treat each guest&amp;rsquo;s attendance as a Bernoulli random variable, and run simulations to determine how many guests we might expect to attend the wedding.&lt;/p&gt;
-&lt;p&gt;To this end, I whipped up a very simple Python package called pyguest which you can install with:&lt;/p&gt;
+&lt;p&gt;To this end, I whipped up a very simple Python package called 
+&lt;a href=&#34;https://github.com/TomasBeuzen/pyguest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pyguest&lt;/a&gt; which you can install with:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ pip install pyguest
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;an-example&#34;&gt;An Example&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s walk through a quick example of how the package works. Below is the python code to create a hypothetical guest list, with each guest assigned a &amp;ldquo;probability of attending&amp;rdquo;.&lt;/p&gt;
@@ -76,7 +77,8 @@ df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;We can use &lt;code&gt;pyguest&lt;/code&gt; to simulate wedding attendance from this guest list. The idea is to treat each guest&amp;rsquo;s attendance as a 
+&lt;p&gt;We can use 
+&lt;a href=&#34;https://github.com/TomasBeuzen/pyguest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pyguest&lt;/a&gt; to simulate wedding attendance from this guest list. The idea is to treat each guest&amp;rsquo;s attendance as a 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Bernoulli_distribution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bernoulli random variable&lt;/a&gt;. For each simulation, we run through all the guests in the list and record how many &amp;ldquo;successes&amp;rdquo; we have (i.e, how many guests attend the wedding based on their respective probabilities). I&amp;rsquo;ve coded this up in pure NumPy and it&amp;rsquo;s nice and fast - ten thousand simulations can be run in literally the blink of an eye. Here&amp;rsquo;s the code to do it:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyguest &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; simulate
 

@@ -583,7 +583,8 @@
     <div class="article-style" itemprop="articleBody">
       <h2 id="introduction">Introduction</h2>
 <p>My partner recently tasked me with coming up with the guest list for our wedding. Coming up with the list was easy - but how many people could we expect to actually attend? We needed a number to give to the various vendors catering our wedding so, as a bonafide nerd, I turned to probability and simulation for the answer. The idea was to assign a &ldquo;probability of attendance&rdquo; for each guest on my list, treat each guest&rsquo;s attendance as a Bernoulli random variable, and run simulations to determine how many guests we might expect to attend the wedding.</p>
-<p>To this end, I whipped up a very simple Python package called pyguest which you can install with:</p>
+<p>To this end, I whipped up a very simple Python package called 
+<a href="https://github.com/TomasBeuzen/pyguest" target="_blank" rel="noopener">pyguest</a> which you can install with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ pip install pyguest
 </code></pre></div><h2 id="an-example">An Example</h2>
 <p>Let&rsquo;s walk through a quick example of how the package works. Below is the python code to create a hypothetical guest list, with each guest assigned a &ldquo;probability of attending&rdquo;.</p>
@@ -640,7 +641,8 @@ df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">8</span>)
 </tr>
 </tbody>
 </table>
-<p>We can use <code>pyguest</code> to simulate wedding attendance from this guest list. The idea is to treat each guest&rsquo;s attendance as a 
+<p>We can use 
+<a href="https://github.com/TomasBeuzen/pyguest" target="_blank" rel="noopener">pyguest</a> to simulate wedding attendance from this guest list. The idea is to treat each guest&rsquo;s attendance as a 
 <a href="https://en.wikipedia.org/wiki/Bernoulli_distribution" target="_blank" rel="noopener">Bernoulli random variable</a>. For each simulation, we run through all the guests in the list and record how many &ldquo;successes&rdquo; we have (i.e, how many guests attend the wedding based on their respective probabilities). I&rsquo;ve coded this up in pure NumPy and it&rsquo;s nice and fast - ten thousand simulations can be run in literally the blink of an eye. Here&rsquo;s the code to do it:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyguest <span style="color:#f92672">import</span> simulate
 
@@ -792,21 +794,6 @@ fig
           <li>
             <a itemprop="sameAs" href="https://orcid.org/0000-0003-2762-9151" target="_blank" rel="noopener">
               <i class="ai ai-orcid"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a itemprop="sameAs" href="/files/cv.pdf" >
-              <i class="ai ai-cv"></i>
             </a>
           </li>
         
