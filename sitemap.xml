@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/admin/</loc>
-    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+    <loc>https://www.tomasbeuzen.com/tag/data-science/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tag/outreach/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/py-pkgs/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tags/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/</loc>
+    <lastmod>2020-07-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -23,8 +48,28 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/</loc>
+    <loc>https://www.tomasbeuzen.com/author/tomas-beuzen/</loc>
     <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/tag/open-source/</loc>
+    <lastmod>2020-06-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/jupyterdays/</loc>
+    <lastmod>2020-06-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/cookiecutter-jb/</loc>
+    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/cookiecutter-mds/</loc>
+    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,17 +88,17 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/publication_types/2/</loc>
+    <loc>https://www.tomasbeuzen.com/publication-type/2/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/bayesian-network/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/bayesian-network/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/beach/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/beach/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,17 +108,32 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/data/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/data/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/dune/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/dune/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/erosion/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/author/ian-turner/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/author/kristen-splinter/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/author/mitchell-harley/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,17 +148,12 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/storm/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/storm/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/authors/tomas-beuzen/</loc>
+    <loc>https://www.tomasbeuzen.com/author/tomas-beuzen/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,42 +173,27 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/data-science/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/graphics/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/graphics/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/machine-learning/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/machine-learning/</loc>
+    <loc>https://www.tomasbeuzen.com/project/ml-tutorials/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/project/deploy-ml/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/tags/outreach/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/project/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/tags/coastal/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/coastal/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/dune-toe/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/dune-toe/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -163,12 +203,12 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/runup/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/runup/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/project/py-pkgs/</loc>
+    <loc>https://www.tomasbeuzen.com/project/animated-data/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -183,32 +223,27 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/evan-goldstein/</loc>
+    <loc>https://www.tomasbeuzen.com/author/evan-goldstein/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/gaussian-process/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/gaussian-process/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/joshua-simmons/</loc>
+    <loc>https://www.tomasbeuzen.com/author/joshua-simmons/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/kristen-splinter/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/overfitting/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/overfitting/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/tags/variable-selection/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/variable-selection/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -218,17 +253,17 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/discretization/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/discretization/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/lucy-marshall/</loc>
+    <loc>https://www.tomasbeuzen.com/author/lucy-marshall/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/model-fitting/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/model-fitting/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -238,32 +273,22 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/coastal-modelling/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/coastal-modelling/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/coastal-processes/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/coastal-processes/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/ian-turner/</loc>
+    <loc>https://www.tomasbeuzen.com/author/margaret-palmsten/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/margaret-palmsten/</loc>
-    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/authors/mitchell-harley/</loc>
-    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/tags/storm-erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/storm-erosion/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -273,47 +298,47 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/alex-atkinson/</loc>
+    <loc>https://www.tomasbeuzen.com/author/alex-atkinson/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/alexander-atkinson/</loc>
+    <loc>https://www.tomasbeuzen.com/author/alexander-atkinson/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/bruun-rule/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/bruun-rule/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/chris-blenkinsopp/</loc>
+    <loc>https://www.tomasbeuzen.com/author/chris-blenkinsopp/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/coastal-erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/coastal-erosion/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/coastal-management/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/coastal-management/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/david-callaghan/</loc>
+    <loc>https://www.tomasbeuzen.com/author/david-callaghan/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/florent-birrien/</loc>
+    <loc>https://www.tomasbeuzen.com/author/florent-birrien/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/francois-flocard/</loc>
+    <loc>https://www.tomasbeuzen.com/author/francois-flocard/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -323,7 +348,7 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/peter-nielsen/</loc>
+    <loc>https://www.tomasbeuzen.com/author/peter-nielsen/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -333,42 +358,42 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/roshanka-ranasinghe/</loc>
+    <loc>https://www.tomasbeuzen.com/author/roshanka-ranasinghe/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/sea-level-rise/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/sea-level-rise/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/seawalls/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/seawalls/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/sediment-transport/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/sediment-transport/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/tom-baldock/</loc>
+    <loc>https://www.tomasbeuzen.com/author/tom-baldock/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/aeration/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/aeration/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/alexander-horner-devine/</loc>
+    <loc>https://www.tomasbeuzen.com/author/alexander-horner-devine/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/chris-chickadel/</loc>
+    <loc>https://www.tomasbeuzen.com/author/chris-chickadel/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -378,22 +403,22 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/rivers/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/rivers/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/stratification/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/stratification/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/thermal-imaging/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/thermal-imaging/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/turbulence/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/turbulence/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -403,22 +428,12 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/project/nrl-prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/project/pybeach/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/project/runup-prediction/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/tags/prediction/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/project/autobeach/</loc>
+    <loc>https://www.tomasbeuzen.com/project/pywebcat/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -433,7 +448,7 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/publication_types/1/</loc>
+    <loc>https://www.tomasbeuzen.com/publication-type/1/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -443,22 +458,26 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/shoreline-erosion/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/shoreline-erosion/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/shoreline-prediction/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/shoreline-prediction/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/tags/storms/</loc>
+    <loc>https://www.tomasbeuzen.com/tag/storms/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tomasbeuzen.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/talk/</loc>
   </url>
   
 </urlset>

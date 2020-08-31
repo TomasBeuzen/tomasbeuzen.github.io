@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Tomas Beuzen</title>
+    <link>https://www.tomasbeuzen.com/talk/</link>
+      <atom:link href="https://www.tomasbeuzen.com/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://www.tomasbeuzen.com/talk/</link>
+    </image>
+    
+  </channel>
+</rss>

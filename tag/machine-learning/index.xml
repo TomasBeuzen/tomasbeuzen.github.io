@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning | Tomas Beuzen</title>
+    <link>https://www.tomasbeuzen.com/tag/machine-learning/</link>
+      <atom:link href="https://www.tomasbeuzen.com/tag/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Machine Learning</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_512x512_fill_lanczos_center_2.png</url>
+      <title>Machine Learning</title>
+      <link>https://www.tomasbeuzen.com/tag/machine-learning/</link>
+    </image>
+    
+    <item>
+      <title>Machine Learning Tutorials</title>
+      <link>https://www.tomasbeuzen.com/project/ml-tutorials/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/ml-tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pybeach: A Python package for extracting the location of dune toes on beach profile transects</title>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-pybeach/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble models from machine learning: an example of wave runup and coastal dune erosion</title>
+      <link>https://www.tomasbeuzen.com/publication/journal-article-gp/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/publication/journal-article-gp/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+# Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Public Machine Learning Course</title>
+      <link>https://www.tomasbeuzen.com/project/bait-509/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/bait-509/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pybeach Python package</title>
+      <link>https://www.tomasbeuzen.com/project/pybeach/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/pybeach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pywebcat Python package</title>
+      <link>https://www.tomasbeuzen.com/project/pywebcat/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/pywebcat/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
