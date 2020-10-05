@@ -5,12 +5,332 @@
     <link>https://www.tomasbeuzen.com/post/</link>
       <atom:link href="https://www.tomasbeuzen.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://www.tomasbeuzen.com/post/</link>
     </image>
+    
+    <item>
+      <title>Multivariate Normal Distributions</title>
+      <link>https://www.tomasbeuzen.com/post/multivariate-normal/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/post/multivariate-normal/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Multivariate distribution are used when there is correlation between your variables: i.e., the value of one variable affects the value of the other(s). I always found multivariate distributions a difficult concept to understand. One of the simplest multivariate distributions is the multivariate normal distribution, the focus of this short post. The multivariate normal distribution really clicked for me when a friend gave me a very intuitive analogy which I&amp;rsquo;ll be using throughout this post.&lt;/p&gt;
+&lt;p&gt;Imagine you want to measure two variables: your heart rate at 9:00am, and your heart rate at 9:05am in beats per minute (bpm). There is likely correlation between these two variables, i.e., your heart rate at 9:05am is probably pretty similar to your heart rate at 9:00am. You measure this data for 7 days, and you get the following data:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+from scipy.stats import norm, multivariate_normal
+np.random.seed(2020)
+pd.options.plotting.backend = &amp;quot;plotly&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.DataFrame({&amp;quot;9:00&amp;quot;: [60, 70, 45, 55, 61, 57, 64],
+                   &amp;quot;9:05&amp;quot;: [62, 69, 45, 60, 62, 60, 67]})
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;9:00&lt;/th&gt;
+      &lt;th&gt;9:05&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;60&lt;/td&gt;
+      &lt;td&gt;62&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;69&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;45&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;55&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;61&lt;/td&gt;
+      &lt;td&gt;62&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;57&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;64&lt;/td&gt;
+      &lt;td&gt;67&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;While we&amp;rsquo;re here let&amp;rsquo;s check the correlation in our data (we&amp;rsquo;ll use this later on):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.corr()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;9:00&lt;/th&gt;
+      &lt;th&gt;9:05&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9:00&lt;/th&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;0.965826&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9:05&lt;/th&gt;
+      &lt;td&gt;0.965826&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;There&amp;rsquo;s a strong positive correlation here, indicating that the two variables do appear to be related. In the next few sections, I&amp;rsquo;ll use the above data to build up to an intuition of the multivariate normal distribution.&lt;/p&gt;
+&lt;h2 id=&#34;univariate-normal-distribution&#34;&gt;Univariate Normal Distribution&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s start by exploring the univariate (one variable) normal distribution. One thing you could do with the data above is model each variable as two independent univariate normal distributions, which are each defined by two parameters: the mean $\mu$ and the standard deviation $\sigma$. Let&amp;rsquo;s fit the two distributions now:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mu_900, std_900 = norm.fit(df[&#39;9:00&#39;])
+mu_905, std_905 = norm.fit(df[&#39;9:05&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have two univariate distributions, let&amp;rsquo;s randomly draw 7 observations from them to simulate a week of new data:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.DataFrame({&amp;quot;9:00&amp;quot;: norm.rvs(mu_900, std_900, size=7).astype(int),
+              &amp;quot;9:05&amp;quot;: norm.rvs(mu_905, std_905, size=7).astype(int)})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;9:00&lt;/th&gt;
+      &lt;th&gt;9:05&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;46&lt;/td&gt;
+      &lt;td&gt;61&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;59&lt;/td&gt;
+      &lt;td&gt;63&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;54&lt;/td&gt;
+      &lt;td&gt;54&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;52&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;49&lt;/td&gt;
+      &lt;td&gt;69&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;58&lt;/td&gt;
+      &lt;td&gt;52&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice anything strange? The heart rate measured at 9:00am is sometimes very different to the heart rate at 9:05am. By simulating our two variables as univariate normal distributions, there is no &amp;ldquo;sharing of information&amp;rdquo; between the variables, i.e., they are independent and don&amp;rsquo;t influence each other (although they probably should). Here are the two distributions for your reference:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = np.linspace(40, 80, 100)
+df_uvn = pd.DataFrame({&amp;quot;9:00&amp;quot;: norm.pdf(x, mu_900, std_900),
+                       &amp;quot;9:05&amp;quot;: norm.pdf(x, mu_905, std_905)})
+fig = df_uvn.plot(width=700, height=400, title=&amp;quot;Univariate Normal Heart Rate Distributions&amp;quot;)
+fig.update_xaxes(title_text=&#39;Heart Rate&#39;)
+fig.update_yaxes(title_text=&#39;Probability Density&#39;)
+fig.update_layout(xaxis = dict(range=[0, 100], tickmode = &#39;linear&#39;, dtick = 20),
+                  yaxis = dict(range=[0, 0.06], tickmode = &#39;linear&#39;, dtick = 0.01))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+
+&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+
+
+
+&lt;div id=&#34;plotly_graph_1.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+    Plotly.d3.json(&#34;plotly_graph_1.json&#34;, function (err, fig) {
+        Plotly.plot(&#39;plotly_graph_1.json&#39;, fig.data, fig.layout, { responsive: true });
+    });
+&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&#34;multivariate-normal-distribution&#34;&gt;Multivariate Normal Distribution&lt;/h2&gt;
+&lt;p&gt;We could more realistically model our heart rate data as a multivariate distribution, which will include the correlation between the variables we noticed earlier. I&amp;rsquo;m going to let &lt;code&gt;scipy&lt;/code&gt; formulate the multivariate normal distribution for me and I&amp;rsquo;ll directly draw 7 observations from it:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.DataFrame(multivariate_normal.rvs(df.mean(), df.cov(), size=7).astype(int),
+             columns=[&amp;quot;9:00&amp;quot;, &amp;quot;9:05&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;9:00&lt;/th&gt;
+      &lt;th&gt;9:05&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;57&lt;/td&gt;
+      &lt;td&gt;56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;62&lt;/td&gt;
+      &lt;td&gt;62&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;55&lt;/td&gt;
+      &lt;td&gt;57&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;44&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;59&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;60&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;71&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Ah, much better, our simulated data is much closer to reality now than what we had previously with our univariate distributions. It&amp;rsquo;s a bit harder to plot this as we are now working in 3D (two dimensions for the variables, one for the probability density) but let&amp;rsquo;s give it a go:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x1, x2 = np.mgrid[40:80:0.25, 40:80:0.25]
+z = multivariate_normal(df.mean(), df.cov()).pdf(np.dstack((x1, x2)))
+fig = go.Figure(data=[go.Surface(z=z)])
+fig.update_xaxes(title_text=&#39;Heart Rate&#39;)
+fig.update_yaxes(title_text=&#39;Probability Density&#39;)
+fig.update_layout(width=700, height=700, title=&amp;quot;Multivariate Normal Heart Rate Distribution&amp;quot;,
+                  scene = dict(xaxis = dict(title = &#39;9:05am&#39;),
+                               yaxis = dict(title = &#39;9:00am&#39;),
+                               zaxis = dict(title = &#39;Probability density&#39;)),
+                  margin=dict(l=0, r=50, b=50, t=50))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+
+
+&lt;div id=&#34;plotly_graph_2.json&#34; class=&#34;plotly&#34; style=&#34;height:700px&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+    Plotly.d3.json(&#34;plotly_graph_2.json&#34;, function (err, fig) {
+        Plotly.plot(&#39;plotly_graph_2.json&#39;, fig.data, fig.layout, { responsive: true });
+    });
+&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Feel free to move the above plot around with your cursor. You can interpret the &amp;ldquo;height/elevation&amp;rdquo; in the plot as a probability, i.e., the higher the elevation, the more likely the values of heart rate at 9:00am/9:05am. In particular, note how if we observe a heart rate of 60 at 9:00am, the most probably value of your heart rate at 9:05am is about 62 or so. We can confirm that by looking at the cross-section of the above plot at 9:00am = 60:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = pd.DataFrame(z[80,:], index=x1[:,80]).plot(width=700, height=400, title=&amp;quot;Heart Rate at 9:05am given that Heart Rate at 9:00am = 60bpm&amp;quot;)
+fig.update_xaxes(title_text=&#39;Heart Rate&#39;)
+fig.update_yaxes(title_text=&#39;Probability Density&#39;)
+fig.update_layout(xaxis = dict(range=[40, 80], tickmode = &#39;linear&#39;, dtick = 5),
+                  showlegend=False)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+
+
+&lt;div id=&#34;plotly_graph_3.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+    Plotly.d3.json(&#34;plotly_graph_3.json&#34;, function (err, fig) {
+        Plotly.plot(&#39;plotly_graph_3.json&#39;, fig.data, fig.layout, { responsive: true });
+    });
+&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;I hope this short post helped give some intuition about what multivariate distributions are and why they are useful. The example above is actually a bivariate distribution (two variables), but the intuition provided extends to more than two variables - it just gets harder to plot in more dimensions so I stuck to two variables here!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Party Planning with Probability</title>
@@ -106,12 +426,11 @@ print(f&amp;quot;First 5 results: {results[:5]}&amp;quot;)
 First 5 results: [69 78 73 78 78]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;results&lt;/code&gt; variable is an array containing the total number of attending guests in each of the 10,000 simulations. We can plot these results to help us understand how many of our 100 hypothetical guests will actually be attending the wedding.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = pd.DataFrame(results).hist(histnorm=&#39;probability density&#39;, width=700, height=400)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = pd.DataFrame(results).plot.hist(histnorm=&#39;probability density&#39;, width=700, height=400)
 fig.update_xaxes(title_text=&#39;Number of Guests&#39;)
 fig.update_yaxes(title_text=&#39;Probability of Attending&#39;)
 fig.update_layout(showlegend=False,
                   xaxis = dict(range=[57,90], tickmode = &#39;linear&#39;, tick0 = 55, dtick = 5))
-fig
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
 
@@ -119,10 +438,10 @@ fig
 
 
 
-&lt;div id=&#34;/plotly/plotly_graph.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;plotly_graph.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;/plotly/plotly_graph.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;\/plotly\/plotly_graph.json&#39;, fig.data, fig.layout, { responsive: true });
+    Plotly.d3.json(&#34;plotly_graph.json&#34;, function (err, fig) {
+        Plotly.plot(&#39;plotly_graph.json&#39;, fig.data, fig.layout, { responsive: true });
     });
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;

@@ -75,8 +75,8 @@
     
       
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/tomorrow-night-blue.min.css" crossorigin="anonymous" title="hl-light">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/tomorrow-night-blue.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
@@ -820,12 +820,11 @@ print(f&quot;First 5 results: {results[:5]}&quot;)
 First 5 results: [69 78 73 78 78]
 </code></pre>
 <p>The <code>results</code> variable is an array containing the total number of attending guests in each of the 10,000 simulations. We can plot these results to help us understand how many of our 100 hypothetical guests will actually be attending the wedding.</p>
-<pre><code class="language-python">fig = pd.DataFrame(results).hist(histnorm='probability density', width=700, height=400)
+<pre><code class="language-python">fig = pd.DataFrame(results).plot.hist(histnorm='probability density', width=700, height=400)
 fig.update_xaxes(title_text='Number of Guests')
 fig.update_yaxes(title_text='Probability of Attending')
 fig.update_layout(showlegend=False,
                   xaxis = dict(range=[57,90], tickmode = 'linear', tick0 = 55, dtick = 5))
-fig
 </code></pre>
 <p>
 
@@ -833,10 +832,10 @@ fig
 
 
 
-<div id="/plotly/plotly_graph.json" class="plotly" style="height:400px"></div>
+<div id="plotly_graph.json" class="plotly" style="height:400px"></div>
 <script>
-    Plotly.d3.json("/plotly/plotly_graph.json", function (err, fig) {
-        Plotly.plot('\/plotly\/plotly_graph.json', fig.data, fig.layout, { responsive: true });
+    Plotly.d3.json("plotly_graph.json", function (err, fig) {
+        Plotly.plot('plotly_graph.json', fig.data, fig.layout, { responsive: true });
     });
 </script></p>
 <h2 id="summary">Summary</h2>
@@ -881,7 +880,7 @@ fig
     <div class="media author-card content-widget-hr">
       
         
-        <img class="avatar mr-3 avatar-circle" src="/author/tomas-beuzen/avatar_hu24e4664fe587ac4632d43700593d62f5_484531_270x270_fill_q90_lanczos_center.jpg" alt="Tomas Beuzen">
+        <img class="avatar mr-3 avatar-circle" src="/author/tomas-beuzen/avatar_hu24e4664fe587ac4632d43700593d62f5_493113_270x270_fill_q90_lanczos_center.jpg" alt="Tomas Beuzen">
       
 
       <div class="media-body">
