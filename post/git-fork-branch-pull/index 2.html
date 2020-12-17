@@ -1,0 +1,1136 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Tomas Beuzen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="A simple summary of how to collaborate on open-source projects using forking, branching and pull requests.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://www.tomasbeuzen.com/post/git-fork-branch-pull/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  <meta name="theme-color" content="#0c4085">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu711dd623cc2810410109350012a588da_14433_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu711dd623cc2810410109350012a588da_14433_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://www.tomasbeuzen.com/post/git-fork-branch-pull/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@TBeuzen">
+  <meta property="twitter:creator" content="@TBeuzen">
+  
+  <meta property="og:site_name" content="Tomas Beuzen">
+  <meta property="og:url" content="https://www.tomasbeuzen.com/post/git-fork-branch-pull/">
+  <meta property="og:title" content="The Git Fork-Branch-Pull Workflow | Tomas Beuzen">
+  <meta property="og:description" content="A simple summary of how to collaborate on open-source projects using forking, branching and pull requests."><meta property="og:image" content="https://www.tomasbeuzen.com/post/git-fork-branch-pull/featured.png">
+  <meta property="twitter:image" content="https://www.tomasbeuzen.com/post/git-fork-branch-pull/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-10-25T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-10-25T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.tomasbeuzen.com/post/git-fork-branch-pull/"
+  },
+  "headline": "The Git Fork-Branch-Pull Workflow",
+  
+  "image": [
+    "https://www.tomasbeuzen.com/post/git-fork-branch-pull/featured.png"
+  ],
+  
+  "datePublished": "2019-10-25T00:00:00Z",
+  "dateModified": "2019-10-25T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Tomas Beuzen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tomas Beuzen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "A simple summary of how to collaborate on open-source projects using forking, branching and pull requests."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>The Git Fork-Branch-Pull Workflow | Tomas Beuzen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>window.staDarkLightChooser = true;</script>
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Tomas Beuzen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Tomas Beuzen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>The Git Fork-Branch-Pull Workflow</h1>
+
+  
+  <p class="page-subtitle">A simple summary of how to collaborate on open-source projects using forking, branching and pull requests.</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/tomas-beuzen/">Tomas Beuzen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 25, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 433px;">
+  <div style="position: relative">
+    <img src="/post/git-fork-branch-pull/featured_hud478d74d48d19bfd1c1c03fc398c8033_312322_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="introduction">Introduction</h2>
+<p>I primarily use Git and GitHub for my open-source work. However, if your anything like me, using these tools sometimes feels like a bit of a black box, nicely summarised by this xkcd comic:</p>
+<p><img src="image_2.png" alt="png">
+<strong><em>Git. Source: 
+<a href="https://xkcd.com/1597/" target="_blank" rel="noopener">xkcd.com</a></em></strong></p>
+<p>I particularly feel this way when wanting to contribute to others&rsquo; open-source projects on GitHub. For this, we typically use the &ldquo;fork-and-branch&rdquo; workflow. I wanted to document my simple approach to this workflow here (for reference by my future self and others). The workflow comprises the following steps which are described in more detail in the subsequent sections:</p>
+<ol>
+<li>Fork a GitHub repository: navigate to a repository on GitHub and click the <code>Fork</code> button.</li>
+<li>Clone the repository locally: <code>git clone https://github.com/user/repo.git</code>.</li>
+<li>Add remote called &ldquo;upstream&rdquo; pointing to the original repository: <code>git remote add upstream https://github.com/user/repo.git</code>.</li>
+<li>Checkout a new branch (here called &ldquo;new_feature&rdquo;): <code>git checkout -b new_feature</code></li>
+<li>Make desired changes to the local repository on this branch.</li>
+<li>Pull new changes from remote: <code>git checkout master</code>, <code>git pull upstream master</code>. Sync dev branch: <code>git checkout new_feature</code>, <code>git merge master</code>. Push changes to your remote repository: <code>git push origin new_feature</code>.</li>
+<li>Open a pull request on GitHub merging your changes with the upstream (original) repository.</li>
+<li>Once the pull request is accepted, you&rsquo;ll want to pull those changes into your origin (forked repository). Change to master: <code>git checkout master</code> and pull: <code>git pull upstream master</code>.</li>
+<li>Delete your feature branch using the GitHub website or, delete the local branch: <code>git branch -d new_feature</code>, and delete the remote: <code>git push origin --delete new_feature</code>.</li>
+</ol>
+<h2 id="1-forking-a-github-repository">1. Forking a GitHub Repository</h2>
+<p>The first step is to fork the GitHub repository you want to work on. A &ldquo;fork&rdquo; is just an independent copy of a repository that you can develop on without affecting the original. To fork a repository, find it on GitHub and then click the <code>Fork</code> button.</p>
+<h2 id="2-clone-the-repository-locally">2. Clone the repository locally</h2>
+<p>Before you can make changes to the repository you&rsquo;ll first want to make a local copy on your computer. This is as simple as using <code>git clone</code> on the forked repository. Navigate to your forked repository on GitHub, click the &ldquo;Clone or download&rdquo; button and copy the url. Then, at the command line, clone the repository, for example:</p>
+<pre><code class="language-shell">$ git clone https://github.com/user/repo.git
+</code></pre>
+<h2 id="3-add-a-remote">3. Add a remote</h2>
+<p>When you cloned the forked repository onto your local computer, git automatically added a remote repository named &ldquo;origin&rdquo; pointing to the forked repository on GitHub. This means that when you do <code>git add</code>/<code>git commit</code>/<code>git push</code> you can push your local changes to the forked repository.</p>
+<p>However, the goal here is to contribute to the original repository and we want to keep up to date with the original. While we are making changes, others might also be making changes and the original repository might be getting updated during the time you are adding a feature. So we want to add another remote pointing to the original repository so that we can periodically <code>git pull</code> any changes that have occurred in that repository such that we are working on the must up-to-date version of the code. We usually call this remote &ldquo;upstream&rdquo; and can add it using:</p>
+<pre><code class="language-shell">$ git remote add upstream https://github.com/user/repo.git
+</code></pre>
+<p>You can verify that you now have two remotes, &ldquo;origin&rdquo; and &ldquo;upstream&rdquo; using the following:</p>
+<pre><code class="language-shell">$ git remote -v
+</code></pre>
+<h2 id="4-checkout-a-new-branch">4. Checkout a new branch</h2>
+<p>Okay, so now we&rsquo;ve made a fork of the repository we want to work on, we&rsquo;ve cloned it to our local computer and also added a remote pointing back to the original repository. Now we can start making our desired changes. To do this, we are going to want to create a branch to work on. This branch will be independent of the clean, functioning &ldquo;master&rdquo; code and is a safe place for you to delete, modify and add code. You can actually have multiple branches (for different features) that you&rsquo;re working on at the same time. To create a branch called &ldquo;new_feature&rdquo;, use the following:</p>
+<pre><code class="language-shell">$ git checkout -b new_feature
+</code></pre>
+<p>You can verify that you created the branch by using the following command which will show you all your local and remote branches:</p>
+<pre><code class="language-shell">$ git branch -a
+</code></pre>
+<h2 id="5-make-changes">5. Make changes</h2>
+<p>Now that you have an independent workspace (a branch) to work on, that will not break any of the existing code, you can get to work implementing your changes. As you work you will <code>add</code> and <code>commit</code> changes you make. It is likely that the longer you take to implement your changes, the more changes could be made to the original &ldquo;upstream&rdquo; code - which could be problematic, especially if the code you are changing on your branch also gets changed in the upstream repository, which can leave you with a bunch of troublesome &ldquo;merge conflicts&rdquo; to deal with later on. If you want to make sure your branch stays up-to-date with the original repository you forked, you&rsquo;ll need to do two things. Firstly, update your &ldquo;master&rdquo; fork of the original repository by checking out the master branch and pulling from the upstream repository:</p>
+<pre><code class="language-shell">$ git checkout master
+$ git pull upstream master
+</code></pre>
+<p>Then, go back to your branch and merge it with the master to incorporate any new changes:</p>
+<pre><code class="language-shell">$ git checkout new_feature
+$ git merge master
+</code></pre>
+<h2 id="6-push-changes">6. Push changes</h2>
+<p>When you&rsquo;ve made all the changes you want to make to the code you&rsquo;ll want to push it to your remote &ldquo;origin&rdquo; to get it ready to show to the maintainers of the &ldquo;upstream&rdquo; (original) repository you wanted to contribute to in the first place. To do this:</p>
+<pre><code class="language-shell">$ git push origin new_feature
+</code></pre>
+<p>This will push your branch to your forked copy of the original repository.</p>
+<h2 id="7-open-a-pull-request">7. Open a pull request</h2>
+<p>Finally, we can open a &ldquo;pull request&rdquo; which essentially asks the maintainers of the original repository to take a look at and hopefully integrate your code changes into their repository. To open a pull request, go to the GitHub website, navigate to your &ldquo;new_feature&rdquo; branch and follow the prompts to open a pull request. Note that for many popular repositories, there will be a number of tasks you should complete before opening a pull request. For example, checking that the code still passes a number of pre-written tests, that the documentation still renders, etc. These kinds of guidelines for contributing to a repository are typically included in a repository&rsquo;s root directory in a file called something like &ldquo;contributing.md&rdquo;.</p>
+<h2 id="8-updating-your-fork">8. Updating your fork</h2>
+<p>Once the maintainers accept your changes, the code you wrote will now be incorporated into the original repository. Hooray! Once this is done, you&rsquo;ll want to update your fork of the original repository (because it now includes the changes you added through your branch and pull request workflow). Locally, we will make sure we are on the master branch, and we will pull changes from the upstream (original) repository:</p>
+<pre><code class="language-shell">$ git checkout master
+$ git pull upstream master
+</code></pre>
+<h2 id="9-deleting-branches">9. Deleting branches</h2>
+<p>Finally we can now delete our feature branch (both locally and remotely) because we no longer need it:</p>
+<pre><code class="language-shell">$ git branch -d new_feature
+$ git push origin --delete new_feature
+</code></pre>
+<p>Note that during the pull request workflow on GitHub, you may have already deleted your feature branch by following prompts on GitHub which is fine too.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/tomas-beuzen/avatar_hu24e4664fe587ac4632d43700593d62f5_493113_270x270_fill_q90_lanczos_center.jpg" alt="Tomas Beuzen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://www.tomasbeuzen.com/">Tomas Beuzen</a></h5>
+        <h6 class="card-subtitle">Postdoctoral Teaching Fellow &amp; <br> Data Science Consultant</h6>
+        <p class="card-text">Postdoctoral Teaching and Learning Fellow for the Master of Data Science course at the University of British Columbia, Vancouver, Canada.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/TBeuzen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.au/citations?user=v8Di958AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/TomasBeuzen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/tomas-beuzen-2b432a118" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0003-2762-9151" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    <b>Onward and Upward</b> 🚀
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
