@@ -5,12 +5,36 @@
     <link>https://www.tomasbeuzen.com/</link>
       <atom:link href="https://www.tomasbeuzen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Tomas Beuzen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_512x512_fill_lanczos_center_2.png</url>
       <title>Tomas Beuzen</title>
       <link>https://www.tomasbeuzen.com/</link>
     </image>
+    
+    <item>
+      <title>Calorie Calculator Web App</title>
+      <link>https://www.tomasbeuzen.com/project/calocrunch/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/calocrunch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Online Python Course</title>
+      <link>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter Book Cookiecutter</title>
+      <link>https://www.tomasbeuzen.com/project/cookiecutter-jb/</link>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/cookiecutter-jb/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multivariate Normal Distributions</title>
@@ -333,18 +357,10 @@ fig.update_layout(xaxis = dict(range=[40, 80], tickmode = &#39;linear&#39;, dtic
     </item>
     
     <item>
-      <title>Open Online Python Course</title>
-      <link>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</link>
-      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python Packaging Book</title>
-      <link>https://www.tomasbeuzen.com/project/py-pkgs/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/py-pkgs/</guid>
+      <title>Coastal Book Co-author</title>
+      <link>https://www.tomasbeuzen.com/project/sandy-beach-morpho/</link>
+      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/sandy-beach-morpho/</guid>
       <description></description>
     </item>
     
@@ -463,30 +479,6 @@ fig.update_layout(showlegend=False,
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;There you have it! We originally had a hypothetical guest list of 100 people, each with an allocated &amp;ldquo;probability of attendance&amp;rdquo;. After running 10,000 simulations, we get a distribution of expected guest attenendance and can use this distribution to inform our future planning - want to be conservative? Plan for 85 guests. Want to live a little riskier? You might be able to get away with planning for 75 guests. Obviously the simulation results depend on the probabilites you assign to each guest so use your best judgement!&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Coastal Book Co-author</title>
-      <link>https://www.tomasbeuzen.com/project/sandy-beach-morpho/</link>
-      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/sandy-beach-morpho/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UBC Jupyter Days 2020</title>
-      <link>https://www.tomasbeuzen.com/project/jupyterdays/</link>
-      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/jupyterdays/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jupyter Book Cookiecutter</title>
-      <link>https://www.tomasbeuzen.com/project/cookiecutter-jb/</link>
-      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/cookiecutter-jb/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -756,6 +748,14 @@ fig
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this post I documented a few approaches for clustering mixed continuous and categorical data. As always with data science, there is no one approach suited to all problems - in my opinion, clustering in particular is as much an art as a science. But, for the specific real-world application I was working on, I ended up going with approach number 4 (FAMD + clustering), because it yielded the best results for my dataset (which was significantly more complex than the one in this post, with ~400 mixed categorical and continuous features).&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>UBC Jupyter Days 2020</title>
+      <link>https://www.tomasbeuzen.com/project/jupyterdays/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/jupyterdays/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -1129,14 +1129,6 @@ $ git push
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;After this, you may need to wait ~10 minutes for the changes to take effect on the online version of your website.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Calorie Calculator Web App</title>
-      <link>https://www.tomasbeuzen.com/project/calocrunch/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/calocrunch/</guid>
-      <description></description>
     </item>
     
     <item>

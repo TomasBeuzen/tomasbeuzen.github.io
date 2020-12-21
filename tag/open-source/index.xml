@@ -5,7 +5,7 @@
     <link>https://www.tomasbeuzen.com/tag/open-source/</link>
       <atom:link href="https://www.tomasbeuzen.com/tag/open-source/index.xml" rel="self" type="application/rss+xml" />
     <description>Open Source</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_512x512_fill_lanczos_center_2.png</url>
       <title>Open Source</title>
@@ -15,23 +15,15 @@
     <item>
       <title>Open Online Python Course</title>
       <link>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</link>
-      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UBC Jupyter Days 2020</title>
-      <link>https://www.tomasbeuzen.com/project/jupyterdays/</link>
-      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.tomasbeuzen.com/project/jupyterdays/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jupyter Book Cookiecutter</title>
       <link>https://www.tomasbeuzen.com/project/cookiecutter-jb/</link>
-      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://www.tomasbeuzen.com/project/cookiecutter-jb/</guid>
       <description></description>
     </item>
@@ -41,6 +33,14 @@
       <link>https://www.tomasbeuzen.com/project/cookiecutter-mds/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       <guid>https://www.tomasbeuzen.com/project/cookiecutter-mds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UBC Jupyter Days 2020</title>
+      <link>https://www.tomasbeuzen.com/project/jupyterdays/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/jupyterdays/</guid>
       <description></description>
     </item>
     
