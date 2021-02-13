@@ -75,8 +75,8 @@
     
       
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-light">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/mono-blue.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
@@ -917,7 +917,7 @@ df
 </div>
 <p>There&rsquo;s a strong positive correlation here, indicating that the two variables do appear to be related. In the next few sections, I&rsquo;ll use the above data to build up to an intuition of the multivariate normal distribution.</p>
 <h2 id="univariate-normal-distribution">Univariate Normal Distribution</h2>
-<p>Let&rsquo;s start by exploring the univariate (one variable) normal distribution. One thing you could do with the data above is model each variable as two independent univariate normal distributions, which are each defined by two parameters: the mean $\mu$ and the standard deviation $\sigma$. Let&rsquo;s fit the two distributions now:</p>
+<p>Let&rsquo;s start by exploring the univariate (one variable) normal distribution. One thing you could do with the data above is model each variable as two independent univariate normal distributions, which are each defined by two parameters: the mean μ and the standard deviation σ. Let&rsquo;s fit the two distributions now:</p>
 <pre><code class="language-python">mu_900, std_900 = norm.fit(df['9:00'])
 mu_905, std_905 = norm.fit(df['9:05'])
 </code></pre>

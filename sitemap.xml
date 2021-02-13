@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.tomasbeuzen.com/authors/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/floating-point-numbers/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/post/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/author/tomas-beuzen/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.tomasbeuzen.com/tag/data-science/</loc>
     <lastmod>2020-12-27T00:00:00+00:00</lastmod>
   </url>
@@ -28,11 +53,6 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/</loc>
-    <lastmod>2020-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.tomasbeuzen.com/project/calocrunch/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
   </url>
@@ -43,12 +63,17 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</loc>
-    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+    <loc>https://www.tomasbeuzen.com/project/deep-learning-with-pytorch/</loc>
+    <lastmod>2020-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tomasbeuzen.com/tag/open-source/</loc>
+    <lastmod>2020-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tomasbeuzen.com/project/python-prog-for-data-science/</loc>
     <lastmod>2020-10-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,22 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.tomasbeuzen.com/authors/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.tomasbeuzen.com/post/multivariate-normal/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/post/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tomasbeuzen.com/author/tomas-beuzen/</loc>
     <lastmod>2020-09-10T00:00:00+00:00</lastmod>
   </url>
   

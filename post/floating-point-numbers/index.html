@@ -1,0 +1,1663 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Tomas Beuzen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Learn how floating point numbers are stored and why it matters.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://www.tomasbeuzen.com/post/floating-point-numbers/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  <meta name="theme-color" content="#0c4085">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157992550-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-157992550-2', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu711dd623cc2810410109350012a588da_14433_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu711dd623cc2810410109350012a588da_14433_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://www.tomasbeuzen.com/post/floating-point-numbers/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@TBeuzen">
+  <meta property="twitter:creator" content="@TBeuzen">
+  
+  <meta property="og:site_name" content="Tomas Beuzen">
+  <meta property="og:url" content="https://www.tomasbeuzen.com/post/floating-point-numbers/">
+  <meta property="og:title" content="Floating point numbers and rounding errors - a crash course in Python | Tomas Beuzen">
+  <meta property="og:description" content="Learn how floating point numbers are stored and why it matters."><meta property="og:image" content="https://www.tomasbeuzen.com/post/floating-point-numbers/featured.png">
+  <meta property="twitter:image" content="https://www.tomasbeuzen.com/post/floating-point-numbers/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-02-10T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2021-02-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.tomasbeuzen.com/post/floating-point-numbers/"
+  },
+  "headline": "Floating point numbers and rounding errors - a crash course in Python",
+  
+  "image": [
+    "https://www.tomasbeuzen.com/post/floating-point-numbers/featured.png"
+  ],
+  
+  "datePublished": "2021-02-10T00:00:00Z",
+  "dateModified": "2021-02-10T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Tomas Beuzen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tomas Beuzen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tomasbeuzen.com/images/icon_hu711dd623cc2810410109350012a588da_14433_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Learn how floating point numbers are stored and why it matters."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Floating point numbers and rounding errors - a crash course in Python | Tomas Beuzen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>window.staDarkLightChooser = true;</script>
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Tomas Beuzen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Tomas Beuzen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/tomas-beuzen-cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Floating point numbers and rounding errors - a crash course in Python</h1>
+
+  
+  <p class="page-subtitle">Learn how floating point numbers are stored and why it matters.</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/tomas-beuzen/">Tomas Beuzen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 10, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    13 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 353px;">
+  <div style="position: relative">
+    <img src="/post/floating-point-numbers/featured_hu2d7958a33b6785afe2858a99f12570ed_82675_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="introduction">Introduction</h2>
+<p>Computers can&rsquo;t always represent numbers as accurately as some of us might think. For example:</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = 0.1 + 0.2
+&gt;&gt;&gt; b = 0.3
+&gt;&gt;&gt; a == b
+False
+</code></pre>
+<p>The above might come as a shock to many readers. In this short post, we&rsquo;re going to find out what&rsquo;s going on.</p>
+<ol>
+<li>
+<a href="#1">Integers</a></li>
+<li>
+<a href="#2">Fractional Numbers</a></li>
+<li>
+<a href="#3">Fixed Point Numbers</a></li>
+<li>
+<a href="#4">Floating Point Numbers</a></li>
+<li>
+<a href="#5">Rounding Errors</a></li>
+</ol>
+<h2 id="integers-a-name1a">Integers <a name="1"></a></h2>
+<pre><code class="language-python">#  We'll use these imports later on
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; import struct
+&gt;&gt;&gt; import numpy as np
+</code></pre>
+<p>The first part of the story is integers. Growing up, we learn to use a base-10 number system (or &ldquo;denary&rdquo; system). Denary is based on powers of 10 and we can use the digits 0 - 9 to help us represent numbers. For example, the number 104 can be interpreted as:</p>
+<ul>
+<li>4 x 1   ($10^0$)</li>
+<li>0 x 10  ($10^1$)</li>
+<li>1 x 100 ($10^2$)</li>
+</ul>
+<p>Let&rsquo;s put that in an easy-to-read tabular format:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unit</th>
+<th align="left">$10^2$</th>
+<th align="left">$10^1$</th>
+<th align="left">$10^0$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Value</td>
+<td align="left">100</td>
+<td align="left">10</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">Number of units</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>100</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In contrast, computers use a base-2 system (i.e., &ldquo;binary&rdquo;) to store numbers. Binary is based on powers of 2 rather than powers of 10 and we only have two numbers, 0 and 1, to work with (think of them as &ldquo;off&rdquo; and &ldquo;on&rdquo; switches respectively). In binary, 104 looks like:</p>
+<pre><code class="language-python">&gt;&gt;&gt; f&quot;{104:b}&quot;
+'1101000'
+</code></pre>
+<p>In our tabular format:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unit</th>
+<th align="left">$2^6$</th>
+<th align="left">$2^5$</th>
+<th align="left">$2^4$</th>
+<th align="left">$2^3$</th>
+<th align="left">$2^2$</th>
+<th align="left">$2^1$</th>
+<th align="left">$2^0$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Value</td>
+<td align="left">64</td>
+<td align="left">32</td>
+<td align="left">16</td>
+<td align="left">8</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">Number of units</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>64</strong></td>
+<td align="left"><strong>32</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>8</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>We call these single binary 0/1 values, <strong>bits</strong>. We can see that we needed 7 bits to represent the number 104. We can confirm that using the <code>.bit_length()</code> integer method in Python:</p>
+<pre><code class="language-python">&gt;&gt;&gt; x = 104
+&gt;&gt;&gt; x.bit_length()
+7
+</code></pre>
+<p>Any integer can be represented in binary (if we have enough bits). The range of <em>unsigned integers</em> we can represent with <code>N</code> bits is: 0 to $2^{N}-1$. However, we often reserve one bit to specify the sign (- or +) of a number, so the range of <em>signed integers</em> you can represent with <code>N</code> bits is: $-2^{N-1}$ to $2^{N-1}-1$.</p>
+<p>For example, with 8 bits we can represent the unsigned integers 0 to 255, <em>or</em> the signed integers -128 to 127:</p>
+<pre><code class="language-python">&gt;&gt;&gt; bits = 8
+&gt;&gt;&gt; print(f&quot;unsigned min: 0&quot;)
+&gt;&gt;&gt; print(f&quot;unsigned max: {2 ** bits - 1}&quot;)
+&gt;&gt;&gt; print(f&quot;signed min: {-2 ** (bits - 1)}&quot;)
+&gt;&gt;&gt; print(f&quot;signed max: {2 ** (bits - 1) - 1}&quot;)
+unsigned min: 0
+unsigned max: 255 
+signed min: -128
+signed max: 127
+</code></pre>
+<p>We can confirm all this with the helpful NumPy function <code>np.iinfo()</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.iinfo(&quot;int8&quot;)  # signed 8-bit integer
+iinfo(min=-128, max=127, dtype=int8)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; np.iinfo(&quot;uint8&quot;)  # unsigned 8-bit integer
+iinfo(min=0, max=255, dtype=uint8)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; np.iinfo(&quot;int16&quot;)  # signed 16-bit integer
+iinfo(min=-32768, max=32767, dtype=int16)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; np.iinfo(&quot;int64&quot;)  # signed 64-bit integer
+iinfo(min=-9223372036854775808, max=9223372036854775807, dtype=int64)
+</code></pre>
+<p>It&rsquo;s interesting to see what happens if you try to store an integer outside the representable range. In NumPy, you actually won&rsquo;t get an error. Instead, NumPy will change your number to be within the representable range, by just looping around the range:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.array([-87, 31], &quot;int8&quot;)  # this is fine
+array([-87,  31], dtype=int8)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; np.array([-129, 128], &quot;int8&quot;)  # these numbers are outside the range
+array([ 127, -128], dtype=int8)
+</code></pre>
+<h2 id="fractional-numbers-a-name2a">Fractional Numbers <a name="2"></a></h2>
+<p>So we&rsquo;ve looked at integers above, but what about fractional numbers like 14.75? In denary, the &ldquo;decimal point&rdquo; helps us represent these fractional numbers. In our tabular format, 14.75 looks like:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unit</th>
+<th align="left">$10^1$</th>
+<th align="left">$10^0$</th>
+<th align="left">$10^{-1}$</th>
+<th align="left">$10^{-2}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Value</td>
+<td align="left">10</td>
+<td align="left">1</td>
+<td align="left">0.1</td>
+<td align="left">0.01</td>
+</tr>
+<tr>
+<td align="left">Number of units</td>
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">7</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>10</strong></td>
+<td align="left"><strong>4</strong></td>
+<td align="left"><strong>0.7</strong></td>
+<td align="left"><strong>0.05</strong></td>
+</tr>
+</tbody>
+</table>
+<p>That seems pretty natural, and in binary it&rsquo;s much the same! We just need to introduce a &ldquo;binary point&rdquo;. Anything to the left of the binary point has a positive exponent and anything to the right of the binary point has a negative exponent. So in binary, 14.75 would look like this: <code>1110.11</code>. In tabular format:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unit</th>
+<th align="left">$2^3$</th>
+<th align="left">$2^2$</th>
+<th align="left">$2^1$</th>
+<th align="left">$2^0$</th>
+<th align="left">$2^{-1}$</th>
+<th align="left">$2^{-2}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Value</td>
+<td align="left">8</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">0.5</td>
+<td align="left">0.25</td>
+</tr>
+<tr>
+<td align="left">Number of units</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>8</strong></td>
+<td align="left"><strong>4</strong></td>
+<td align="left"><strong>2</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>0.5</strong></td>
+<td align="left"><strong>0.25</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fixed-point-numbers-a-name3a">Fixed Point Numbers <a name="3"></a></h2>
+<p>As we saw earlier, we typically have a fixed number of bits to work with when storing a number, e.g., 8, 16, 32, 64 bits. This is because, in layman&rsquo;s terms, having a fixed number of bits makes it easier for our computer to allocate and use memory.</p>
+<p>So if we have a fixed number of bits, say 8 bits, how do we decide where to put the binary point to help us store fractional numbers? Well with 8 bits, we could put 4 bits on the left and 4 on the right:</p>
+<table>
+<thead>
+<tr>
+<th>Unit</th>
+<th>$2^3$</th>
+<th>$2^2$</th>
+<th>$2^1$</th>
+<th>$2^0$</th>
+<th>$2^{-1}$</th>
+<th>$2^{-2}$</th>
+<th>$2^{-3}$</th>
+<th>$2^{-4}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0.5</td>
+<td>0.25</td>
+<td>0.125</td>
+<td>0.0625</td>
+</tr>
+</tbody>
+</table>
+<p>In this case, the largest and smallest (closest to 0) numbers we could represent in the <em>unsigned</em> case are:</p>
+<pre><code class="language-python">&gt;&gt;&gt; (2.0 ** np.arange(-4, 4, 1)).sum()
+15.9375
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; 2 ** -4
+0.0625
+</code></pre>
+<p>But what if we wanted to represent numbers larger than this? We could shift the binary point right, so we have 6 on the left and 2 on the right, then our range would be:</p>
+<pre><code class="language-python">&gt;&gt;&gt; (2.0 ** np.arange(-2, 6, 1)).sum()
+63.75
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; 2 ** -2
+0.25
+</code></pre>
+<p>As you can see, we get this trade-off between being able to represent large numbers and small numbers depending on where we put our binary point. But is there a format that let&rsquo;s us represent both large and small numbers? Read on&hellip;</p>
+<h2 id="floating-point-numbers-a-name4a">Floating Point Numbers <a name="4"></a></h2>
+<p>At this point, you may have read &ldquo;floating point&rdquo; and had a little &ldquo;ah-ha!&rdquo; moment because you see where we&rsquo;re going. Rather than having a fixed location for our binary point, we could let it &ldquo;float&rdquo; around depending on what number we want to store. Recall &ldquo;scientific notation&rdquo; in the denary system, which for the number 1234 looks like $1.234 \times 10^3$, or for computers we usually use <code>e</code> for shorthand:</p>
+<pre><code class="language-python">&gt;&gt;&gt; f&quot;{1234:.3e}&quot;
+'1.234e+03'
+</code></pre>
+<p>I want you to notice that the &ldquo;exponent&rdquo; is actually controlling the location of the decimal point, Consider the following numbers:</p>
+<ul>
+<li>$1.234 \times 10^0 = 1.234$</li>
+<li>$1.234 \times 10^1 = 12.34$</li>
+<li>$1.234 \times 10^2 = 123.4$</li>
+<li>$1.234 \times 10^3 = 1234.$</li>
+</ul>
+<p>See how by changing the value of the exponent we can control the location of the floating point and represent a range of values? We&rsquo;ll be using the exact same logic with the binary system to come up with our &ldquo;floating point&rdquo; format. This is floating point format:</p>
+<p>$$1.M \times 2^E$$</p>
+<ul>
+<li>$M$ = &ldquo;mantissa&rdquo;</li>
+<li>$E$ = &ldquo;exponent&rdquo;</li>
+</ul>
+<p>Note that the $.$ is a &ldquo;binary point&rdquo;, digits on the left are 2&rsquo;s with +ve exponents, digits on the right are 2&rsquo;s with negative exponents, as before.</p>
+<p>Consider the number 10. $10 = 1.25 \times 8 = 1.25 \times 2^3$. So $M=.25$ and $E=3$. But we want binary, not decimal, so $M=01$ and $E=11$ (I&rsquo;ll leave this to you to work that out). Therefore, 10 in floating point is: $1.01 \times 2^{11}$.</p>
+<p>This is where the magic happens, just as the exponent of 10 in denary scientific notation defines the location of the decimal point, so too does the exponent of a floating point number define the location of the binary point. For $1.01 \times 2^{11}$, the exponent is <code>11</code> in binary which is <code>3</code> in decimal - so move the binary point three places to the right: $1.01 \times 2^{11} = 1010.$ What is <code>1010</code> in binary?</p>
+<pre><code class="language-python">&gt;&gt;&gt; int(&quot;1010&quot;, base=2)
+10
+</code></pre>
+<p>It&rsquo;s 10 of course! How cool is that - we now have this &ldquo;floating point&rdquo; format that uses an exponent to help us represent both small and large fractional numbers (unlike fixed point where we would have to choose one or the other!) I wrote a function <code>binary()</code> to display any number in floating point format (don&rsquo;t worry about the code too much):</p>
+<pre><code class="language-python">def binary(number: float):
+    &quot;&quot;&quot;Print a number's floating point representation.&quot;&quot;&quot;
+    packed = struct.pack(&quot;!d&quot;, float(number))
+    integers = [c for c in packed]
+    binaries = [bin(i) for i in integers]
+    stripped_binaries = [s.replace(&quot;0b&quot;, &quot;&quot;) for s in binaries]
+    padded = [s.rjust(8, &quot;0&quot;) for s in stripped_binaries]
+    final = &quot;&quot;.join(padded)
+    sign, exponent_plus_1023, mantissa = final[0], final[1:12], final[12:]
+    sign_str = &quot;&quot; if int(sign) == 0 else &quot;-&quot;
+    mantissa_base10 = (int(mantissa, 2) / 2 ** 52)  # shift decimal point from end of binary string to beginning of it
+    mantissa_base10_str = str(mantissa_base10)[2:]  # throw away the leading &quot;0.&quot;
+    mantissa_index = mantissa.rfind(&quot;1&quot;)
+    mantissa_index = 0 if mantissa_index == -1 else mantissa_index
+    exponent_base10 = int(exponent_plus_1023, 2) - 1023
+    print(f&quot; Decimal: {sign_str}1.{mantissa_base10_str} x 2^{exponent_base10}&quot;)
+    print(f&quot;  Binary: {sign_str}1.{mantissa[:mantissa_index + 1]} x 2^{exponent_base10:b}\n&quot;)
+    print(f&quot;    Sign: {sign} ({'+' if sign == '0' else '-'})&quot;)
+    print(f&quot;Mantissa: {mantissa[:mantissa_index + 1]} ({mantissa_base10})&quot;)
+    print(f&quot;Exponent: {exponent_base10:b} ({exponent_base10})&quot;)
+</code></pre>
+<p>Let&rsquo;s try out some numbers:</p>
+<pre><code class="language-python">&gt;&gt;&gt; binary(10)
+ Decimal: 1.25 x 2^3
+  Binary: 1.01 x 2^11 
+    Sign: 0 (+)
+Mantissa: 01 (0.25)
+Exponent: 11 (3)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; binary(2.998e8)  # speed of light
+ Decimal: 1.11684203147888184 x 2^28
+  Binary: 1.0001110111101001010111 x 2^11100
+    Sign: 0 (+)
+Mantissa: 0001110111101001010111 (0.11684203147888184)
+Exponent: 11100 (28)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; binary(6.02214076e23)  # one mole
+ Decimal: 1.9925592330949422 x 2^78
+  Binary: 1.1111111000011000010111001010010101111100010100010111 x 2^1001110  
+    Sign: 0 (+)
+Mantissa: 1111111000011000010111001010010101111100010100010111 (0.9925592330949422)
+Exponent: 1001110 (78)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; binary(6.62607004e-34)  # Planck's constant
+ Decimal: 1.720226132656187 x 2^-111
+  Binary: 1.1011100001100000101111010110010101111011100111100001 x 2^-1101111
+    Sign: 0 (+)
+Mantissa: 1011100001100000101111010110010101111011100111100001 (0.720226132656187)
+Exponent: -1101111 (-111)
+</code></pre>
+<p>One question you might have about the above: how many bits should I use for the mantissa and how many for the exponent? Well that&rsquo;s already been decided for you in: IEEE Standard for Floating-Point Arithmetic (
+<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>) which is what most computers/software use. You&rsquo;ll mostly be using the data types <code>float64</code> and <code>float32</code>:</p>
+<ul>
+<li>Float 64 (also called &ldquo;double precision&rdquo;)
+<ul>
+<li>53 bits for the mantissa</li>
+<li>11 bits for the exponent</li>
+</ul>
+</li>
+<li>Float 32 (also called &ldquo;single precision&rdquo;)
+<ul>
+<li>24 bits for the mantissa</li>
+<li>8 bits for the exponent</li>
+</ul>
+</li>
+</ul>
+<h2 id="rounding-errors-a-name5a">Rounding Errors <a name="5"></a></h2>
+<p>Many fractional numbers can&rsquo;t be represented exactly using floating point format. After all, we&rsquo;re using a finite number of bits to try and represent and infinite amount of numbers. This will inevitably lead to rounding errors - your computer will always round numbers to the closest representable number.</p>
+<p>For example 0.1 can&rsquo;t be exactly represented in binary (feel free to try and make 0.1 using floating point format). Python usually hides this fact for us out of convenience, but here is &ldquo;<em>the real 0.1</em>&quot;:</p>
+<pre><code class="language-python">&gt;&gt;&gt; f&quot;{0.1:.60f}&quot;
+'0.100000000000000005551115123125782702118158340454101562500000'
+</code></pre>
+<p>So 0.1 is actually represented as a number slightly bigger than 0.1! I wrote a function to work out if a number is stored exactly or inexactly, and to show the rounding error:</p>
+<pre><code class="language-python">def float_rep(num):
+    &quot;&quot;&quot;Print info about whether a float is represented exactly or not.&quot;&quot;&quot;
+    if not isinstance(num, float):
+        raise ValueError(&quot;Please enter a floating point number.&quot;)
+    sig_digits = 52 + abs(math.frexp(num)[1])
+    num_str = f&quot;{num}&quot;
+    num_str_float = f&quot;{num:.{sig_digits}f}&quot;
+    print(f&quot;You entered: {num}&quot;)
+    if sum(int(_) for _ in num_str_float[len(num_str) :]) &gt; 0:
+        print(f&quot;Which is inexactly stored as: {num_str_float}&quot;)
+    else:
+        print(f&quot;Which is exactly stored as: {num}&quot;)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; float_rep(0.1)
+You entered: 0.1
+Which is inexactly stored as: 0.1000000000000000055511151231257827021181583404541015625
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; float_rep(0.25)
+You entered: 0.25
+Which is exactly stored as: 0.25
+</code></pre>
+<p>So how bad are these rounding errors? Well we can actually quantify the &ldquo;spacing&rdquo; between representable numbers. Before we do, imagine we&rsquo;re in the decimal system again. For a number with a fixed amount of significant digits, the spacing between that number and the next biggest number with the same format can be determined as the smallest significant digit multipled by the exponent:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Next Largest</th>
+<th>Spacing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.982e0</td>
+<td>8.983e0</td>
+<td>0.001e0 = 0.001</td>
+</tr>
+<tr>
+<td>0.001e1</td>
+<td>0.002e1</td>
+<td>0.001e1 = 0.01</td>
+</tr>
+<tr>
+<td>3.423e2</td>
+<td>3.424e2</td>
+<td>0.001e2 = 0.1</td>
+</tr>
+</tbody>
+</table>
+<p>Same goes for our binary floating point numbers! The spacing can be determined as the smallest part of the mantissa multiplied by a number&rsquo;s exponent. What is the smallest part of the mantissa? Well, for <code>float64</code>, we have 53 bits for the mantissa. 1 bit is reserved for the sign of the number, so we have 52 left. Therefore the smallest significant digit is $2^{-52}$.</p>
+<p>To be super clear here, this is the floating point format written as powers of 2 for all 52 mantissa bits:</p>
+<p>$$2^0{}.{}2^{-1}2^{-2}2^{-3}&hellip;{}2^{-50}2^{-51}\boldsymbol{2^{-52}} \times 2 ^ {E}$$</p>
+<p>See how $2^{-52}$ is the smallest value we can change? Now, consider the number 1:</p>
+<pre><code class="language-python">&gt;&gt;&gt; binary(1.0)
+ Decimal: 1.0 x 2^0
+  Binary: 1.0 x 2^0
+    Sign: 0 (+)
+Mantissa: 0 (0.0)
+Exponent: 0 (0)
+</code></pre>
+<p>As you can see, the number 1 has has an exponent of 0. Remember the smallest significant digit multiplied by our exponent gives us the spacing between this number and the next number we can represent with our format. So for the number 1, the spacing is $2^{-52} * 2^0$:</p>
+<pre><code class="language-python">&gt;&gt;&gt; (2 ** -52) * (2 ** 0)
+2.220446049250313e-16
+</code></pre>
+<p>NumPy has a helpful function we can use to calculate spacing: <code>np.nextafter(x1, x2)</code> returns the next representable floating-point value after <code>x1</code> towards <code>x2</code>. The next representable number after 1 should be 1 plus the spacing above, let&rsquo;s check:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.nextafter(1, 2)
+1.0000000000000002
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; spacing = np.nextafter(1, 2) - 1
+&gt;&gt;&gt; spacing
+2.220446049250313e-16
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; spacing == (2 ** -52) * (2 ** 0)
+True
+</code></pre>
+<p>If you do a calculation that puts you somewhere between the <strong>space</strong> of two numbers, the computer will automatically round to the nearest one. I like to think of this as a mountain range in the computer. The valleys are representable numbers. If a calculation puts us on a mountain side, we&rsquo;ll roll down the mountain to the closest valley. For example, spacing for the number 1 is $2^{-52}$, so if we don&rsquo;t add at least half that, we won&rsquo;t reach the next representable number:</p>
+<pre><code class="language-python">&gt;&gt;&gt; 1 + 0.4 * spacing == 1  # add less than half the spacing
+True
+</code></pre>
+<p><img src="fall_left.png" alt=""></p>
+<pre><code class="language-python">&gt;&gt;&gt; 1 + 0.6 * spacing == 1 # add a more than half the spacing
+False
+</code></pre>
+<p><img src="fall_right.png" alt=""></p>
+<p>We&rsquo;re working with pretty small numbers here so you might not be too shocked. But remember, the bigger our exponent, the bigger our rounding errors will be!</p>
+<pre><code class="language-python">&gt;&gt;&gt; large_number = 1e25
+&gt;&gt;&gt; binary(large_number)
+ Decimal: 1.03397576569128469 x 2^83
+  Binary: 1.0000100010110010101000101100001010000000001010010001 x 2^1010011
+    Sign: 0 (+)
+Mantissa: 0000100010110010101000101100001010000000001010010001 (0.03397576569128469)
+Exponent: 1010011 (83)
+</code></pre>
+<p>The exponent is 83 so the spacing should be:</p>
+<pre><code class="language-python">&gt;&gt;&gt; spacing = (2 ** -52) * (2 ** 83)
+&gt;&gt;&gt; print(f&quot;{spacing:.5e}&quot;)
+2.14748e+09
+</code></pre>
+<p>That&rsquo;s just over 2 billion! 1 billion is less than half that spacing, so if we add 1 billion to <code>large_number</code>, we won&rsquo;t cross the mountain peak, and we&rsquo;ll slide back down into the same valley:</p>
+<pre><code class="language-python">&gt;&gt;&gt; one_billion = 1e9
+&gt;&gt;&gt; 1e25 + one_billion == 1e25  # adding a billion didn't change our number!
+True
+</code></pre>
+<p>2 billion is more than half that spacing, so if we add it to <code>large_number</code>, we&rsquo;ll slide into the next valley (representable number):</p>
+<pre><code class="language-python">&gt;&gt;&gt; two_billion = 2e9
+&gt;&gt;&gt; 1e25 + two_billion == 1e25  # adding two billion (more than half the spacing) did change our number
+False
+</code></pre>
+<p>Another thing you should know is that, just as with integer data types, there is a biggest and a smallest number you can represent with floating point. You could determine this by hand (by making the mantissa and the exponenet as big/small as possible), but we&rsquo;ll use NumPy:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.finfo(&quot;float64&quot;).max  # maximum representable number
+1.7976931348623157e+308
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; np.finfo(&quot;float64&quot;).min  # minimum representable number
+-1.7976931348623157e+308
+</code></pre>
+<p>If your calculation results in a number higher than the <code>max</code>, you get an &ldquo;overflow error&rdquo;. In NumPy, your number is turned to <code>inf</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.array(2e+308)
+array(inf)
+</code></pre>
+<p>The closest value to 0 you can represent is:</p>
+<pre><code class="language-python">&gt;&gt;&gt; np.finfo(&quot;float64&quot;).tiny  # closest to 0
+2.2250738585072014e-308
+</code></pre>
+<p>If your calculation results in a number lower than the <code>tiny</code> (closest number to 0), you get an &ldquo;underflow error&rdquo;. In NumPy, your number is turned to 0.</p>
+<p>This actually isn&rsquo;t quite true in Python, as there exists &ldquo;
+<a href="https://en.wikipedia.org/wiki/Denormal_number" target="_blank" rel="noopener">subnormal numbers</a>&rdquo; which allow is to work with numbers a little smaller than <code>tiny</code>. I&rsquo;ll leave it to you to do your own research as this post is getting a little long, but the actual smalelst value you can represent is:</p>
+<pre><code class="language-python">&gt;&gt;&gt; 2 ** -1074
+5e-324
+</code></pre>
+<p>Anything smaller than this will be rounded to 0:</p>
+<pre><code class="language-python">&gt;&gt;&gt; 2 ** -1075
+0.0
+</code></pre>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/tomas-beuzen/avatar_hu24e4664fe587ac4632d43700593d62f5_493113_270x270_fill_q90_lanczos_center.jpg" alt="Tomas Beuzen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://www.tomasbeuzen.com/">Tomas Beuzen</a></h5>
+        <h6 class="card-subtitle">Postdoctoral Teaching Fellow &amp; <br> Data Science Consultant</h6>
+        <p class="card-text">Postdoctoral Teaching and Learning Fellow for the Master of Data Science course at the University of British Columbia, Vancouver, Canada.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/TBeuzen" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.au/citations?user=v8Di958AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/TomasBeuzen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/tomas-beuzen-2b432a118" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0003-2762-9151" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/tomas-beuzen-cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/python.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    <b>Onward and Upward</b> 🚀
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
