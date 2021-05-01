@@ -559,6 +559,14 @@ array(inf)
     </item>
     
     <item>
+      <title>Open Online Python Geospatial Course</title>
+      <link>https://www.tomasbeuzen.com/project/python-for-geospatial-analysis/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.tomasbeuzen.com/project/python-for-geospatial-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jupyter Book Cookiecutter</title>
       <link>https://www.tomasbeuzen.com/project/cookiecutter-jb/</link>
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
@@ -767,16 +775,16 @@ fig.update_layout(xaxis = dict(range=[0, 100], tickmode = &#39;linear&#39;, dtic
                   yaxis = dict(range=[0, 0.06], tickmode = &#39;linear&#39;, dtick = 0.01))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-
-&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+  
+  &lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
 
 
 
 &lt;div id=&#34;plotly_graph_1.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_1.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_1.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_1.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_1.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;multivariate-normal-distribution&#34;&gt;Multivariate Normal Distribution&lt;/h2&gt;
 &lt;p&gt;We could more realistically model our heart rate data as a multivariate distribution, which will include the correlation between the variables we noticed earlier. I&amp;rsquo;m going to let &lt;code&gt;scipy&lt;/code&gt; formulate the multivariate normal distribution for me and I&amp;rsquo;ll directly draw 7 observations from it:&lt;/p&gt;
@@ -861,9 +869,9 @@ fig.update_layout(width=700, height=700, title=&amp;quot;Multivariate Normal Hea
 
 &lt;div id=&#34;plotly_graph_2.json&#34; class=&#34;plotly&#34; style=&#34;height:700px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_2.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_2.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_2.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_2.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;Feel free to move the above plot around with your cursor. You can interpret the &amp;ldquo;height/elevation&amp;rdquo; in the plot as a probability, i.e., the higher the elevation, the more likely the values of heart rate at 9:00am/9:05am. In particular, note how if we observe a heart rate of 60 at 9:00am, the most probably value of your heart rate at 9:05am is about 62 or so. We can confirm that by looking at the cross-section of the above plot at 9:00am = 60:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig = pd.DataFrame(z[80,:], index=x1[:,80]).plot(width=700, height=400, title=&amp;quot;Heart Rate at 9:05am given that Heart Rate at 9:00am = 60bpm&amp;quot;)
@@ -877,9 +885,9 @@ fig.update_layout(xaxis = dict(range=[40, 80], tickmode = &#39;linear&#39;, dtic
 
 &lt;div id=&#34;plotly_graph_3.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_3.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_3.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_3.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_3.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;I hope this short post helped give some intuition about what multivariate distributions are and why they are useful. The example above is actually a bivariate distribution (two variables), but the intuition provided extends to more than two variables - it just gets harder to plot in more dimensions so I stuck to two variables here!&lt;/p&gt;
@@ -995,16 +1003,16 @@ fig.update_layout(showlegend=False,
                   xaxis = dict(range=[57,90], tickmode = &#39;linear&#39;, tick0 = 55, dtick = 5))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-
-&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+  
+  &lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
 
 
 
 &lt;div id=&#34;plotly_graph.json&#34; class=&#34;plotly&#34; style=&#34;height:400px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;There you have it! We originally had a hypothetical guest list of 100 people, each with an allocated &amp;ldquo;probability of attendance&amp;rdquo;. After running 10,000 simulations, we get a distribution of expected guest attenendance and can use this distribution to inform our future planning - want to be conservative? Plan for 85 guests. Want to live a little riskier? You might be able to get away with planning for 75 guests. Obviously the simulation results depend on the probabilites you assign to each guest so use your best judgement!&lt;/p&gt;
@@ -1133,16 +1141,16 @@ X.head()
 fig
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-
-&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+  
+  &lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
 
 
 
 &lt;div id=&#34;plotly_graph_1.json&#34; class=&#34;plotly&#34; style=&#34;height:475px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_1.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_1.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_1.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_1.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-cluster-based-on-continuous-data-only&#34;&gt;1. Cluster based on continuous data only&lt;/h2&gt;
 &lt;p&gt;The first question I asked myself when dealing with my mixed data was &amp;ldquo;Do I really need the information contained in the categorical features to extract patterns in my dataset?&amp;rdquo;. It could be that the continuous features available to you in your mixed data are adequate for grouping the data into representative clusters. So the first thing we&amp;rsquo;ll try here is to simply ignore our single categorical feature (which standard algorithms like k-means and DBSCAN don&amp;rsquo;t like), and only cluster based on our continuous features.&lt;/p&gt;
@@ -1156,9 +1164,9 @@ fig
 
 &lt;div id=&#34;plotly_graph_2.json&#34; class=&#34;plotly&#34; style=&#34;height:475px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_2.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_2.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_2.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_2.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;The results are not too bad, we pick up the 3 main clusters, but do not identify that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;) evident in the true data (Figure 1).&lt;/p&gt;
 &lt;h2 id=&#34;2-encode-the-categorical-data-before-clustering&#34;&gt;2. Encode the categorical data before clustering&lt;/h2&gt;
@@ -1173,9 +1181,9 @@ fig
 
 &lt;div id=&#34;plotly_graph_3.json&#34; class=&#34;plotly&#34; style=&#34;height:475px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_3.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_3.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_3.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_3.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;The results are better than before, we get our 3 blobs, plus we identify some of that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;).&lt;/p&gt;
 &lt;h2 id=&#34;3-use-the-k-prototypes-algorithm&#34;&gt;3. Use the k-prototypes algorithm&lt;/h2&gt;
@@ -1191,9 +1199,9 @@ fig
 
 &lt;div id=&#34;plotly_graph_4.json&#34; class=&#34;plotly&#34; style=&#34;height:475px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_4.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_4.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_4.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_4.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;The results are similar to the above, we get our 3 blobs, plus we identify some of that mixed data around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;).&lt;/p&gt;
 &lt;h2 id=&#34;4-use-famd-to-create-continuous-features-for-clustering&#34;&gt;4. Use FAMD to create continuous features for clustering&lt;/h2&gt;
@@ -1270,9 +1278,9 @@ fig
 
 &lt;div id=&#34;plotly_graph_5.json&#34; class=&#34;plotly&#34; style=&#34;height:475px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph_5.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph_5.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph_5.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph_5.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;The results are interesting here, we do get our 3 blobs but the bottom left blob is not very uniform. However, we perfectly identify the mixed labels around (&lt;code&gt;X1=-1&lt;/code&gt;, &lt;code&gt;X2=0&lt;/code&gt;), which no previous approach has been able to do.&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
@@ -1344,16 +1352,16 @@ pd.options.plotting.backend = &amp;quot;plotly&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The plot below shows 100 random points sampled from this synthetic dataset, with only the first two features used for plotting purposes.&lt;/p&gt;
 &lt;p&gt;
-
-&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
+  
+  &lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
 
 
 
 &lt;div id=&#34;plotly_graph.json&#34; class=&#34;plotly&#34; style=&#34;height:500px&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
-    Plotly.d3.json(&#34;plotly_graph.json&#34;, function (err, fig) {
-        Plotly.plot(&#39;plotly_graph.json&#39;, fig.data, fig.layout, { responsive: true });
-    });
+Plotly.d3.json(&#34;plotly_graph.json&#34;, function(err, fig) {
+    Plotly.plot(&#39;plotly_graph.json&#39;, fig.data, fig.layout, {responsive: true});
+});
 &lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;step-3-create-pipeline-framework&#34;&gt;Step 3: Create pipeline framework&lt;/h2&gt;
 &lt;p&gt;Using our synthetic dataset, we are going to set up a pipeline object that will:&lt;/p&gt;
