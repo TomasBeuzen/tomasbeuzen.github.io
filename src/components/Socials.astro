@@ -1,0 +1,88 @@
+---
+/**
+ * This section is for adding your social media links.
+ *
+ * 1. Add your social media links: Replace 'xxx' with your username for each social media platform.
+ * 2. Add more links: If you want to include more social media platforms, replicate the existing pattern and update the `Type` enum accordingly.
+ * 3. Adjust the order: You can change the order of the social media icons by rearranging the objects.
+ * 4. Customize icon colors: To change the color of the icons, refer to the Tailwind CSS color classes. Visit: https://tailwindcss.com/docs/customizing-colors
+ *
+ */
+import { Image } from 'astro:assets'
+import github_icon from '../assets/icons/github.svg'
+import email_icon from '../assets/icons/email.svg'
+import linkedin_icon from '../assets/icons/linkedin.svg'
+import scholar_icon from '../assets/icons/scholar.svg'
+import orcid_icon from '../assets/icons/orcid.svg'
+
+enum Type {
+	linkedIn = 'LinkedIn',
+	gitHub = 'GitHub',
+	email = 'Email',
+    scholar = 'Google Scholar',
+	orcid = 'ORCID',
+}
+
+const socials = [
+	{
+		name: Type.gitHub,
+		url: 'https://github.com/TomasBeuzen',
+		icon: github_icon,
+		color: 'bg-sky-600',
+	},
+	{
+		name: Type.linkedIn,
+		url: 'https://www.linkedin.com/in/tomas-beuzen-2b432a118',
+		icon: linkedin_icon,
+		color: 'bg-yellow-400',
+	},
+	{
+		name: Type.scholar,
+		url: 'https://scholar.google.com.au/citations?user=v8Di958AAAAJ&hl=en',
+		icon: scholar_icon,
+		color: 'bg-pink-400',
+	},
+	{
+		name: Type.orcid,
+		url: 'https://orcid.org/0000-0003-2762-9151',
+		icon: orcid_icon,
+		color: 'bg-lime-400',
+	},
+	// {
+	// 	name: Type.email,
+	// 	url: 'https://www.linkedin.com/in/tomas-beuzen-2b432a118',
+	// 	icon: email_icon,
+	// 	color: 'bg-lime-400',
+	// },
+];
+
+const getColor = (type: Type) => socials.find((social) => social.name === type)?.color;
+const getClass = (type: Type) =>
+	`scale-90 rounded-full border border-gray-950 ${getColor(
+		type,
+	)} transition duration-300 hover:scale-110 animate-zoom-in`;
+---
+<div class="grid grid-cols-3 gap-3 duration-500 md:grid-flow-col md:gap-2">
+	{
+		socials.map((social) => {
+			const href = social.name === Type.email ? `mailto:${social.url}` : social.url;
+			return (
+				<a
+					aria-label={social.name}
+					class={getClass(social.name)}
+					href={href}
+					target="_blank"
+					rel="nofollow noopner"
+					style={{ width: "64px", height: "64px" }}
+				>
+						<Image
+							src={social.icon}
+							alt={social.name}
+							class='size-13 p-3 size-16'
+							loading='eager'
+						/>
+				</a>
+			);
+		})
+	}
+</div>
