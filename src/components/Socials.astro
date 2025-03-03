@@ -62,7 +62,7 @@ const getClass = (type: Type) =>
 		type,
 	)} transition duration-300 hover:scale-110 animate-zoom-in`;
 ---
-<div class="grid grid-cols-3 gap-3 duration-500 md:grid-flow-col md:gap-2">
+<div class="grid grid-flow-col gap-2 duration-500">
 	{
 		socials.map((social) => {
 			const href = social.name === Type.email ? `mailto:${social.url}` : social.url;
