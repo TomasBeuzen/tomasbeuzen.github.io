@@ -1,5 +1,11 @@
 # Astro Resume
 
+## Development
+
+- `npm install`
+- Change files as desired
+- Run dev server to see preview: `npm run dev`
+
 ## Features
 
 - Astro v4
